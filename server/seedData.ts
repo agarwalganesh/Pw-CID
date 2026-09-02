@@ -2270,15 +2270,213 @@ export async function seedDatabase(db: Database): Promise<void> {
       ]
     },
 
-    // Banking Organizations
+    // --- SSC & Railways Premier Departments & Posts ---
+    {
+      id: 'col-ssc-mea-css',
+      category_id: 'cat-ssc-railways',
+      name: 'Ministry of External Affairs & Central Secretariat (CSS / MEA)',
+      code: 'CSS-MEA',
+      location: 'South Block, North Block, New Delhi & Global Embassies',
+      institution_type: 'Central Govt Ministry (Apex Civil Bureaucracy)',
+      accreditation: 'DoPT / Ministry of External Affairs (Diplomatic Postings)',
+      website: 'https://mea.gov.in',
+      data_status: 'DEMO',
+      source: 'SSC CGL State Allocation & Cutoff PDF (Seed)',
+      programs: [
+        {
+          id: 'prg-ssc-aso-mea',
+          exam_code: 'SSC-CGL',
+          program_name: 'Assistant Section Officer (ASO in MEA)',
+          degree_level: 'Group B Non-Gazetted (Pay Level 7: Basic ₹44,900)',
+          seats: 180,
+          duration_years: 0,
+          avg_package_lpa: 14.50, // Includes foreign allowances ($3000-4500/mo during embassy postings)
+          median_package_lpa: 14.50,
+          exam_cutoff_percentile: 'Tier 2 Score 335+ / 390 Marks',
+          exam_cutoff_rank: 'Top 350 All India Rank in SSC CGL',
+          academic_cutoff: 'Bachelor’s degree in any discipline',
+          selection_process: 'Tier 1 CBT Screening -> Tier 2 Merit CBT + DEST Typing Test'
+        },
+        {
+          id: 'prg-ssc-aso-css',
+          exam_code: 'SSC-CGL',
+          program_name: 'Assistant Section Officer (ASO in CSS - Central Secretariat)',
+          degree_level: 'Group B (Pay Level 7: Basic ₹44,900, Gross ~₹82,000/mo)',
+          seats: 980,
+          duration_years: 0,
+          avg_package_lpa: 10.50,
+          median_package_lpa: 10.50,
+          exam_cutoff_percentile: 'Tier 2 Score 322+ / 390 Marks',
+          exam_cutoff_rank: 'Top 1500 All India Rank',
+          academic_cutoff: 'Graduation in any discipline',
+          selection_process: 'Tier 1 -> Tier 2 (390M) + Computer Test'
+        }
+      ]
+    },
+    {
+      id: 'col-ssc-cbic-inspectors',
+      category_id: 'cat-ssc-railways',
+      name: 'Central Board of Indirect Taxes & Customs (CBIC)',
+      code: 'CBIC',
+      location: 'Pan-India Custom Houses, Air Cargo & GST Commissionerates',
+      institution_type: 'Department of Revenue, Ministry of Finance',
+      accreditation: 'Uniformed 3-Star Enforcement & Revenue Inspectorate',
+      website: 'https://cbic.gov.in',
+      data_status: 'DEMO',
+      source: 'CBIC Recruitment Gazette',
+      programs: [
+        {
+          id: 'prg-ssc-gst-inspector',
+          exam_code: 'SSC-CGL',
+          program_name: 'Inspector of Central GST & Central Excise',
+          degree_level: 'Group B (Pay Level 7: Basic ₹44,900, Gross ~₹78,000/mo)',
+          seats: 2800,
+          duration_years: 0,
+          avg_package_lpa: 10.20,
+          median_package_lpa: 10.20,
+          exam_cutoff_percentile: 'Tier 2 Score 316+ / 390 Marks',
+          exam_cutoff_rank: 'Top 3000 All India Rank',
+          academic_cutoff: 'Graduation degree + Physical Standard (157.5 cm height & cycling/walking test)',
+          selection_process: 'Tier 1 -> Tier 2 Merit CBT -> Physical Endurance Test'
+        },
+        {
+          id: 'prg-ssc-examiner',
+          exam_code: 'SSC-CGL',
+          program_name: 'Inspector (Examiner / Preventive Officer at Major Seaports)',
+          degree_level: 'Group B Uniformed (Customs White Uniform with Gold Epaulettes)',
+          seats: 540,
+          duration_years: 0,
+          avg_package_lpa: 10.50,
+          median_package_lpa: 10.50,
+          exam_cutoff_percentile: 'Tier 2 Score 328+ / 390 Marks',
+          exam_cutoff_rank: 'Top 800 All India Rank',
+          academic_cutoff: 'Graduation degree + Physical standard',
+          selection_process: 'Tier 1 -> Tier 2 Merit -> Physical Test'
+        }
+      ]
+    },
+    {
+      id: 'col-ssc-cbdt-iti',
+      category_id: 'cat-ssc-railways',
+      name: 'Central Board of Direct Taxes (Income Tax Department)',
+      code: 'CBDT',
+      location: 'Pan-India Directorates of Investigation & Field Ranges',
+      institution_type: 'Department of Revenue, Ministry of Finance',
+      accreditation: 'Premier Direct Tax Enforcement & Search/Seizure Authority',
+      website: 'https://incometaxindia.gov.in',
+      data_status: 'DEMO',
+      source: 'CBDT Placement & Zone Allocation PDF',
+      programs: [
+        {
+          id: 'prg-ssc-iti',
+          exam_code: 'SSC-CGL',
+          program_name: 'Inspector of Income Tax (ITI)',
+          degree_level: 'Group B (Pay Level 7: Basic ₹44,900, Gross ~₹80,000/mo)',
+          seats: 1200,
+          duration_years: 0,
+          avg_package_lpa: 10.50,
+          median_package_lpa: 10.50,
+          exam_cutoff_percentile: 'Tier 2 Score 326+ / 390 Marks',
+          exam_cutoff_rank: 'Top 1000 All India Rank',
+          academic_cutoff: 'Graduation in any discipline',
+          selection_process: 'Tier 1 Screening -> Tier 2 Merit CBT'
+        }
+      ]
+    },
+    {
+      id: 'col-ssc-ed-cbi',
+      category_id: 'cat-ssc-railways',
+      name: 'Enforcement Directorate (ED) & Central Bureau of Investigation (CBI)',
+      code: 'ED-CBI',
+      location: 'Headquarters New Delhi & Zonal Offices',
+      institution_type: 'Premier Central Investigation Agencies',
+      accreditation: 'Money Laundering (PMLA) & Anti-Corruption Prosecution',
+      website: 'https://cbi.gov.in',
+      data_status: 'DEMO',
+      source: 'CBI / ED Allocation List',
+      programs: [
+        {
+          id: 'prg-ssc-cbi-si',
+          exam_code: 'SSC-CGL',
+          program_name: 'Sub-Inspector in CBI (Central Bureau of Investigation)',
+          degree_level: 'Group B (Pay Level 7: Basic ₹44,900 + 25% Special Security Allowance)',
+          seats: 190,
+          duration_years: 0,
+          avg_package_lpa: 11.50,
+          median_package_lpa: 11.50,
+          exam_cutoff_percentile: 'Tier 2 Score 330+ / 390 Marks',
+          exam_cutoff_rank: 'Top 600 All India Rank',
+          academic_cutoff: 'Bachelor’s degree in any discipline',
+          selection_process: 'Tier 1 -> Tier 2 -> Medical & Physical verification'
+        },
+        {
+          id: 'prg-ssc-ed-aeo',
+          exam_code: 'SSC-CGL',
+          program_name: 'Assistant Enforcement Officer (AEO in ED)',
+          degree_level: 'Group B (Pay Level 7 + 20% Special Allowance)',
+          seats: 240,
+          duration_years: 0,
+          avg_package_lpa: 11.20,
+          median_package_lpa: 11.20,
+          exam_cutoff_percentile: 'Tier 2 Score 332+ / 390 Marks',
+          exam_cutoff_rank: 'Top 500 All India Rank',
+          academic_cutoff: 'Recognized Bachelor’s Degree',
+          selection_process: 'Tier 1 -> Tier 2 Merit CBT'
+        }
+      ]
+    },
+    {
+      id: 'col-rrb-railway-stations',
+      category_id: 'cat-ssc-railways',
+      name: 'Indian Railways - Station Master & Traffic Cadre (RRB NTPC)',
+      code: 'RRB-RAILWAYS',
+      location: '17 Railway Zones & 68 Divisions Across India',
+      institution_type: 'Ministry of Railways (Government of India)',
+      accreditation: 'World’s 4th Largest Railway Network',
+      website: 'https://indianrailways.gov.in',
+      data_status: 'DEMO',
+      source: 'RRB NTPC Centralized Employment Notification (CEN)',
+      programs: [
+        {
+          id: 'prg-rrb-sm',
+          exam_code: 'RRB-NTPC',
+          program_name: 'Station Master (SM) & Train Manager / Goods Guard',
+          degree_level: 'Group C Central (Pay Level 6: Basic ₹35,400, Gross ~₹65,000/mo + Perks)',
+          seats: 8500,
+          duration_years: 0,
+          avg_package_lpa: 8.50, // Includes night duty, running & travel allowances
+          median_package_lpa: 8.50,
+          exam_cutoff_percentile: 'CBT 2 Score 82+ / 120 Marks',
+          exam_cutoff_rank: 'Top 500 in Respective RRB Board',
+          academic_cutoff: 'Graduation in any discipline + A2 Medical Standard',
+          selection_process: 'CBT 1 Screening -> CBT 2 Merit (70%) -> CBAT Aptitude Test (30%) -> Document Verification'
+        },
+        {
+          id: 'prg-rrb-alp-driver',
+          exam_code: 'RRB-ALP',
+          program_name: 'Assistant Loco Pilot (ALP - Express/Goods Train Operator)',
+          degree_level: 'Safety Running Staff (Basic ₹19,900 + Running Allowance ₹40k+/mo)',
+          seats: 18799,
+          duration_years: 0,
+          avg_package_lpa: 7.50, // High running kilometer allowance
+          median_package_lpa: 7.50,
+          exam_cutoff_percentile: 'CBT 2 Part A Score 74+ / 100 Marks',
+          exam_cutoff_rank: 'Board Merit',
+          academic_cutoff: '10th + ITI / Diploma / Degree in Mechanical, Electrical, Electronics, Auto',
+          selection_process: 'CBT 1 -> CBT 2 (Part A Merit + Part B Trade Qualifying) -> CBAT Aptitude -> A1 Medical (6/6 Eyesight without glasses)'
+        }
+      ]
+    },
+
+    // --- Banking & Insurance Premier Organizations ---
     {
       id: 'col-sbi',
       category_id: 'cat-banking',
-      name: 'State Bank of India (Corporate Centre)',
+      name: 'State Bank of India (SBI Corporate Centre Mumbai)',
       code: 'SBI',
-      location: 'Mumbai & Circle Head Offices Pan-India',
-      institution_type: 'Government (Fortune 500 Public Sector Bank)',
-      accreditation: 'India’s Largest Commercial Bank',
+      location: 'Mumbai & Circle Head Offices Across India',
+      institution_type: 'Fortune 500 Public Sector Bank (#1 in India)',
+      accreditation: 'India’s Largest Commercial Bank with 22,000+ Branches',
       website: 'https://sbi.co.in',
       data_status: 'DEMO',
       source: 'SBI PO Final Cutoff Gazette (Seed)',
@@ -2286,16 +2484,114 @@ export async function seedDatabase(db: Database): Promise<void> {
         {
           id: 'prg-sbi-po',
           exam_code: 'SBI-PO',
-          program_name: 'Probationary Officer (Scale I Cadre)',
-          degree_level: 'Bank Executive Officer',
+          program_name: 'Probationary Officer (Scale I Junior Management Cadre)',
+          degree_level: 'Bank Executive Officer (Basic ₹41,960 + 4 Advance Increments)',
           seats: 2000,
-          duration_years: 0,
-          avg_package_lpa: 16.50, // Inclusive of leased accommodation, perks, allowances
+          duration_years: 2, // 2-year probation leading to Assistant Manager
+          avg_package_lpa: 16.50, // Total Compensation: Salary + Leased Quarters (up to ₹35k/mo) + Furniture + Medical + Travel
           median_package_lpa: 16.50,
-          exam_cutoff_percentile: 'Final Normalized Cutoff: ~50-53 / 100 in Mains+PI',
-          exam_cutoff_rank: 'Top 2000 in Combined Merit',
+          exam_cutoff_percentile: 'Final Merit Score: ~48-52 / 100 in Mains+PI',
+          exam_cutoff_rank: 'Top 2000 in All India Merit',
+          academic_cutoff: 'Graduation in ANY stream (No minimum percentage!)',
+          selection_process: 'Prelims (100M) -> Mains (250M) -> Psychometric + Group Discussion (20M) + Personal Interview (30M)'
+        },
+        {
+          id: 'prg-sbi-clerk-post',
+          exam_code: 'SBI-CLERK',
+          program_name: 'Junior Associate (Customer Support & Banking Operations)',
+          degree_level: 'Clerical Cadre (Basic ₹19,900, Gross ~₹38,000 - ₹42,000/mo)',
+          seats: 8773,
+          duration_years: 0,
+          avg_package_lpa: 5.40,
+          median_package_lpa: 5.40,
+          exam_cutoff_percentile: 'State Cutoff: ~72-78 / 100 in Prelims',
+          exam_cutoff_rank: 'State Merit List',
+          academic_cutoff: 'Graduation in any discipline; Local language proficiency',
+          selection_process: 'Prelims CBT (100M) -> Mains CBT (200M) -> NO INTERVIEW! Direct Final Appointment'
+        }
+      ]
+    },
+    {
+      id: 'col-rbi',
+      category_id: 'cat-banking',
+      name: 'Reserve Bank of India (RBI Central Office Mumbai)',
+      code: 'RBI',
+      location: 'Shahid Bhagat Singh Road, Fort, Mumbai',
+      institution_type: 'Central Banking Authority of India',
+      accreditation: 'Apex Monetary & Financial Regulatory Institution',
+      website: 'https://rbi.org.in',
+      data_status: 'DEMO',
+      source: 'RBI Grade B Recruitment Gazette',
+      programs: [
+        {
+          id: 'prg-rbi-grade-b',
+          exam_code: 'RBI-GRADE-B',
+          program_name: 'Officers in Grade ‘B’ (General Cadre - Direct Class A)',
+          degree_level: 'Central Bank Executive (Basic ₹55,200, Gross Salary ₹1,16,000/mo)',
+          seats: 291,
+          duration_years: 0,
+          avg_package_lpa: 24.00, // Includes prime RBI housing quarters in Metros, vehicle allowance, children education grants
+          median_package_lpa: 24.00,
+          exam_cutoff_percentile: 'Phase 2 Cutoff ~168-175 / 300 Marks',
+          exam_cutoff_rank: 'Top 300 All India Rank',
+          academic_cutoff: 'Graduation with min 60% marks (50% for SC/ST/PwD)',
+          selection_process: 'Phase 1 CBT (200M) -> Phase 2 (ESI, FM, English Descriptive 300M) -> Interview (75M)'
+        }
+      ]
+    },
+    {
+      id: 'col-ibps-banks',
+      category_id: 'cat-banking',
+      name: '11 Public Sector Nationalized Banks (PNB, BoB, Canara, Union Bank)',
+      code: 'IBPS-PSB',
+      location: 'Pan-India Zonal & Regional Offices',
+      institution_type: 'Nationalized Commercial Banks of India',
+      accreditation: 'Public Sector Banking System under Ministry of Finance',
+      website: 'https://ibps.in',
+      data_status: 'DEMO',
+      source: 'IBPS CRP PO/MT Official Allotment Notification',
+      programs: [
+        {
+          id: 'prg-ibps-po',
+          exam_code: 'IBPS-PO',
+          program_name: 'Probationary Officer / Management Trainee (Scale I)',
+          degree_level: 'Scale 1 Officer (Basic ₹36,000, Gross ~₹68,000 - ₹75,000/mo)',
+          seats: 4455,
+          duration_years: 2,
+          avg_package_lpa: 9.80, // Basic + DA + HRA + Bank quarters + Medical
+          median_package_lpa: 9.80,
+          exam_cutoff_percentile: 'Prelims Cutoff ~52-58 / 100 Marks',
+          exam_cutoff_rank: 'Top 4500 in Combined Merit',
           academic_cutoff: 'Graduation in any discipline',
-          selection_process: 'Prelims (100) -> Mains (250) -> Psychometric + Group Discussion (20) + PI (30)'
+          selection_process: 'Prelims CBT (100M) -> Mains CBT + Descriptive (225M) -> Personal Interview (100M, 80:20 Weightage)'
+        }
+      ]
+    },
+    {
+      id: 'col-ibps-rrb-banks',
+      category_id: 'cat-banking',
+      name: 'Regional Rural Banks of India (Gramin Banks - 43 RRBs)',
+      code: 'IBPS-RRB',
+      location: 'Home-State District Branches (State-Specific Allotment)',
+      institution_type: 'Joint Venture Banks (Govt of India, State Govt & Sponsor Banks)',
+      accreditation: 'Agricultural & Rural Credit Backbone of India',
+      website: 'https://ibps.in',
+      data_status: 'DEMO',
+      source: 'IBPS CRP RRBs Notification',
+      programs: [
+        {
+          id: 'prg-rrb-po-scale1',
+          exam_code: 'IBPS-RRB-PO',
+          program_name: 'Officer Scale I (Assistant Manager in Gramin Bank)',
+          degree_level: 'Scale 1 Officer (Basic ₹36,000, Gross ~₹62,000/mo)',
+          seats: 3800,
+          duration_years: 2,
+          avg_package_lpa: 8.50,
+          median_package_lpa: 8.50,
+          exam_cutoff_percentile: 'Prelims Cutoff ~54-60 / 80 Marks (Math + Reasoning Only)',
+          exam_cutoff_rank: 'State Rural Bank Merit',
+          academic_cutoff: 'Graduation degree + Proficiency in local state language',
+          selection_process: 'Prelims (80 Qs, 45 mins) -> Mains (200 Qs, 200M) -> Interview (100M) • Home State Posting!'
         }
       ]
     },

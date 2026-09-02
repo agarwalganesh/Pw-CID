@@ -14,6 +14,8 @@ import { ProvenResultsSection } from './ProvenResultsSection';
 import { MbaCounsellorCockpit } from './MbaCounsellorCockpit';
 import { UgcNetCounsellorCockpit } from './UgcNetCounsellorCockpit';
 import { UpscCounsellorCockpit } from './UpscCounsellorCockpit';
+import { SscCounsellorCockpit } from './SscCounsellorCockpit';
+import { BankingCounsellorCockpit } from './BankingCounsellorCockpit';
 
 interface CategoryDetailsViewProps {
   payload: CategoryDetailPayload;
@@ -81,6 +83,40 @@ export const CategoryDetailsView: React.FC<CategoryDetailsViewProps> = ({
   if (category.slug === 'upsc') {
     return (
       <UpscCounsellorCockpit
+        category={category}
+        exams={exams}
+        colleges={colleges}
+        eligibilityRules={eligibilityRules}
+        preparation={preparation}
+        courses={courses}
+        onBack={onBack}
+        onPitchCourse={onPitchCourse}
+        onOpenFitmentModal={onOpenFitmentModal}
+      />
+    );
+  }
+
+  // If SSC & Railways category, render the fast, counsellor-first Cockpit!
+  if (category.slug === 'ssc-railways') {
+    return (
+      <SscCounsellorCockpit
+        category={category}
+        exams={exams}
+        colleges={colleges}
+        eligibilityRules={eligibilityRules}
+        preparation={preparation}
+        courses={courses}
+        onBack={onBack}
+        onPitchCourse={onPitchCourse}
+        onOpenFitmentModal={onOpenFitmentModal}
+      />
+    );
+  }
+
+  // If Banking category, render the fast, counsellor-first Cockpit!
+  if (category.slug === 'banking') {
+    return (
+      <BankingCounsellorCockpit
         category={category}
         exams={exams}
         colleges={colleges}
