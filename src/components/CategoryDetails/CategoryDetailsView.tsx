@@ -17,6 +17,11 @@ import { UpscCounsellorCockpit } from './UpscCounsellorCockpit';
 import { SscCounsellorCockpit } from './SscCounsellorCockpit';
 import { BankingCounsellorCockpit } from './BankingCounsellorCockpit';
 import { PharmaCounsellorCockpit } from './PharmaCounsellorCockpit';
+import { CsirJamCounsellorCockpit } from './CsirJamCounsellorCockpit';
+import { GateCounsellorCockpit } from './GateCounsellorCockpit';
+import { CaCounsellorCockpit } from './CaCounsellorCockpit';
+import { JudiciaryCounsellorCockpit } from './JudiciaryCounsellorCockpit';
+import { ClatCounsellorCockpit } from './ClatCounsellorCockpit';
 
 interface CategoryDetailsViewProps {
   payload: CategoryDetailPayload;
@@ -135,6 +140,91 @@ export const CategoryDetailsView: React.FC<CategoryDetailsViewProps> = ({
   if (category.slug === 'pharma') {
     return (
       <PharmaCounsellorCockpit
+        category={category}
+        exams={exams}
+        colleges={colleges}
+        eligibilityRules={eligibilityRules}
+        preparation={preparation}
+        courses={courses}
+        onBack={onBack}
+        onPitchCourse={onPitchCourse}
+        onOpenFitmentModal={onOpenFitmentModal}
+      />
+    );
+  }
+
+  // If CSIR-JAM category, render the fast, counsellor-first Cockpit!
+  if (category.slug === 'csir-jam') {
+    return (
+      <CsirJamCounsellorCockpit
+        category={category}
+        exams={exams}
+        colleges={colleges}
+        eligibilityRules={eligibilityRules}
+        preparation={preparation}
+        courses={courses}
+        onBack={onBack}
+        onPitchCourse={onPitchCourse}
+        onOpenFitmentModal={onOpenFitmentModal}
+      />
+    );
+  }
+
+  // If GATE OA category, render the fast, counsellor-first Cockpit!
+  if (category.slug === 'gate-oa') {
+    return (
+      <GateCounsellorCockpit
+        category={category}
+        exams={exams}
+        colleges={colleges}
+        eligibilityRules={eligibilityRules}
+        preparation={preparation}
+        courses={courses}
+        onBack={onBack}
+        onPitchCourse={onPitchCourse}
+        onOpenFitmentModal={onOpenFitmentModal}
+      />
+    );
+  }
+
+  // If CA category, render the fast, counsellor-first Cockpit!
+  if (category.slug === 'ca') {
+    return (
+      <CaCounsellorCockpit
+        category={category}
+        exams={exams}
+        colleges={colleges}
+        eligibilityRules={eligibilityRules}
+        preparation={preparation}
+        courses={courses}
+        onBack={onBack}
+        onPitchCourse={onPitchCourse}
+        onOpenFitmentModal={onOpenFitmentModal}
+      />
+    );
+  }
+
+  // If Judiciary category, render the fast, counsellor-first Cockpit!
+  if (category.slug === 'judiciary') {
+    return (
+      <JudiciaryCounsellorCockpit
+        category={category}
+        exams={exams}
+        colleges={colleges}
+        eligibilityRules={eligibilityRules}
+        preparation={preparation}
+        courses={courses}
+        onBack={onBack}
+        onPitchCourse={onPitchCourse}
+        onOpenFitmentModal={onOpenFitmentModal}
+      />
+    );
+  }
+
+  // If CLAT & Law category, render the fast, counsellor-first Cockpit!
+  if (category.slug === 'clat') {
+    return (
+      <ClatCounsellorCockpit
         category={category}
         exams={exams}
         colleges={colleges}

@@ -200,14 +200,17 @@ export async function seedDatabase(db: Database): Promise<void> {
     { id: 'ex-cmat', category_id: 'cat-mba', code: 'CMAT', name: 'Common Management Admission Test', conducting_body: 'National Testing Agency (NTA)', frequency: 'Once a Year (May)', mode: 'CBT', duration_minutes: 180, exam_level: 'National (Tier 1 & Tier 2)', official_website: 'https://cmat.nta.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
     { id: 'ex-mat', category_id: 'cat-mba', code: 'MAT', name: 'Management Aptitude Test', conducting_body: 'AIMA', frequency: '4 Times a Year (Feb/May/Sep/Dec)', mode: 'CBT/PBT/IBT', duration_minutes: 120, exam_level: 'National', official_website: 'https://mat.aima.in', data_status: 'DEMO', academic_year: '2025-2026' },
 
-    // CLAT
-    { id: 'ex-clat-ug', category_id: 'cat-clat', code: 'CLAT-UG', name: 'CLAT Under-Graduate', conducting_body: 'Consortium of NLUs', frequency: 'Once a Year (Dec)', mode: 'Offline Pen & Paper (OMR)', duration_minutes: 120, exam_level: 'National', official_website: 'https://consortiumofnlus.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-clat-pg', category_id: 'cat-clat', code: 'CLAT-PG', name: 'CLAT Post-Graduate (LLM)', conducting_body: 'Consortium of NLUs', frequency: 'Once a Year (Dec)', mode: 'Offline OMR', duration_minutes: 120, exam_level: 'National', official_website: 'https://consortiumofnlus.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-ailet', category_id: 'cat-clat', code: 'AILET', name: 'All India Law Entrance Test', conducting_body: 'NLU Delhi', frequency: 'Once a Year (Dec)', mode: 'Offline OMR', duration_minutes: 120, exam_level: 'National', official_website: 'https://nationallawuniversitydelhi.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    // CLAT & Law
+    { id: 'ex-clat-ug', category_id: 'cat-clat', code: 'CLAT-UG', name: 'Common Law Admission Test (5-Year Integrated LLB)', conducting_body: 'Consortium of National Law Universities', frequency: 'Once a Year (December)', mode: 'Offline Pen & Paper (OMR)', duration_minutes: 120, exam_level: 'Apex National Law Entrance (NLSIU/NALSAR)', official_website: 'https://consortiumofnlus.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-ailet', category_id: 'cat-clat', code: 'AILET', name: 'All India Law Entrance Test (NLU Delhi Exclusive)', conducting_body: 'National Law University, Delhi', frequency: 'Once a Year (December)', mode: 'Offline Pen & Paper (OMR)', duration_minutes: 120, exam_level: 'Apex National Law (NIRF Law #2)', official_website: 'https://nationallawuniversitydelhi.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-clat-pg', category_id: 'cat-clat', code: 'CLAT-PG', name: 'CLAT Post-Graduate (One-Year LL.M. & PSU Law Officer)', conducting_body: 'Consortium of NLUs', frequency: 'Once a Year (December)', mode: 'Offline OMR', duration_minutes: 120, exam_level: 'Master of Laws & PSU Recruitment', official_website: 'https://consortiumofnlus.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-slat-law', category_id: 'cat-clat', code: 'SLAT', name: 'Symbiosis Law Aptitude Test (SLS Pune / Noida BA/BBA LLB)', conducting_body: 'Symbiosis International (Deemed University)', frequency: 'Once a Year (May)', mode: 'Computer Based Test', duration_minutes: 60, exam_level: 'Premier Private Law School', official_website: 'https://set-test.org', data_status: 'DEMO', academic_year: '2025-2026' },
 
-    // CSIR-JAM
-    { id: 'ex-csir-net', category_id: 'cat-csir-jam', code: 'CSIR-NET', name: 'CSIR UGC NET (Science Streams)', conducting_body: 'NTA / CSIR', frequency: 'Twice a Year (June/Dec)', mode: 'CBT', duration_minutes: 180, exam_level: 'National', official_website: 'https://csirnet.nta.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-iit-jam', category_id: 'cat-csir-jam', code: 'IIT-JAM', name: 'Joint Admission Test for Masters', conducting_body: 'IITs (Rotational)', frequency: 'Once a Year (Feb)', mode: 'CBT', duration_minutes: 180, exam_level: 'National', official_website: 'https://jam.iitd.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    // CSIR-JAM (Science & Research)
+    { id: 'ex-csir-net', category_id: 'cat-csir-jam', code: 'CSIR-NET', name: 'CSIR UGC NET (Chemical, Life, Physical, Math Sciences)', conducting_body: 'National Testing Agency (NTA) & CSIR HRDG', frequency: 'Twice a Year (June & Dec Cycles)', mode: 'Computer Based Test (CBT - 3 Parts: A, B, C)', duration_minutes: 180, exam_level: 'National Research Apex (JRF ₹37,000/mo Fellowship)', official_website: 'https://csirnet.nta.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-iit-jam', category_id: 'cat-csir-jam', code: 'IIT-JAM', name: 'Joint Admission Test for Masters (M.Sc. & Ph.D. at IITs/IISc)', conducting_body: 'Indian Institutes of Technology (Rotational)', frequency: 'Once a Year (February)', mode: 'Computer Based Test (MCQ + MSQ + NAT)', duration_minutes: 180, exam_level: 'Apex Postgraduate Science (21 IITs & IISc)', official_website: 'https://jam.iitd.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-tifr-gs', category_id: 'cat-csir-jam', code: 'TIFR-GS', name: 'TIFR Graduate Studies Entrance Examination', conducting_body: 'Tata Institute of Fundamental Research (TIFR Mumbai)', frequency: 'Once a Year (December)', mode: 'CBT Test + Research Interview', duration_minutes: 180, exam_level: 'Premier Fundamental Science Research', official_website: 'https://www.tifr.res.in/~academics', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-jest', category_id: 'cat-csir-jam', code: 'JEST', name: 'Joint Entrance Screening Test (Physics & Neuro/Comp Science)', conducting_body: 'Science & Engineering Research Board / Premier Institutes', frequency: 'Once a Year (March)', mode: 'Offline / CBT Screening', duration_minutes: 180, exam_level: 'Premier Theoretical Research (IISc, RRI, IMSc)', official_website: 'https://jest.org.in', data_status: 'DEMO', academic_year: '2025-2026' },
 
     // PHARMA
     { id: 'ex-gpat', category_id: 'cat-pharma', code: 'GPAT', name: 'Graduate Pharmacy Aptitude Test (GPAT)', conducting_body: 'National Board of Examinations in Medical Sciences (NBEMS)', frequency: 'Once a Year (May-June)', mode: 'Computer Based Test (CBT - 125 MCQs)', duration_minutes: 180, exam_level: 'National Apex Pharmacy (AICTE ₹12,400/mo Fellowship)', official_website: 'https://natboard.edu.in', data_status: 'DEMO', academic_year: '2025-2026' },
@@ -222,10 +225,10 @@ export async function seedDatabase(db: Database): Promise<void> {
     { id: 'ex-asst-prof-psc', category_id: 'cat-ugc-net', code: 'PSC-ASST-PROF', name: 'State PSC Assistant Professor Recruitment (UPPSC, RPSC, MPPSC)', conducting_body: 'State Public Service Commissions', frequency: 'Notification Based (Regular Govt Vacancies)', mode: 'Written Exam + Interview', duration_minutes: 180, exam_level: 'State Gazetted Class 1 (Pay Level 10)', official_website: 'https://uppsc.up.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
     { id: 'ex-cuet-phd', category_id: 'cat-ugc-net', code: 'CUET-PHD', name: 'Central Universities Ph.D. Entrance (JNU, DU, BHU, BBAU)', conducting_body: 'National Testing Agency (NTA)', frequency: 'Annual (October-November)', mode: 'CBT', duration_minutes: 180, exam_level: 'National Research Entrance', official_website: 'https://phd-entr.nta.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
 
-    // CA
-    { id: 'ex-ca-found', category_id: 'cat-ca', code: 'CA-FOUNDATION', name: 'CA Foundation Examination', conducting_body: 'ICAI', frequency: 'Thrice a Year (Jan/June/Sep)', mode: 'Offline Subjective + Objective', duration_minutes: 180, exam_level: 'National Professional', official_website: 'https://icai.org', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-ca-inter', category_id: 'cat-ca', code: 'CA-INTER', name: 'CA Intermediate Examination (6 Papers)', conducting_body: 'ICAI', frequency: 'Thrice a Year', mode: 'Offline Subjective + Case MCQs', duration_minutes: 180, exam_level: 'National Professional', official_website: 'https://icai.org', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-ca-final', category_id: 'cat-ca', code: 'CA-FINAL', name: 'CA Final Examination (6 Papers)', conducting_body: 'ICAI', frequency: 'Twice a Year (May/Nov)', mode: 'Offline Advanced Subjective', duration_minutes: 240, exam_level: 'National Professional', official_website: 'https://icai.org', data_status: 'DEMO', academic_year: '2025-2026' },
+    // CA (Chartered Accountancy - ICAI New Scheme)
+    { id: 'ex-ca-found', category_id: 'cat-ca', code: 'CA-FOUNDATION', name: 'CA Foundation Examination (New Scheme - 4 Papers)', conducting_body: 'Institute of Chartered Accountants of India (ICAI)', frequency: 'Thrice a Year (January, June, September)', mode: 'Offline Subjective + Objective (400 Marks)', duration_minutes: 180, exam_level: 'Apex Professional Accountancy Entry', official_website: 'https://icai.org', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-ca-inter', category_id: 'cat-ca', code: 'CA-INTER', name: 'CA Intermediate Examination (New Scheme - 2 Groups, 6 Papers)', conducting_body: 'ICAI', frequency: 'Thrice a Year (January, May, September)', mode: 'Offline Descriptive + 30% Case-Scenario MCQs', duration_minutes: 180, exam_level: 'National Professional (Big 4 Articleship Gateway)', official_website: 'https://icai.org', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-ca-final', category_id: 'cat-ca', code: 'CA-FINAL', name: 'CA Final Examination (New Scheme - 6 Papers + SPOM)', conducting_body: 'ICAI', frequency: 'Twice a Year (May & November)', mode: 'Offline Advanced Subjective + Case MCQs', duration_minutes: 240, exam_level: 'Apex Professional Qualification (CTC ₹12-28 LPA)', official_website: 'https://icai.org', data_status: 'DEMO', academic_year: '2025-2026' },
 
     // SSC + Railways
     { id: 'ex-ssc-cgl', category_id: 'cat-ssc-railways', code: 'SSC-CGL', name: 'Combined Graduate Level Exam (Inspector / ASO)', conducting_body: 'Staff Selection Commission (SSC)', frequency: 'Once a Year (Sep-Oct)', mode: 'Tier 1 Screening (CBT) -> Tier 2 Merit (CBT)', duration_minutes: 60, exam_level: 'Central Govt Group B Gazetted & Non-Gazetted', official_website: 'https://ssc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
@@ -234,10 +237,12 @@ export async function seedDatabase(db: Database): Promise<void> {
     { id: 'ex-rrb-ntpc', category_id: 'cat-ssc-railways', code: 'RRB-NTPC', name: 'Non-Technical Popular Categories (Station Master / Goods Guard)', conducting_body: 'Railway Recruitment Boards (RRBs)', frequency: 'Annual Centralized Notification', mode: 'CBT 1 -> CBT 2 -> CBAT (Aptitude) / Typing -> DV', duration_minutes: 90, exam_level: 'Indian Railways Central (Pay Level 2 to 6)', official_website: 'https://indianrailways.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
     { id: 'ex-rrb-alp', category_id: 'cat-ssc-railways', code: 'RRB-ALP', name: 'Assistant Loco Pilot & Technician (Train Operator)', conducting_body: 'RRB', frequency: 'Annual Centralized Notification', mode: 'CBT 1 -> CBT 2 (Part A & B Trade) -> CBAT Aptitude', duration_minutes: 90, exam_level: 'Indian Railways Technical (Running Staff)', official_website: 'https://indianrailways.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
 
-    // GATE OA
-    { id: 'ex-gate-cs', category_id: 'cat-gate-oa', code: 'GATE-CS', name: 'GATE Computer Science & Information Tech', conducting_body: 'IISc / IITs', frequency: 'Once a Year (Feb)', mode: 'CBT', duration_minutes: 180, exam_level: 'National (Tech/PSU)', official_website: 'https://gate.iitk.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-gate-da', category_id: 'cat-gate-oa', code: 'GATE-DA', name: 'GATE Data Science and Artificial Intelligence', conducting_body: 'IISc / IITs', frequency: 'Once a Year (Feb)', mode: 'CBT', duration_minutes: 180, exam_level: 'National (Tech/PSU)', official_website: 'https://gate.iitk.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-gate-ec', category_id: 'cat-gate-oa', code: 'GATE-EC', name: 'GATE Electronics & Communication', conducting_body: 'IISc / IITs', frequency: 'Once a Year (Feb)', mode: 'CBT', duration_minutes: 180, exam_level: 'National', official_website: 'https://gate.iitk.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    // GATE & PSU Recruitment
+    { id: 'ex-gate-cs', category_id: 'cat-gate-oa', code: 'GATE-CS', name: 'GATE Computer Science & Information Technology', conducting_body: 'IISc Bangalore / IITs (Rotational)', frequency: 'Once a Year (February)', mode: 'Computer Based Test (65 Qs, 100 Marks)', duration_minutes: 180, exam_level: 'Apex Tech Entrance & Maharatna PSU Trainee', official_website: 'https://gate.iitk.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-gate-da', category_id: 'cat-gate-oa', code: 'GATE-DA', name: 'GATE Data Science and Artificial Intelligence', conducting_body: 'IISc / IITs', frequency: 'Once a Year (February)', mode: 'CBT (65 Qs, 100 Marks)', duration_minutes: 180, exam_level: 'Premier AI/ML & Analytics Postgrad', official_website: 'https://gate.iitk.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-gate-ec', category_id: 'cat-gate-oa', code: 'GATE-EC', name: 'GATE Electronics & Communication Engineering', conducting_body: 'IISc / IITs', frequency: 'Once a Year (February)', mode: 'CBT (65 Qs, 100 Marks)', duration_minutes: 180, exam_level: 'National VLSI / Embedded & PSU Gateway', official_website: 'https://gate.iitk.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-gate-me', category_id: 'cat-gate-oa', code: 'GATE-ME', name: 'GATE Mechanical Engineering (Core PSU Recruitment)', conducting_body: 'IISc / IITs', frequency: 'Once a Year (February)', mode: 'CBT (65 Qs, 100 Marks)', duration_minutes: 180, exam_level: 'Heavy PSU Recruitment (ONGC, IOCL, NTPC)', official_website: 'https://gate.iitk.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-barc-ocis', category_id: 'cat-gate-oa', code: 'BARC-SCIENTIFIC', name: 'BARC Scientific Officer (OCES/DGFS Class A Gazetted)', conducting_body: 'Bhabha Atomic Research Centre', frequency: 'Annual (Through GATE / Online Test)', mode: 'CBT / GATE Score + Intensive Technical Interview', duration_minutes: 120, exam_level: 'Central Atomic Research Scientist (Pay Level 10)', official_website: 'https://barconlineexam.com', data_status: 'DEMO', academic_year: '2025-2026' },
 
     // UPSC & Civil Services
     { id: 'ex-upsc-cse', category_id: 'cat-upsc', code: 'UPSC-CSE', name: 'Civil Services Examination (IAS, IPS, IFS, IRS)', conducting_body: 'Union Public Service Commission (UPSC)', frequency: 'Once a Year (May Prelims, Sep Mains)', mode: 'Prelims (OMR) -> Mains (Subjective Written) -> Interview', duration_minutes: 120, exam_level: 'Apex Constitutional (All India Services)', official_website: 'https://upsc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
@@ -246,10 +251,11 @@ export async function seedDatabase(db: Database): Promise<void> {
     { id: 'ex-upsc-epfo', category_id: 'cat-upsc', code: 'UPSC-EPFO', name: 'EPFO Enforcement Officer (EO/AO) & APFC', conducting_body: 'UPSC (Special Recruitment)', frequency: 'Periodic Recruitment Tests', mode: 'Recruitment Test (RT) CBT/OMR + Interview', duration_minutes: 120, exam_level: 'Central Govt Group A/B Gazetted', official_website: 'https://upsc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
     { id: 'ex-upsc-cds', category_id: 'cat-upsc', code: 'UPSC-CDS', name: 'Combined Defence Services Examination (IMA/INA/AFA/OTA)', conducting_body: 'UPSC', frequency: 'Twice a Year (CDS I in April, CDS II in Sep)', mode: 'Written (English + GK + Math) + 5-Day SSB Interview', duration_minutes: 120, exam_level: 'Military Commissioned Officer (Lieutenant)', official_website: 'https://upsc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
 
-    // Judiciary
-    { id: 'ex-djs', category_id: 'cat-judiciary', code: 'DJS', name: 'Delhi Judicial Service Examination', conducting_body: 'Delhi High Court', frequency: 'Annual / Biennial', mode: 'Prelims (MCQ) -> Mains (Law Subjective) -> Viva', duration_minutes: 150, exam_level: 'State Judicial Officer', official_website: 'https://delhihighcourt.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-uppcs-j', category_id: 'cat-judiciary', code: 'UP-PCS-J', name: 'UP Judicial Service Civil Judge (JD)', conducting_body: 'UPPSC', frequency: 'Periodic Notification', mode: 'Prelims -> Mains -> Interview', duration_minutes: 120, exam_level: 'State Judicial Officer', official_website: 'https://uppsc.up.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-rjs', category_id: 'cat-judiciary', code: 'RJS', name: 'Rajasthan Judicial Service Exam', conducting_body: 'Rajasthan High Court', frequency: 'Annual', mode: 'Prelims -> Mains -> Interview', duration_minutes: 120, exam_level: 'State Judicial Officer', official_website: 'https://hcraj.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    // Judiciary (Civil Judge Junior Division & Judicial Magistrate)
+    { id: 'ex-djs', category_id: 'cat-judiciary', code: 'DJS', name: 'Delhi Judicial Service Examination (Civil Judge / Metropolitan Magistrate)', conducting_body: 'High Court of Delhi', frequency: 'Annual Notification', mode: 'Prelims (200 MCQs) -> Mains (850M Subjective) -> Viva (150M)', duration_minutes: 150, exam_level: 'Premier State Judicial Service (Gross ₹1.25L/mo)', official_website: 'https://delhihighcourt.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-uppcs-j', category_id: 'cat-judiciary', code: 'UP-PCS-J', name: 'UP Judicial Service Civil Judge (Junior Division)', conducting_body: 'UPPSC & Allahabad High Court', frequency: 'Regular Notification (Large Vacancies)', mode: 'Prelims (450M) -> Mains (6 Papers, 1000M) -> Interview (100M)', duration_minutes: 120, exam_level: 'State Judicial Officer (Class 1 Gazetted)', official_website: 'https://uppsc.up.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-rjs', category_id: 'cat-judiciary', code: 'RJS', name: 'Rajasthan Judicial Service Exam (Civil Judge & Judicial Magistrate)', conducting_body: 'Rajasthan High Court Jodhpur', frequency: 'Annual Schedule', mode: 'Prelims (100 MCQs: 70 Law + 30 Lang) -> Mains (300M) -> Interview', duration_minutes: 120, exam_level: 'State Judicial Officer (No GS Paper!)', official_website: 'https://hcraj.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-mp-cj', category_id: 'cat-judiciary', code: 'MP-CJ', name: 'Madhya Pradesh Civil Judge (Junior Division / Entry Level)', conducting_body: 'High Court of Madhya Pradesh, Jabalpur', frequency: 'Annual Notification', mode: 'Online Prelims (150 MCQs) -> Mains (400M) -> Interview (50M)', duration_minutes: 120, exam_level: 'State Judicial Officer (Fast-Track Recruitment)', official_website: 'https://mphc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
 
     // Banking & Insurance
     { id: 'ex-sbi-po', category_id: 'cat-banking', code: 'SBI-PO', name: 'State Bank of India Probationary Officer (Scale I)', conducting_body: 'SBI Central Recruitment Board', frequency: 'Once a Year (Oct-Nov)', mode: 'Prelims CBT -> Mains CBT + Descriptive -> GE & PI', duration_minutes: 60, exam_level: 'Premier Public Banking (CTC ₹16.5 LPA)', official_website: 'https://sbi.co.in/careers', data_status: 'DEMO', academic_year: '2025-2026' },
@@ -350,17 +356,31 @@ export async function seedDatabase(db: Database): Promise<void> {
     {
       id: 'str-clat-ug',
       exam_id: 'ex-clat-ug',
-      tier_name: 'CLAT UG Common Test Paper',
+      tier_name: 'CLAT UG Common Test Paper (120 Questions, 120 Marks, 120 Mins)',
       sections_json: JSON.stringify([
-        { name: 'English Language', questions: 24, marks: 24, duration: 25 },
-        { name: 'Current Affairs & General Knowledge', questions: 30, marks: 30, duration: 20 },
-        { name: 'Legal Reasoning', questions: 32, marks: 32, duration: 35 },
-        { name: 'Logical Reasoning', questions: 24, marks: 24, duration: 25 },
-        { name: 'Quantitative Techniques', questions: 10, marks: 10, duration: 15 }
+        { name: 'English Language (Passage-Based)', questions: 24, marks: 24, duration: 25, question_types: '4-5 Passages (~450 words each) testing comprehension, inference, vocabulary (+1 / -0.25)' },
+        { name: 'Current Affairs & General Knowledge', questions: 30, marks: 30, duration: 20, question_types: 'Contemporary national & international events, historic milestones, awards (+1 / -0.25)' },
+        { name: 'Legal Reasoning (No Prior Law Knowledge Needed)', questions: 32, marks: 32, duration: 35, question_types: 'Legal principles, fact situations, application to constitutional & criminal scenarios (+1 / -0.25)' },
+        { name: 'Logical Reasoning (Critical & Analytical)', questions: 24, marks: 24, duration: 25, question_types: 'Arguments, premises, conclusions, logical fallacies, paradoxes (+1 / -0.25)' },
+        { name: 'Quantitative Techniques (10th Std Applied Math)', questions: 10, marks: 10, duration: 15, question_types: 'Data Interpretation caselets, ratios, percentages, commercial math (+1 / -0.25)' }
       ]),
       total_marks: 120,
       total_questions: 120,
-      marking_scheme: '+1 for Correct, -0.25 for Incorrect MCQ',
+      marking_scheme: '+1 for Correct, -0.25 for Incorrect MCQ; Direct All India Merit for 26 NLUs',
+      duration_minutes: 120
+    },
+    {
+      id: 'str-ailet',
+      exam_id: 'ex-ailet',
+      tier_name: 'AILET (NLU Delhi Exclusive - 150 Questions, 150 Marks, 120 Mins)',
+      sections_json: JSON.stringify([
+        { name: 'Section A: English Language', questions: 50, marks: 50, duration: 40, question_types: 'Advanced reading comprehension, grammar, vocabulary in context (+1 / -0.25)' },
+        { name: 'Section B: Current Affairs & General Knowledge', questions: 30, marks: 30, duration: 20, question_types: 'Static GK, Current legal & national affairs (+1 / -0.25)' },
+        { name: 'Section C: Logical Reasoning (Includes Legal Aptitude)', questions: 70, marks: 70, duration: 60, question_types: 'Critical reasoning, analytical puzzles, principle-fact legal deduction (+1 / -0.25)' }
+      ]),
+      total_marks: 150,
+      total_questions: 150,
+      marking_scheme: '+1 for Correct, -0.25 for Incorrect MCQ; Direct admission into NLU Delhi (NIRF Law #2)',
       duration_minutes: 120
     },
     // --- PHARMA STRUCTURES ---
@@ -619,6 +639,151 @@ export async function seedDatabase(db: Database): Promise<void> {
       total_questions: 150,
       marking_scheme: '+2 for Correct, NO NEGATIVE MARKING; Qualifying 6% aggregate merit rule',
       duration_minutes: 180
+    },
+    // --- CSIR-NET & IIT-JAM STRUCTURES ---
+    {
+      id: 'str-csir-net',
+      exam_id: 'ex-csir-net',
+      tier_name: 'CSIR UGC NET (3 Parts: Part A General + Part B & C Domain)',
+      sections_json: JSON.stringify([
+        { name: 'Part A: General Science, Quantitative & Reasoning', questions: 20, marks: 30, duration: 30, question_types: 'Attempt any 15 out of 20 questions (2 Marks each, negative 0.50)' },
+        { name: 'Part B: Core Subject Knowledge MCQs', questions: 50, marks: 70, duration: 60, question_types: 'Attempt any 35 out of 50 (Chemical/Life/Physics/Math Sciences, 2 Marks each)' },
+        { name: 'Part C: Higher Order Scientific & Research Analysis', questions: 75, marks: 100, duration: 90, question_types: 'Attempt any 25 out of 75 (4 Marks each, negative 1.00) - Decides JRF Rank' }
+      ]),
+      total_marks: 200,
+      total_questions: 145,
+      marking_scheme: 'Total 200 Marks; Qualifying JRF awards ₹37,000/month stipend (+HRA) for 5 years (₹28+ Lakhs)',
+      duration_minutes: 180
+    },
+    {
+      id: 'str-iit-jam',
+      exam_id: 'ex-iit-jam',
+      tier_name: 'IIT JAM Computer Based Test (60 Questions, 100 Marks)',
+      sections_json: JSON.stringify([
+        { name: 'Section A: Multiple Choice Questions (MCQ)', questions: 30, marks: 50, duration: 80, question_types: '10 Qs of 1 Mark (+1 / -0.33) + 20 Qs of 2 Marks (+2 / -0.66)' },
+        { name: 'Section B: Multiple Select Questions (MSQ)', questions: 10, marks: 20, duration: 40, question_types: '10 Qs of 2 Marks each (One or more options correct, NO NEGATIVE MARKING)' },
+        { name: 'Section C: Numerical Answer Type (NAT)', questions: 20, marks: 30, duration: 60, question_types: '10 Qs of 1 Mark + 10 Qs of 2 Marks (Virtual numeric keypad, NO NEGATIVE MARKING)' }
+      ]),
+      total_marks: 100,
+      total_questions: 60,
+      marking_scheme: 'All India Merit decides M.Sc. and Integrated Ph.D. at 21 IITs and IISc Bangalore',
+      duration_minutes: 180
+    },
+    // --- GATE & PSU RECRUITMENT STRUCTURES ---
+    {
+      id: 'str-gate-cs',
+      exam_id: 'ex-gate-cs',
+      tier_name: 'GATE Computer Science & IT (65 Questions, 100 Marks)',
+      sections_json: JSON.stringify([
+        { name: 'General Aptitude (GA)', questions: 10, marks: 15, duration: 25, question_types: '5 Qs of 1 Mark + 5 Qs of 2 Marks (Verbal & Numerical Ability)' },
+        { name: 'Engineering Mathematics & Discrete Math', questions: 10, marks: 15, duration: 35, question_types: 'Linear Algebra, Calculus, Probability, Graph Theory, Combinatorics' },
+        { name: 'Core Computer Science & Programming', questions: 45, marks: 70, duration: 120, question_types: 'Data Structures, Algorithms, DBMS, Operating Systems, Computer Networks, Theory of Computation, Compiler' }
+      ]),
+      total_marks: 100,
+      total_questions: 65,
+      marking_scheme: '+1 / +2 for Correct; -0.33 / -0.66 for MCQ; NO negative for MSQ and NAT questions',
+      duration_minutes: 180
+    },
+    {
+      id: 'str-gate-da',
+      exam_id: 'ex-gate-da',
+      tier_name: 'GATE Data Science & Artificial Intelligence (65 Qs, 100 Marks)',
+      sections_json: JSON.stringify([
+        { name: 'General Aptitude', questions: 10, marks: 15, duration: 25, question_types: 'Verbal & Analytical Reasoning' },
+        { name: 'Probability, Statistics & Linear Algebra', questions: 20, marks: 30, duration: 55, question_types: 'Random variables, Bayes theorem, Eigen values, Matrix decompositions' },
+        { name: 'Machine Learning, Deep Learning & AI', questions: 35, marks: 55, duration: 100, question_types: 'Supervised/Unsupervised learning, Neural nets, Search algorithms, Python data structures' }
+      ]),
+      total_marks: 100,
+      total_questions: 65,
+      marking_scheme: 'Direct admission to M.Tech in AI/Data Science at IITs & PSU AI specialist roles',
+      duration_minutes: 180
+    },
+    // --- CA (ICAI NEW SCHEME) STRUCTURES ---
+    {
+      id: 'str-ca-foundation',
+      exam_id: 'ex-ca-found',
+      tier_name: 'CA Foundation (ICAI New Scheme - 4 Papers, 400 Marks)',
+      sections_json: JSON.stringify([
+        { name: 'Paper 1: Accounting (Subjective)', questions: 6, marks: 100, duration: 180, question_types: 'Financial reporting, Partnership, Company accounts, Depreciation' },
+        { name: 'Paper 2: Business Laws (Subjective)', questions: 6, marks: 100, duration: 180, question_types: 'Indian Regulatory Framework, Contract Act, Sale of Goods, Partnership, LLP, Companies Act' },
+        { name: 'Paper 3: Quantitative Aptitude (Objective MCQ)', questions: 100, marks: 100, duration: 120, question_types: 'Business Math (40M), Logical Reasoning (20M), Statistics (40M) (+1 / -0.25)' },
+        { name: 'Paper 4: Business Economics (Objective MCQ)', questions: 100, marks: 100, duration: 120, question_types: 'Micro/Macro Economics, National Income, Public Finance, Money Market (+1 / -0.25)' }
+      ]),
+      total_marks: 400,
+      total_questions: 212,
+      marking_scheme: 'Passing Rule: Minimum 40% in each individual paper AND 50% aggregate (Min 200/400 Marks)',
+      duration_minutes: 600
+    },
+    {
+      id: 'str-ca-inter',
+      exam_id: 'ex-ca-inter',
+      tier_name: 'CA Intermediate (ICAI New Scheme - 2 Groups, 6 Papers, 600 Marks)',
+      sections_json: JSON.stringify([
+        { name: 'Group 1: Advanced Accounting (Paper 1)', questions: 6, marks: 100, duration: 180, question_types: 'Accounting Standards (AS), Consolidated Financial Statements, Financial Reporting' },
+        { name: 'Group 1: Corporate and Other Laws (Paper 2)', questions: 6, marks: 100, duration: 180, question_types: 'Companies Act 2013, Foreign Exchange Management Act (FEMA), Interpretation of Statutes' },
+        { name: 'Group 1: Taxation - Income Tax & GST (Paper 3)', questions: 6, marks: 100, duration: 180, question_types: 'Direct Taxes (50M) + Goods & Services Tax (50M) • 30% Case Scenario MCQs' },
+        { name: 'Group 2: Cost & Management Accounting (Paper 4)', questions: 6, marks: 100, duration: 180, question_types: 'Standard Costing, Marginal Costing, Budgetary Control, Process Costing' },
+        { name: 'Group 2: Auditing and Ethics (Paper 5)', questions: 6, marks: 100, duration: 180, question_types: 'Standards on Auditing (SAs), Internal Control, Professional Ethics, Digital Auditing' },
+        { name: 'Group 2: Financial Management & Strategic Mgmt (Paper 6)', questions: 6, marks: 100, duration: 180, question_types: 'FM (50M) Capital Budgeting, WACC + Strategic Management (50M)' }
+      ]),
+      total_marks: 600,
+      total_questions: 36,
+      marking_scheme: 'Passing: 40% per paper + 50% group aggregate; Clearing both groups unlocks 2-year Big 4 Articleship',
+      duration_minutes: 1080
+    },
+    {
+      id: 'str-ca-final',
+      exam_id: 'ex-ca-final',
+      tier_name: 'CA Final (ICAI New Scheme - 6 Papers, 600 Marks + SPOM)',
+      sections_json: JSON.stringify([
+        { name: 'Group 1: Financial Reporting - Ind AS (Paper 1)', questions: 6, marks: 100, duration: 180, question_types: 'Indian Accounting Standards (Ind AS), Business Combinations, Financial Instruments' },
+        { name: 'Group 1: Advanced Financial Management (Paper 2)', questions: 6, marks: 100, duration: 180, question_types: 'Derivatives, Forex Risk Management, Portfolio Theory, Mergers & Acquisitions' },
+        { name: 'Group 1: Advanced Auditing, Assurance & Ethics (Paper 3)', questions: 6, marks: 100, duration: 180, question_types: 'Risk Assessment, Forensic Audit, ESG Assurance, Peer Review, Code of Ethics' },
+        { name: 'Group 2: Direct Tax Laws & International Taxation (Paper 4)', questions: 6, marks: 100, duration: 180, question_types: 'Corporate Taxation, Transfer Pricing, Double Taxation Avoidance (DTAA), BEPS' },
+        { name: 'Group 2: Indirect Tax Laws - Customs & GST (Paper 5)', questions: 6, marks: 100, duration: 180, question_types: 'GST Litigation, Appeals, Foreign Trade Policy, Valuation, Customs Duty' },
+        { name: 'Group 2: Integrated Business Solutions (Paper 6 Open Book)', questions: 5, marks: 100, duration: 240, question_types: 'Multi-disciplinary Case Studies integrating Tax, Law, Accounts, Costing & Strategy' }
+      ]),
+      total_marks: 600,
+      total_questions: 35,
+      marking_scheme: 'Passing: 40% per paper + 50% aggregate + Mandatory Self-Paced Online Modules (SPOM Set A & B)',
+      duration_minutes: 1140
+    },
+    // --- JUDICIARY (CIVIL JUDGE & JUDICIAL MAGISTRATE) STRUCTURES ---
+    {
+      id: 'str-djs',
+      exam_id: 'ex-djs',
+      tier_name: 'Delhi Judicial Service (Prelims 200M -> Mains 850M -> Viva 150M = 1200M)',
+      sections_json: JSON.stringify([
+        { name: 'Prelims: Objective Screening Test', questions: 200, marks: 200, duration: 150, question_types: 'General Knowledge (50M), Legal GK, CPC, CrPC, IPC, Evidence Act, Contract Act, Arbitration (+1 / -0.25)' },
+        { name: 'Mains: General Knowledge & Language (Paper 1)', questions: 5, marks: 250, duration: 180, question_types: 'Current Legal Affairs, Translation (Hindi-English), Précis, Essay Writing' },
+        { name: 'Mains: Civil Law I (Paper 2)', questions: 8, marks: 200, duration: 180, question_types: 'Contract, Sale of Goods, Specific Relief, Delhi Rent Control, Torts, Hindu & Muslim Law' },
+        { name: 'Mains: Civil Law II (Paper 3)', questions: 8, marks: 200, duration: 180, question_types: 'Civil Procedure Code (CPC), Evidence Act, Limitation Act, Commercial Courts Act' },
+        { name: 'Mains: Criminal Law (Paper 4)', questions: 8, marks: 200, duration: 180, question_types: 'Indian Penal Code (IPC/BNS), Criminal Procedure Code (CrPC/BNSS), Indian Evidence Act (BSA), Negotiable Instruments Act, POCSO' },
+        { name: 'Viva Voce (Personal Interview by High Court Bench)', questions: 1, marks: 150, duration: 30, question_types: 'Judicial temperament, quick statutory application, composure (Min 50% in Viva required for Gen)' }
+      ]),
+      total_marks: 1200,
+      total_questions: 230,
+      marking_scheme: 'Prelims 25% minimum cutoff; Final Appointment = Mains 850M + Viva 150M = 1000 Marks',
+      duration_minutes: 900
+    },
+    {
+      id: 'str-up-pcs-j',
+      exam_id: 'ex-uppcs-j',
+      tier_name: 'UP Judicial Service (Prelims 450M -> Mains 1000M -> Interview 100M)',
+      sections_json: JSON.stringify([
+        { name: 'Prelims Paper 1: General Studies', questions: 150, marks: 150, duration: 120, question_types: 'History, Indian Culture, Geography, Polity, Current National Events, Special Women & Child Acts' },
+        { name: 'Prelims Paper 2: Law', questions: 150, marks: 300, duration: 120, question_types: 'Jurisprudence, International Law, Constitution, IPC, CrPC, Evidence, CPC, Contract (+2 / -0.66)' },
+        { name: 'Mains Paper 1: General Knowledge', questions: 10, marks: 200, duration: 180, question_types: 'Subjective questions on Polity, Science, Social Schemes, Indian Heritage' },
+        { name: 'Mains Paper 2 & 3: English & Hindi Language', questions: 8, marks: 200, duration: 360, question_types: 'Essay, Translation, Summary (100 Marks English + 100 Marks Hindi)' },
+        { name: 'Mains Paper 4: Substantive Law (Civil Law)', questions: 8, marks: 200, duration: 180, question_types: 'Contract, Partnership, Torts, Transfer of Property, Equity, Specific Relief' },
+        { name: 'Mains Paper 5: Procedure & Evidence', questions: 8, marks: 200, duration: 180, question_types: 'Civil Procedure, Criminal Procedure, Evidence, Framing of Charges, Judgment Writing' },
+        { name: 'Mains Paper 6: Penal, Revenue & Local UP Laws', questions: 8, marks: 200, duration: 180, question_types: 'IPC, UP Revenue Code 2006, UP Urban Buildings Tenancy Act' },
+        { name: 'Interview', questions: 1, marks: 100, duration: 25, question_types: 'High Court Judge & Board Viva Voce' }
+      ]),
+      total_marks: 1550,
+      total_questions: 343,
+      marking_scheme: 'Final Merit = Mains (1000M) + Interview (100M) = 1100 Marks decides Civil Judge (JD) rank',
+      duration_minutes: 1320
     }
   ];
 
@@ -3320,6 +3485,408 @@ export async function seedDatabase(db: Database): Promise<void> {
           exam_cutoff_rank: 'State Merit List',
           academic_cutoff: 'Master’s degree with 55% marks in subject',
           selection_process: 'OMR Written Exam (MP GK 200M + Subject 600M = 800M) -> Direct Merit Selection'
+        }
+      ]
+    },
+
+    // --- CLAT & PREMIER NATIONAL LAW UNIVERSITIES ---
+    {
+      id: 'col-nlsiu-blr',
+      category_id: 'cat-clat',
+      name: 'National Law School of India University (NLSIU Bengaluru)',
+      code: 'NLSIU',
+      location: 'Nagarbhavi, Bengaluru, Karnataka',
+      institution_type: 'Apex National Law University (Established by Statute)',
+      accreditation: 'NIRF Law Rank #1 for 7 Consecutive Years (The Harvard of the East)',
+      website: 'https://nls.ac.in',
+      data_status: 'DEMO',
+      source: 'NLSIU Recruitment & Placement Archive (Seed)',
+      programs: [
+        {
+          id: 'prg-nlsiu-ballb-hons',
+          exam_code: 'CLAT-UG',
+          program_name: 'B.A., LL.B. (Hons.) 5-Year Integrated Degree',
+          degree_level: 'Undergraduate Law',
+          seats: 300,
+          duration_years: 5,
+          avg_package_lpa: 21.50, // Top Tier 1 Law Firms (Trilegal, CAM, SAM, Khaitan)
+          median_package_lpa: 19.00,
+          exam_cutoff_percentile: 'CLAT All India Rank 1 - 105',
+          exam_cutoff_rank: 'AIR 1 - 105 (General)',
+          academic_cutoff: '10+2 with minimum 45% marks (40% for SC/ST)',
+          selection_process: 'Strictly CLAT UG Merit Rank through Consortium Counseling'
+        },
+        {
+          id: 'prg-nlsiu-llm',
+          exam_code: 'CLAT-PG',
+          program_name: 'Master of Laws (LL.M.) in Corporate & Commercial Law',
+          degree_level: 'Postgraduate Law',
+          seats: 100,
+          duration_years: 1,
+          avg_package_lpa: 16.50,
+          median_package_lpa: 15.00,
+          exam_cutoff_percentile: 'CLAT PG Rank Top 80',
+          exam_cutoff_rank: 'AIR 1 - 80',
+          academic_cutoff: 'LL.B. Degree with min 50%',
+          selection_process: 'CLAT PG All India Rank'
+        }
+      ]
+    },
+    {
+      id: 'col-nlu-delhi',
+      category_id: 'cat-clat',
+      name: 'National Law University, Delhi (NLU Delhi)',
+      code: 'NLU-DELHI',
+      location: 'Sector 14, Dwarka, New Delhi',
+      institution_type: 'State Law University (Autonomous Premier NLU)',
+      accreditation: 'NIRF Law Rank #2 in India',
+      website: 'https://nludelhi.ac.in',
+      data_status: 'DEMO',
+      source: 'AILET Merit Notification',
+      programs: [
+        {
+          id: 'prg-nlud-ballb',
+          exam_code: 'AILET',
+          program_name: 'B.A., LL.B. (Hons.) 5-Year Integrated',
+          degree_level: 'Undergraduate Law',
+          seats: 123,
+          duration_years: 5,
+          avg_package_lpa: 20.00,
+          median_package_lpa: 18.50,
+          exam_cutoff_percentile: 'AILET Rank Top 90',
+          exam_cutoff_rank: 'AIR 1 - 90 (General)',
+          academic_cutoff: '10+2 with min 45% marks',
+          selection_process: 'Exclusive AILET Written Test Merit (NO CLAT!)'
+        }
+      ]
+    },
+    {
+      id: 'col-wbnujs-kolkata',
+      category_id: 'cat-clat',
+      name: 'West Bengal National University of Juridical Sciences (WBNUJS Kolkata)',
+      code: 'WBNUJS',
+      location: 'Salt Lake City, Kolkata, West Bengal',
+      institution_type: 'Autonomous National Law University',
+      accreditation: 'NIRF Law Rank #4 (Top Corporate Law Placement Powerhouse)',
+      website: 'https://nujs.edu',
+      data_status: 'DEMO',
+      source: 'WBNUJS Placement Report',
+      programs: [
+        {
+          id: 'prg-nujs-ballb',
+          exam_code: 'CLAT-UG',
+          program_name: 'B.A., LL.B. (Hons.) / B.Sc., LL.B. (Hons.)',
+          degree_level: 'Undergraduate Law',
+          seats: 132,
+          duration_years: 5,
+          avg_package_lpa: 19.50,
+          median_package_lpa: 18.00,
+          exam_cutoff_percentile: 'CLAT Rank Top 260',
+          exam_cutoff_rank: 'AIR 100 - 260',
+          academic_cutoff: '10+2 with min 45% marks',
+          selection_process: 'CLAT Counseling'
+        }
+      ]
+    },
+
+    // --- CSIR-NET & IIT-JAM PREMIER SCIENCE INSTITUTES ---
+    {
+      id: 'col-iisc-bangalore',
+      category_id: 'cat-csir-jam',
+      name: 'Indian Institute of Science (IISc Bangalore)',
+      code: 'IISC-BLR',
+      location: 'CV Raman Road, Bengaluru, Karnataka',
+      institution_type: 'Institute of National Importance (Apex Science Institution of India)',
+      accreditation: 'NIRF Overall Rank #1 & Research #1 in India',
+      website: 'https://iisc.ac.in',
+      data_status: 'DEMO',
+      source: 'IISc Postgraduate & Research Admissions Portal (Seed)',
+      programs: [
+        {
+          id: 'prg-iisc-phd-jrf',
+          exam_code: 'CSIR-NET',
+          program_name: 'Ph.D. in Chemical / Physical / Mathematical / Biological Sciences',
+          degree_level: 'Doctoral (Direct JRF Fellowship ₹37,000/mo + HRA)',
+          seats: 180,
+          duration_years: 5,
+          avg_package_lpa: 18.50, // High industrial R&D and global post-doc opportunities
+          median_package_lpa: 16.00,
+          exam_cutoff_percentile: 'CSIR NET JRF (AIR Top 50 in Subject)',
+          exam_cutoff_rank: 'AIR 1 - 50 in CSIR JRF',
+          academic_cutoff: 'First class M.Sc. degree with valid CSIR JRF award',
+          selection_process: 'CSIR JRF Shortlisting -> Technical In-Depth Research Interview'
+        },
+        {
+          id: 'prg-iisc-msc-jam',
+          exam_code: 'IIT-JAM',
+          program_name: 'Integrated Ph.D. / M.Sc. in Chemical & Physical Sciences',
+          degree_level: 'Postgraduate Science Research',
+          seats: 90,
+          duration_years: 3,
+          avg_package_lpa: 15.00,
+          median_package_lpa: 14.00,
+          exam_cutoff_percentile: 'IIT JAM Rank Top 80',
+          exam_cutoff_rank: 'AIR 1 - 80 in IIT JAM',
+          academic_cutoff: 'B.Sc. with min 60% or 6.5 CGPA in science stream',
+          selection_process: 'JAM Score -> IISc Departmental Interview'
+        }
+      ]
+    },
+    {
+      id: 'col-tifr-mumbai',
+      category_id: 'cat-csir-jam',
+      name: 'Tata Institute of Fundamental Research (TIFR Mumbai & NCBS Bengaluru)',
+      code: 'TIFR',
+      location: 'Homi Bhabha Road, Colaba, Mumbai',
+      institution_type: 'Deemed University (Department of Atomic Energy)',
+      accreditation: 'World-Renowned Fundamental Research Centre',
+      website: 'https://tifr.res.in',
+      data_status: 'DEMO',
+      source: 'TIFR Graduate School Admissions',
+      programs: [
+        {
+          id: 'prg-tifr-phd',
+          exam_code: 'TIFR-GS',
+          program_name: 'Ph.D. & Integrated M.Sc.-Ph.D. in Physics, Chemistry, Biology',
+          degree_level: 'Doctoral Research Fellowship (₹31,000 - ₹35,000/mo)',
+          seats: 120,
+          duration_years: 5,
+          avg_package_lpa: 17.50,
+          median_package_lpa: 16.00,
+          exam_cutoff_percentile: 'TIFR GS Written Merit',
+          exam_cutoff_rank: 'Written Test Top Percentile',
+          academic_cutoff: 'B.Sc. / M.Sc. in relevant pure sciences',
+          selection_process: 'TIFR Nationwide Written Test -> Two Rounds of Rigorous Subject Interviews'
+        }
+      ]
+    },
+
+    // --- GATE & MAHARATNA PSU RECRUITERS ---
+    {
+      id: 'col-ongc-psu',
+      category_id: 'cat-gate-oa',
+      name: 'Oil and Natural Gas Corporation (ONGC - Maharatna PSU)',
+      code: 'ONGC',
+      location: 'Dehradun, Mumbai Offshore & Pan-India Assets',
+      institution_type: 'Central Public Sector Enterprise (Maharatna)',
+      accreditation: 'India’s Largest Crude Oil and Natural Gas Producer',
+      website: 'https://ongcindia.com',
+      data_status: 'DEMO',
+      source: 'ONGC Graduate Executive Trainee Recruitment Notification',
+      programs: [
+        {
+          id: 'prg-ongc-get',
+          exam_code: 'GATE-CS',
+          program_name: 'Graduate Executive Trainee (E-1 Executive Level: Programming / Systems)',
+          degree_level: 'Class-1 Central PSU Executive (Basic ₹60,000, CTC ₹21.00 LPA)',
+          seats: 180,
+          duration_years: 0,
+          avg_package_lpa: 21.00, // Basic + DA + Perks 35% + PRP + Medical + Accommodation
+          median_package_lpa: 21.00,
+          exam_cutoff_percentile: 'GATE Score 820+ / 1000',
+          exam_cutoff_rank: 'AIR Top 150 in GATE CS',
+          academic_cutoff: 'B.Tech/BE in CS/IT with min 60% marks',
+          selection_process: 'GATE Score (60% weightage) + Group Discussion & Interview (40%)'
+        },
+        {
+          id: 'prg-ongc-mech',
+          exam_code: 'GATE-ME',
+          program_name: 'Assistant Executive Engineer (Mechanical Cadre - Drilling & Production)',
+          degree_level: 'Class-1 PSU Executive (Pay Scale ₹60,000 - ₹1,80,000)',
+          seats: 250,
+          duration_years: 0,
+          avg_package_lpa: 21.00,
+          median_package_lpa: 21.00,
+          exam_cutoff_percentile: 'GATE Score 840+ / 1000',
+          exam_cutoff_rank: 'AIR Top 200 in GATE ME',
+          academic_cutoff: 'B.E./B.Tech in Mechanical Engineering with 60% marks',
+          selection_process: 'GATE Score + Personal Interview'
+        }
+      ]
+    },
+    {
+      id: 'col-barc-dae',
+      category_id: 'cat-gate-oa',
+      name: 'Bhabha Atomic Research Centre (BARC - Department of Atomic Energy)',
+      code: 'BARC',
+      location: 'Trombay, Mumbai, Maharashtra',
+      institution_type: 'Apex Nuclear Science & Technology Research Centre',
+      accreditation: 'Department of Atomic Energy, Government of India',
+      website: 'https://barconlineexam.com',
+      data_status: 'DEMO',
+      source: 'BARC OCES/DGFS Scientific Officer Gazette',
+      programs: [
+        {
+          id: 'prg-barc-so',
+          exam_code: 'BARC-SCIENTIFIC',
+          program_name: 'Scientific Officer Grade ‘C’ (OCES / DGFS Program)',
+          degree_level: 'Central Govt Group A Gazetted (Pay Level 10: Gross ~₹1,10,000/mo)',
+          seats: 220,
+          duration_years: 1, // 1-year orientation with ₹55,000/mo stipend leading to Level 10
+          avg_package_lpa: 15.50, // Permanent Class A Central Govt Salary + Quarters in Atomic Energy Colony
+          median_package_lpa: 15.50,
+          exam_cutoff_percentile: 'GATE Score 780+ or BARC Online Screening Score',
+          exam_cutoff_rank: 'Top Tier in Discipline',
+          academic_cutoff: 'B.Tech in CS, EC, EE, ME, or Chemical with min 60% aggregate',
+          selection_process: 'GATE Shortlisting or BARC Written Test -> 45-Minute Pure Technical Interview'
+        }
+      ]
+    },
+
+    // --- CA BIG 4 FIRMS & CORPORATE POWERHOUSES ---
+    {
+      id: 'col-big4-firms',
+      category_id: 'cat-ca',
+      name: 'Big 4 Professional Services (Deloitte, PwC, EY, KPMG)',
+      code: 'BIG-4',
+      location: 'Mumbai, Gurugram, Bengaluru, Hyderabad, Chennai, Pune',
+      institution_type: 'Global Accounting, Audit & Financial Advisory Networks',
+      accreditation: 'World’s Leading Audit, Forensic, M&A & Tax Practice Firms',
+      website: 'https://deloitte.com/in',
+      data_status: 'DEMO',
+      source: 'ICAI Campus Placement Committee Report (Seed)',
+      programs: [
+        {
+          id: 'prg-ca-audit-advisory',
+          exam_code: 'CA-FINAL',
+          program_name: 'Chartered Accountant - Statutory Audit, Forensic & Mergers M&A',
+          degree_level: 'Qualified Chartered Accountant (Executive Cadre)',
+          seats: 3500,
+          duration_years: 0,
+          avg_package_lpa: 12.50, // Newly Qualified CA starting CTC
+          median_package_lpa: 11.50,
+          exam_cutoff_percentile: 'CA Final Qualified (Both Groups in 1st/2nd Attempt)',
+          exam_cutoff_rank: 'First Attempt / Rank Holders preferred for Deals Advisory',
+          academic_cutoff: 'Chartered Accountant Qualification from ICAI + 2 years articleship completion',
+          selection_process: 'ICAI Campus Placement Interviews -> Technical & Partner Rounds'
+        },
+        {
+          id: 'prg-ca-articleship',
+          exam_code: 'CA-INTER',
+          program_name: 'Big 4 Articleship Trainee (2-Year Practical Training Scheme)',
+          degree_level: 'Articleship / Industrial Training',
+          seats: 5000,
+          duration_years: 2,
+          avg_package_lpa: 2.40, // ₹15,000 - ₹25,000/month stipend during articleship
+          median_package_lpa: 2.00,
+          exam_cutoff_percentile: 'CA Inter Both Groups Cleared',
+          exam_cutoff_rank: 'Top Marks in Advanced Accounting & Auditing',
+          academic_cutoff: 'Passed both groups of CA Intermediate + IT & Soft Skills (ICITSS)',
+          selection_process: 'Direct Resume Shortlisting -> Aptitude Test -> Technical HR Interview'
+        }
+      ]
+    },
+    {
+      id: 'col-corp-finance-ca',
+      category_id: 'cat-ca',
+      name: 'Corporate Conglomerates & Investment Banks (Tata, Reliance, Goldman Sachs)',
+      code: 'CORP-FINANCE',
+      location: 'Bandra-Kurla Complex (BKC) Mumbai & DLF CyberCity Gurugram',
+      institution_type: 'Global Investment Banks & Fortune 500 Corporates',
+      accreditation: 'Treasury, Private Equity, Strategic Financial Planning',
+      website: 'https://goldmansachs.com',
+      data_status: 'DEMO',
+      source: 'ICAI High-Salary Placement Bulletin',
+      programs: [
+        {
+          id: 'prg-ca-finance-lead',
+          exam_code: 'CA-FINAL',
+          program_name: 'Financial Analyst / Manager (Treasury, FP&A, Risk)',
+          degree_level: 'Corporate Finance Executive',
+          seats: 1200,
+          duration_years: 0,
+          avg_package_lpa: 22.00, // Domestic packages up to ₹28 LPA, International up to ₹45 LPA
+          median_package_lpa: 20.00,
+          exam_cutoff_percentile: 'CA Final All India Rank Top 50',
+          exam_cutoff_rank: 'AIR 1 - 50 Rank Holders',
+          academic_cutoff: 'CA Final Rank or Cleared in 1st Attempt with High Distinction in AFM',
+          selection_process: 'Financial Modeling Case Study -> Senior VP / Director Interview'
+        }
+      ]
+    },
+
+    // --- JUDICIARY (CIVIL JUDGE & HIGH COURT CADRES) ---
+    {
+      id: 'col-delhi-judiciary',
+      category_id: 'cat-judiciary',
+      name: 'Delhi Judicial Service (Tis Hazari, Rouse Avenue, Saket & High Court)',
+      code: 'DELHI-JUDICIARY',
+      location: 'Delhi District Courts & High Court of Delhi',
+      institution_type: 'Constitutional Judicial Authority (Subordinate Judiciary)',
+      accreditation: 'Apex State Judicial Service in India (National Judicial Pay Commission)',
+      website: 'https://delhihighcourt.nic.in',
+      data_status: 'DEMO',
+      source: 'Delhi Judicial Service Examination Gazette Notification (Seed)',
+      programs: [
+        {
+          id: 'prg-djs-judge',
+          exam_code: 'DJS',
+          program_name: 'Civil Judge (Junior Division) / Metropolitan Magistrate (MM)',
+          degree_level: 'Subordinate Judicial Officer (Pay Scale J-1: Basic ₹77,840, Gross ~₹1,25,000/mo)',
+          seats: 53,
+          duration_years: 1, // 1-year training at Delhi Judicial Academy
+          avg_package_lpa: 16.50, // Salary + Official Judicial Bungalow in Central Delhi + Staff + Car + Security
+          median_package_lpa: 16.50,
+          exam_cutoff_percentile: 'Prelims Score 124+ / 200 Marks',
+          exam_cutoff_rank: 'Top 50 in DJS Final Merit',
+          academic_cutoff: 'Citizen of India + Advocate enrolled under Advocates Act 1961 (No min practice years!)',
+          selection_process: 'Prelims (200M) -> Mains Written (4 Papers 850M) -> Viva Voce before High Court Judges (150M)'
+        }
+      ]
+    },
+    {
+      id: 'col-up-judiciary',
+      category_id: 'cat-judiciary',
+      name: 'Uttar Pradesh Judicial Service (Allahabad High Court & District Courts)',
+      code: 'UP-JUDICIARY',
+      location: 'District Courts Across 75 Districts in Uttar Pradesh',
+      institution_type: 'State Judicial Officer Cadre',
+      accreditation: 'Judicial Training & Research Institute (JTRI Lucknow)',
+      website: 'https://uppsc.up.nic.in',
+      data_status: 'DEMO',
+      source: 'UP PCS-J Official Gazette Notification',
+      programs: [
+        {
+          id: 'prg-uppcs-j-judge',
+          exam_code: 'UP-PCS-J',
+          program_name: 'Civil Judge (Junior Division) / Judicial Magistrate',
+          degree_level: 'Gazetted Judicial Officer (Pay Scale J-1: Basic ₹77,840, Gross ~₹1,18,000/mo)',
+          seats: 303,
+          duration_years: 1,
+          avg_package_lpa: 15.50, // Free government residence, personal security guard, medical
+          median_package_lpa: 15.50,
+          exam_cutoff_percentile: 'Prelims Score 255+ / 450 Marks',
+          exam_cutoff_rank: 'Top 303 in Combined Merit',
+          academic_cutoff: 'Bachelor of Laws (LL.B.) from recognized university + Advocate enrollment',
+          selection_process: 'Prelims (450M) -> Mains (6 Papers 1000M) -> Personal Interview (100M)'
+        }
+      ]
+    },
+    {
+      id: 'col-rjs-judiciary',
+      category_id: 'cat-judiciary',
+      name: 'Rajasthan Judicial Service (Rajasthan High Court Jodhpur & Districts)',
+      code: 'RJS-JUDICIARY',
+      location: 'Rajasthan High Court Jodhpur, Jaipur Bench & District Courts',
+      institution_type: 'State Judiciary (Department of Justice)',
+      accreditation: 'Rajasthan State Judicial Academy (RSJA Jodhpur)',
+      website: 'https://hcraj.nic.in',
+      data_status: 'DEMO',
+      source: 'RJS Official Recruitment Notification',
+      programs: [
+        {
+          id: 'prg-rjs-judge',
+          exam_code: 'RJS',
+          program_name: 'Civil Judge and Judicial Magistrate (Entry Level)',
+          degree_level: 'Judicial Officer (Pay Scale J-1: Basic ₹77,840, Gross ~₹1,15,000/mo)',
+          seats: 222,
+          duration_years: 1,
+          avg_package_lpa: 15.20,
+          median_package_lpa: 15.20,
+          exam_cutoff_percentile: 'Prelims Score 72+ / 100 Marks (Pure Law + Language)',
+          exam_cutoff_rank: 'Top 222 in Final Merit',
+          academic_cutoff: 'LL.B. (Professional) Degree; Final year law students also eligible to appear provisionally',
+          selection_process: 'Prelims (100M, No negative marking) -> Mains (300M) -> Interview (35M)'
         }
       ]
     }
