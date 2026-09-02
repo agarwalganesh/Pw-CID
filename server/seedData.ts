@@ -193,11 +193,12 @@ export async function seedDatabase(db: Database): Promise<void> {
   // --- SEED EXAMS ---
   const exams = [
     // MBA
-    { id: 'ex-cat', category_id: 'cat-mba', code: 'CAT', name: 'Common Admission Test', conducting_body: 'IIMs (Rotational)', frequency: 'Once a Year (Nov)', mode: 'Computer Based Test (CBT)', duration_minutes: 120, exam_level: 'National (Tier 1)', official_website: 'https://iimcat.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-xat', category_id: 'cat-mba', code: 'XAT', name: 'Xavier Aptitude Test', conducting_body: 'XLRI Jamshedpur', frequency: 'Once a Year (Jan)', mode: 'CBT', duration_minutes: 210, exam_level: 'National (Tier 1)', official_website: 'https://xatonline.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-cmat', category_id: 'cat-mba', code: 'CMAT', name: 'Common Management Admission Test', conducting_body: 'NTA', frequency: 'Once a Year (May)', mode: 'CBT', duration_minutes: 180, exam_level: 'National (Tier 2/3)', official_website: 'https://cmat.nta.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-cat', category_id: 'cat-mba', code: 'CAT', name: 'Common Admission Test', conducting_body: 'IIMs (Rotational: IIM Calcutta / IIM Lucknow)', frequency: 'Once a Year (Last Sunday of Nov, 3 Slots)', mode: 'Computer Based Test (CBT)', duration_minutes: 120, exam_level: 'National (Tier 1)', official_website: 'https://iimcat.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-xat', category_id: 'cat-mba', code: 'XAT', name: 'Xavier Aptitude Test', conducting_body: 'XLRI Jamshedpur', frequency: 'Once a Year (First Sunday of Jan)', mode: 'CBT', duration_minutes: 210, exam_level: 'National (Tier 1)', official_website: 'https://xatonline.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-snap', category_id: 'cat-mba', code: 'SNAP', name: 'Symbiosis National Aptitude Test', conducting_body: 'Symbiosis International (Deemed Univ) Pune', frequency: '3 Attempts in Dec (Best Score Counted)', mode: 'CBT Speed Test', duration_minutes: 60, exam_level: 'National / University (Tier 1)', official_website: 'https://snaptest.org', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-nmat', category_id: 'cat-mba', code: 'NMAT', name: 'NMAT by GMAC', conducting_body: 'Graduate Management Admission Council (GMAC)', frequency: '75-day testing window (Oct-Dec, up to 3 attempts)', mode: 'Computer Adaptive Test (No Negative Marking)', duration_minutes: 120, exam_level: 'National / University (Tier 1)', official_website: 'https://mba.com/exams/nmat', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-cmat', category_id: 'cat-mba', code: 'CMAT', name: 'Common Management Admission Test', conducting_body: 'National Testing Agency (NTA)', frequency: 'Once a Year (May)', mode: 'CBT', duration_minutes: 180, exam_level: 'National (Tier 1 & Tier 2)', official_website: 'https://cmat.nta.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
     { id: 'ex-mat', category_id: 'cat-mba', code: 'MAT', name: 'Management Aptitude Test', conducting_body: 'AIMA', frequency: '4 Times a Year (Feb/May/Sep/Dec)', mode: 'CBT/PBT/IBT', duration_minutes: 120, exam_level: 'National', official_website: 'https://mat.aima.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-snap', category_id: 'cat-mba', code: 'SNAP', name: 'Symbiosis National Aptitude Test', conducting_body: 'SIU Pune', frequency: '3 Slots in Dec', mode: 'CBT', duration_minutes: 60, exam_level: 'University/National', official_website: 'https://snaptest.org', data_status: 'DEMO', academic_year: '2025-2026' },
 
     // CLAT
     { id: 'ex-clat-ug', category_id: 'cat-clat', code: 'CLAT-UG', name: 'CLAT Under-Graduate', conducting_body: 'Consortium of NLUs', frequency: 'Once a Year (Dec)', mode: 'Offline Pen & Paper (OMR)', duration_minutes: 120, exam_level: 'National', official_website: 'https://consortiumofnlus.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
@@ -213,7 +214,10 @@ export async function seedDatabase(db: Database): Promise<void> {
     { id: 'ex-niper', category_id: 'cat-pharma', code: 'NIPER-JEE', name: 'NIPER Joint Entrance Examination', conducting_body: 'NIPER Council', frequency: 'Once a Year (July)', mode: 'CBT', duration_minutes: 120, exam_level: 'National (Tier 1 Pharma)', official_website: 'https://niperguwahati.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
 
     // UGC NET
-    { id: 'ex-ugc-net-jrf', category_id: 'cat-ugc-net', code: 'UGC-NET', name: 'UGC National Eligibility Test (JRF/Asst Prof)', conducting_body: 'NTA', frequency: 'Twice a Year (June/Dec)', mode: 'CBT', duration_minutes: 180, exam_level: 'National', official_website: 'https://ugcnet.nta.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-ugc-net-jrf', category_id: 'cat-ugc-net', code: 'UGC-NET', name: 'UGC National Eligibility Test (JRF, Asst Prof & PhD)', conducting_body: 'National Testing Agency (NTA)', frequency: 'Twice a Year (June & Dec Cycles)', mode: 'Computer Based Test (CBT)', duration_minutes: 180, exam_level: 'National (Tier 1 Academic)', official_website: 'https://ugcnet.nta.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-state-set', category_id: 'cat-ugc-net', code: 'STATE-SET', name: 'State Eligibility Test (MH-SET, WB-SET, K-SET, AP-SET)', conducting_body: 'State Nodal Agencies (Pune Univ, WBCSC, etc.)', frequency: 'Annual (State-Wise)', mode: 'Offline OMR / CBT', duration_minutes: 180, exam_level: 'State Level Assistant Professorship', official_website: 'https://setexam.unipune.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-asst-prof-psc', category_id: 'cat-ugc-net', code: 'PSC-ASST-PROF', name: 'State PSC Assistant Professor Recruitment (UPPSC, RPSC, MPPSC)', conducting_body: 'State Public Service Commissions', frequency: 'Notification Based (Regular Govt Vacancies)', mode: 'Written Exam + Interview', duration_minutes: 180, exam_level: 'State Gazetted Class 1 (Pay Level 10)', official_website: 'https://uppsc.up.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-cuet-phd', category_id: 'cat-ugc-net', code: 'CUET-PHD', name: 'Central Universities Ph.D. Entrance (JNU, DU, BHU, BBAU)', conducting_body: 'National Testing Agency (NTA)', frequency: 'Annual (October-November)', mode: 'CBT', duration_minutes: 180, exam_level: 'National Research Entrance', official_website: 'https://phd-entr.nta.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
 
     // CA
     { id: 'ex-ca-found', category_id: 'cat-ca', code: 'CA-FOUNDATION', name: 'CA Foundation Examination', conducting_body: 'ICAI', frequency: 'Thrice a Year (Jan/June/Sep)', mode: 'Offline Subjective + Objective', duration_minutes: 180, exam_level: 'National Professional', official_website: 'https://icai.org', data_status: 'DEMO', academic_year: '2025-2026' },
@@ -221,29 +225,35 @@ export async function seedDatabase(db: Database): Promise<void> {
     { id: 'ex-ca-final', category_id: 'cat-ca', code: 'CA-FINAL', name: 'CA Final Examination (6 Papers)', conducting_body: 'ICAI', frequency: 'Twice a Year (May/Nov)', mode: 'Offline Advanced Subjective', duration_minutes: 240, exam_level: 'National Professional', official_website: 'https://icai.org', data_status: 'DEMO', academic_year: '2025-2026' },
 
     // SSC + Railways
-    { id: 'ex-ssc-cgl', category_id: 'cat-ssc-railways', code: 'SSC-CGL', name: 'Combined Graduate Level Exam', conducting_body: 'Staff Selection Commission', frequency: 'Once a Year', mode: 'Tier 1 & Tier 2 CBT', duration_minutes: 60, exam_level: 'Central Govt Group B/C', official_website: 'https://ssc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-ssc-chsl', category_id: 'cat-ssc-railways', code: 'SSC-CHSL', name: 'Combined Higher Secondary Level (10+2)', conducting_body: 'SSC', frequency: 'Once a Year', mode: 'CBT + Skill Test', duration_minutes: 60, exam_level: 'Central Govt Group C', official_website: 'https://ssc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-rrb-ntpc', category_id: 'cat-ssc-railways', code: 'RRB-NTPC', name: 'Non-Technical Popular Categories', conducting_body: 'Railway Recruitment Control Board', frequency: 'Notification Based', mode: 'CBT 1 & CBT 2 + CBAT', duration_minutes: 90, exam_level: 'Indian Railways Central', official_website: 'https://indianrailways.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-rrb-alp', category_id: 'cat-ssc-railways', code: 'RRB-ALP', name: 'Assistant Loco Pilot & Technician', conducting_body: 'RRB', frequency: 'Notification Based', mode: 'CBT 1 & CBT 2 (Technical)', duration_minutes: 90, exam_level: 'Indian Railways Technical', official_website: 'https://indianrailways.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-ssc-cgl', category_id: 'cat-ssc-railways', code: 'SSC-CGL', name: 'Combined Graduate Level Exam (Inspector / ASO)', conducting_body: 'Staff Selection Commission (SSC)', frequency: 'Once a Year (Sep-Oct)', mode: 'Tier 1 Screening (CBT) -> Tier 2 Merit (CBT)', duration_minutes: 60, exam_level: 'Central Govt Group B Gazetted & Non-Gazetted', official_website: 'https://ssc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-ssc-chsl', category_id: 'cat-ssc-railways', code: 'SSC-CHSL', name: 'Combined Higher Secondary Level (10+2 DEO/LDC)', conducting_body: 'Staff Selection Commission (SSC)', frequency: 'Once a Year (June-July)', mode: 'Tier 1 CBT -> Tier 2 CBT + Skill/Typing', duration_minutes: 60, exam_level: 'Central Govt Group C (Pay Level 2/4)', official_website: 'https://ssc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-ssc-cpo', category_id: 'cat-ssc-railways', code: 'SSC-CPO', name: 'Sub-Inspector in Delhi Police & Central Armed Police (CAPFs)', conducting_body: 'SSC', frequency: 'Once a Year (May-June)', mode: 'Paper 1 CBT -> PET/PST -> Paper 2 English -> Medical', duration_minutes: 120, exam_level: 'Sub-Inspector Uniformed (Pay Level 6)', official_website: 'https://ssc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-rrb-ntpc', category_id: 'cat-ssc-railways', code: 'RRB-NTPC', name: 'Non-Technical Popular Categories (Station Master / Goods Guard)', conducting_body: 'Railway Recruitment Boards (RRBs)', frequency: 'Annual Centralized Notification', mode: 'CBT 1 -> CBT 2 -> CBAT (Aptitude) / Typing -> DV', duration_minutes: 90, exam_level: 'Indian Railways Central (Pay Level 2 to 6)', official_website: 'https://indianrailways.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-rrb-alp', category_id: 'cat-ssc-railways', code: 'RRB-ALP', name: 'Assistant Loco Pilot & Technician (Train Operator)', conducting_body: 'RRB', frequency: 'Annual Centralized Notification', mode: 'CBT 1 -> CBT 2 (Part A & B Trade) -> CBAT Aptitude', duration_minutes: 90, exam_level: 'Indian Railways Technical (Running Staff)', official_website: 'https://indianrailways.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
 
     // GATE OA
     { id: 'ex-gate-cs', category_id: 'cat-gate-oa', code: 'GATE-CS', name: 'GATE Computer Science & Information Tech', conducting_body: 'IISc / IITs', frequency: 'Once a Year (Feb)', mode: 'CBT', duration_minutes: 180, exam_level: 'National (Tech/PSU)', official_website: 'https://gate.iitk.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
     { id: 'ex-gate-da', category_id: 'cat-gate-oa', code: 'GATE-DA', name: 'GATE Data Science and Artificial Intelligence', conducting_body: 'IISc / IITs', frequency: 'Once a Year (Feb)', mode: 'CBT', duration_minutes: 180, exam_level: 'National (Tech/PSU)', official_website: 'https://gate.iitk.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
     { id: 'ex-gate-ec', category_id: 'cat-gate-oa', code: 'GATE-EC', name: 'GATE Electronics & Communication', conducting_body: 'IISc / IITs', frequency: 'Once a Year (Feb)', mode: 'CBT', duration_minutes: 180, exam_level: 'National', official_website: 'https://gate.iitk.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
 
-    // UPSC
-    { id: 'ex-upsc-cse', category_id: 'cat-upsc', code: 'UPSC-CSE', name: 'Civil Services Examination (IAS/IPS/IFS)', conducting_body: 'Union Public Service Commission', frequency: 'Once a Year (May-June Prelims)', mode: 'Prelims (OMR) -> Mains (Subjective) -> Interview', duration_minutes: 120, exam_level: 'Premier Constitutional', official_website: 'https://upsc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-upsc-cds', category_id: 'cat-upsc', code: 'UPSC-CDS', name: 'Combined Defence Services Examination', conducting_body: 'UPSC', frequency: 'Twice a Year (CDS I & II)', mode: 'Offline + SSB Interview', duration_minutes: 120, exam_level: 'Defence Commissioned', official_website: 'https://upsc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    // UPSC & Civil Services
+    { id: 'ex-upsc-cse', category_id: 'cat-upsc', code: 'UPSC-CSE', name: 'Civil Services Examination (IAS, IPS, IFS, IRS)', conducting_body: 'Union Public Service Commission (UPSC)', frequency: 'Once a Year (May Prelims, Sep Mains)', mode: 'Prelims (OMR) -> Mains (Subjective Written) -> Interview', duration_minutes: 120, exam_level: 'Apex Constitutional (All India Services)', official_website: 'https://upsc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-state-pcs', category_id: 'cat-upsc', code: 'STATE-PCS', name: 'Combined State Civil Services (UPPSC, BPSC, MPPSC, RPSC RAS)', conducting_body: 'State Public Service Commissions', frequency: 'Annual (State-Wise Schedules)', mode: 'Prelims (OMR) -> Mains (Subjective) -> Interview', duration_minutes: 120, exam_level: 'State Civil Services (SDM, DSP, BDO)', official_website: 'https://uppsc.up.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-upsc-capf', category_id: 'cat-upsc', code: 'UPSC-CAPF', name: 'Central Armed Police Forces - Assistant Commandant (AC)', conducting_body: 'UPSC', frequency: 'Once a Year (August)', mode: 'Paper 1 (GS MCQ) + Paper 2 (Descriptive English/Essay) + PET + Interview', duration_minutes: 120, exam_level: 'Armed Forces Gazetted Class 1 (Pay Level 10)', official_website: 'https://upsc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-upsc-epfo', category_id: 'cat-upsc', code: 'UPSC-EPFO', name: 'EPFO Enforcement Officer (EO/AO) & APFC', conducting_body: 'UPSC (Special Recruitment)', frequency: 'Periodic Recruitment Tests', mode: 'Recruitment Test (RT) CBT/OMR + Interview', duration_minutes: 120, exam_level: 'Central Govt Group A/B Gazetted', official_website: 'https://upsc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-upsc-cds', category_id: 'cat-upsc', code: 'UPSC-CDS', name: 'Combined Defence Services Examination (IMA/INA/AFA/OTA)', conducting_body: 'UPSC', frequency: 'Twice a Year (CDS I in April, CDS II in Sep)', mode: 'Written (English + GK + Math) + 5-Day SSB Interview', duration_minutes: 120, exam_level: 'Military Commissioned Officer (Lieutenant)', official_website: 'https://upsc.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
 
     // Judiciary
     { id: 'ex-djs', category_id: 'cat-judiciary', code: 'DJS', name: 'Delhi Judicial Service Examination', conducting_body: 'Delhi High Court', frequency: 'Annual / Biennial', mode: 'Prelims (MCQ) -> Mains (Law Subjective) -> Viva', duration_minutes: 150, exam_level: 'State Judicial Officer', official_website: 'https://delhihighcourt.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
     { id: 'ex-uppcs-j', category_id: 'cat-judiciary', code: 'UP-PCS-J', name: 'UP Judicial Service Civil Judge (JD)', conducting_body: 'UPPSC', frequency: 'Periodic Notification', mode: 'Prelims -> Mains -> Interview', duration_minutes: 120, exam_level: 'State Judicial Officer', official_website: 'https://uppsc.up.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
     { id: 'ex-rjs', category_id: 'cat-judiciary', code: 'RJS', name: 'Rajasthan Judicial Service Exam', conducting_body: 'Rajasthan High Court', frequency: 'Annual', mode: 'Prelims -> Mains -> Interview', duration_minutes: 120, exam_level: 'State Judicial Officer', official_website: 'https://hcraj.nic.in', data_status: 'DEMO', academic_year: '2025-2026' },
 
-    // Banking
-    { id: 'ex-sbi-po', category_id: 'cat-banking', code: 'SBI-PO', name: 'State Bank of India Probationary Officer', conducting_body: 'SBI Central Recruitment Board', frequency: 'Once a Year (Oct-Nov)', mode: 'Prelims CBT -> Mains CBT + Descriptive -> GE & PI', duration_minutes: 60, exam_level: 'Premier Public Banking', official_website: 'https://sbi.co.in/careers', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-ibps-po', category_id: 'cat-banking', code: 'IBPS-PO', name: 'IBPS PO/Management Trainee (11 PSBs)', conducting_body: 'IBPS Mumbai', frequency: 'Once a Year (Aug-Oct)', mode: 'Prelims CBT -> Mains CBT -> Interview', duration_minutes: 60, exam_level: 'Public Sector Banking', official_website: 'https://ibps.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-rbi-b', category_id: 'cat-banking', code: 'RBI-GRADE-B', name: 'RBI Officers in Grade B (General)', conducting_body: 'Reserve Bank of India Services Board', frequency: 'Once a Year', mode: 'Phase 1 CBT -> Phase 2 (ESI + FM + Eng) -> Interview', duration_minutes: 120, exam_level: 'Apex Central Bank', official_website: 'https://rbi.org.in', data_status: 'DEMO', academic_year: '2025-2026' }
+    // Banking & Insurance
+    { id: 'ex-sbi-po', category_id: 'cat-banking', code: 'SBI-PO', name: 'State Bank of India Probationary Officer (Scale I)', conducting_body: 'SBI Central Recruitment Board', frequency: 'Once a Year (Oct-Nov)', mode: 'Prelims CBT -> Mains CBT + Descriptive -> GE & PI', duration_minutes: 60, exam_level: 'Premier Public Banking (CTC ₹16.5 LPA)', official_website: 'https://sbi.co.in/careers', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-ibps-po', category_id: 'cat-banking', code: 'IBPS-PO', name: 'IBPS Probationary Officer (11 Nationalized Banks)', conducting_body: 'IBPS Mumbai', frequency: 'Once a Year (Aug-Oct)', mode: 'Prelims CBT -> Mains CBT + Essay -> Interview', duration_minutes: 60, exam_level: 'Public Sector Banking (PNB, BoB, Canara)', official_website: 'https://ibps.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-rbi-b', category_id: 'cat-banking', code: 'RBI-GRADE-B', name: 'Reserve Bank of India Grade B Officers (General)', conducting_body: 'RBI Services Board', frequency: 'Once a Year (June-July)', mode: 'Phase 1 CBT -> Phase 2 (ESI + FM + Eng) -> Interview', duration_minutes: 120, exam_level: 'Apex Central Bank Officer (CTC ₹24 LPA)', official_website: 'https://rbi.org.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-sbi-clerk', category_id: 'cat-banking', code: 'SBI-CLERK', name: 'SBI Junior Associate (Customer Support & Sales)', conducting_body: 'SBI', frequency: 'Annual (Nov-Jan)', mode: 'Prelims CBT -> Mains CBT (No Interview!)', duration_minutes: 60, exam_level: 'Clerical Cadre (Direct Appointment)', official_website: 'https://sbi.co.in/careers', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-ibps-rrb-po', category_id: 'cat-banking', code: 'IBPS-RRB-PO', name: 'IBPS Regional Rural Banks Officer Scale 1 (Gramin Bank)', conducting_body: 'IBPS', frequency: 'Annual (August)', mode: 'Prelims CBT (Math + Logic only) -> Mains -> Interview', duration_minutes: 45, exam_level: 'Regional Rural Banks (Home State Posting)', official_website: 'https://ibps.in', data_status: 'DEMO', academic_year: '2025-2026' }
   ];
 
   for (const ex of exams) {
@@ -256,19 +266,83 @@ export async function seedDatabase(db: Database): Promise<void> {
 
   // --- SEED EXAM STRUCTURES ---
   const structures = [
+    // 1. CAT (Common Admission Test)
     {
       id: 'str-cat',
       exam_id: 'ex-cat',
-      tier_name: 'CAT Computer Based Test (Single Slot)',
+      tier_name: 'CAT Computer Based Test (Single Slot, 3 Sections)',
       sections_json: JSON.stringify([
-        { name: 'VARC (Verbal Ability & Reading Comprehension)', questions: 24, marks: 72, duration: 40 },
-        { name: 'DILR (Data Interpretation & Logical Reasoning)', questions: 20, marks: 60, duration: 40 },
-        { name: 'QA (Quantitative Aptitude)', questions: 22, marks: 66, duration: 40 }
+        { name: 'VARC (Verbal Ability & Reading Comprehension)', questions: 24, marks: 72, duration: 40, question_types: '16 RC (4 Passages) + 8 VA (Parajumbles, Summary, Odd-One-Out)' },
+        { name: 'DILR (Data Interpretation & Logical Reasoning)', questions: 20, marks: 60, duration: 40, question_types: '4 Caselet Sets (5 Questions each: Matrix, Arrangements, Games & Tournaments, Charts)' },
+        { name: 'QA (Quantitative Aptitude)', questions: 22, marks: 66, duration: 40, question_types: 'Arithmetic (8-9 Qs), Algebra (6-7 Qs), Geometry (3-4 Qs), Modern Math & Numbers (2-3 Qs)' }
       ]),
       total_marks: 198,
       total_questions: 66,
-      marking_scheme: '+3 for Correct, -1 for Incorrect MCQ, 0 for Non-MCQ (TITA)',
+      marking_scheme: '+3 for Correct, -1 for Incorrect MCQ, 0 for Non-MCQ (TITA / Type in the Answer)',
       duration_minutes: 120
+    },
+    // 2. XAT (Xavier Aptitude Test)
+    {
+      id: 'str-xat',
+      exam_id: 'ex-xat',
+      tier_name: 'XAT Paper Pattern (Part 1: 175 Mins + Part 2: 35 Mins)',
+      sections_json: JSON.stringify([
+        { name: 'VALR (Verbal & Logical Ability)', questions: 26, marks: 26, duration: 60, question_types: 'Reading Comprehension, Critical Reasoning, Vocabulary, Parajumbles' },
+        { name: 'DM (Decision Making - Unique to XAT)', questions: 21, marks: 21, duration: 50, question_types: 'Ethical Dilemmas, Business Situations, HR Decisions, Managerial Caselets' },
+        { name: 'QADI (Quantitative Ability & Data Interpretation)', questions: 28, marks: 28, duration: 65, question_types: 'Geometry, Algebra, Arithmetic, Data Interpretation Sets' },
+        { name: 'General Knowledge (GK) & Analytical Essay Writing', questions: 25, marks: 25, duration: 35, question_types: 'Static GK + Current Affairs (25 Qs) + 1 Essay (Evaluated during PI)' }
+      ]),
+      total_marks: 100,
+      total_questions: 100,
+      marking_scheme: '+1 for Correct, -0.25 for Incorrect MCQ, -0.10 for >8 unattempted questions; No negative marking in GK',
+      duration_minutes: 210
+    },
+    // 3. SNAP (Symbiosis National Aptitude Test)
+    {
+      id: 'str-snap',
+      exam_id: 'ex-snap',
+      tier_name: 'SNAP Speed Test (60 Mins, Free Sectional Navigation)',
+      sections_json: JSON.stringify([
+        { name: 'General English (Reading Comprehension, Verbal Reasoning, Verbal Ability)', questions: 15, marks: 15, duration: 15, question_types: 'Vocabulary, Grammar, Analogies, Sentence Correction, Short RC' },
+        { name: 'Analytical & Logical Reasoning (A&LR)', questions: 25, marks: 25, duration: 25, question_types: 'Puzzles, Blood Relations, Coding-Decoding, Series, Syllogisms, Critical Reasoning' },
+        { name: 'Quantitative, Data Interpretation & Data Sufficiency (QA, DI-DS)', questions: 20, marks: 20, duration: 20, question_types: 'Arithmetic, Modern Math, Algebra, Tables & Graphs, Data Sufficiency' }
+      ]),
+      total_marks: 60,
+      total_questions: 60,
+      marking_scheme: '+1 for Correct, -0.25 for Incorrect; No sectional timer (Composite 60 Mins)',
+      duration_minutes: 60
+    },
+    // 4. NMAT by GMAC
+    {
+      id: 'str-nmat',
+      exam_id: 'ex-nmat',
+      tier_name: 'NMAT Computer Adaptive Test (Adaptive Difficulty, No Negative Marking)',
+      sections_json: JSON.stringify([
+        { name: 'Language Skills', questions: 36, marks: 120, duration: 28, question_types: 'Reading Comprehension, Prepositions, Error Identification, Vocabulary (Scaled 12-120)' },
+        { name: 'Quantitative Skills', questions: 36, marks: 120, duration: 52, question_types: 'Arithmetic, Algebra, Geometry, Data Sufficiency, Table & Bar DI (Scaled 12-120)' },
+        { name: 'Logical Reasoning', questions: 36, marks: 120, duration: 40, question_types: 'Analytical Puzzles, Critical Reasoning, Syllogisms, Sequences (Scaled 12-120)' }
+      ]),
+      total_marks: 360,
+      total_questions: 108,
+      marking_scheme: '+3 for Correct, NO NEGATIVE MARKING; Strict sectional time limits; Candidate chooses section order',
+      duration_minutes: 120
+    },
+    // 5. CMAT (Common Management Admission Test)
+    {
+      id: 'str-cmat',
+      exam_id: 'ex-cmat',
+      tier_name: 'CMAT National Level CBT (180 Mins, 5 Equal Sections)',
+      sections_json: JSON.stringify([
+        { name: 'Quantitative Techniques & Data Interpretation', questions: 20, marks: 80, duration: 36, question_types: 'Arithmetic, Basic Algebra, Tables, Graphs, Probability' },
+        { name: 'Logical Reasoning', questions: 20, marks: 80, duration: 36, question_types: 'Linear Arrangements, Coding, Direction Sense, Blood Relations' },
+        { name: 'Language Comprehension', questions: 20, marks: 80, duration: 36, question_types: 'Reading Passages, Grammar, Synonyms/Antonyms, Para-jumbles' },
+        { name: 'General Awareness', questions: 20, marks: 80, duration: 36, question_types: 'Indian Economy, Polity, Business GK, Awards, Sports, Current Events' },
+        { name: 'Innovation & Entrepreneurship', questions: 20, marks: 80, duration: 36, question_types: 'Startup Concepts, Venture Funding, Business Models, Innovation Frameworks' }
+      ]),
+      total_marks: 400,
+      total_questions: 100,
+      marking_scheme: '+4 for Correct, -1 for Incorrect; Composite 180 Mins (Free Section Navigation)',
+      duration_minutes: 180
     },
     {
       id: 'str-clat-ug',
@@ -289,44 +363,198 @@ export async function seedDatabase(db: Database): Promise<void> {
     {
       id: 'str-ssc-cgl',
       exam_id: 'ex-ssc-cgl',
-      tier_name: 'Tier 1 Screening + Tier 2 Merit CBT',
+      tier_name: 'SSC CGL 2-Tier Selection (Tier 1 Screening 200M -> Tier 2 Merit 390M)',
       sections_json: JSON.stringify([
-        { name: 'Tier 1: General Intelligence & Reasoning', questions: 25, marks: 50, duration: 15 },
-        { name: 'Tier 1: General Awareness', questions: 25, marks: 50, duration: 10 },
-        { name: 'Tier 1: Quantitative Aptitude', questions: 25, marks: 50, duration: 20 },
-        { name: 'Tier 1: English Comprehension', questions: 25, marks: 50, duration: 15 }
+        { name: 'Tier 1: General Intelligence & Reasoning', questions: 25, marks: 50, duration: 15, question_types: 'Analogies, Series, Coding, Non-verbal, Matrix (+2 / -0.50)' },
+        { name: 'Tier 1: General Awareness', questions: 25, marks: 50, duration: 10, question_types: 'Static GK, Polity, History, Science, Current Affairs (+2 / -0.50)' },
+        { name: 'Tier 1: Quantitative Aptitude', questions: 25, marks: 50, duration: 20, question_types: 'Arithmetic, Algebra, Geometry, Trigonometry, DI (+2 / -0.50)' },
+        { name: 'Tier 1: English Comprehension', questions: 25, marks: 50, duration: 15, question_types: 'Grammar, Vocab, Reading Passages, Error Spotting (+2 / -0.50)' },
+        { name: 'Tier 2 Section 1: Mathematical Abilities + Reasoning (Decides Rank)', questions: 60, marks: 180, duration: 60, question_types: '30 Qs Math (90M) + 30 Qs Reasoning (90M) • High-difficulty (+3 / -1)' },
+        { name: 'Tier 2 Section 2: English Language + General Awareness (Decides Rank)', questions: 70, marks: 210, duration: 60, question_types: '45 Qs English (135M) + 25 Qs GA (75M) • (+3 / -1)' },
+        { name: 'Tier 2 Section 3: Computer Proficiency (Qualifying)', questions: 20, marks: 60, duration: 15, question_types: 'Basics of CPU, MS Office, Networking, Cyber Security (Min 18 marks required)' }
       ]),
-      total_marks: 200,
-      total_questions: 100,
-      marking_scheme: '+2 for Correct, -0.50 for Incorrect',
-      duration_minutes: 60
+      total_marks: 390,
+      total_questions: 150,
+      marking_scheme: 'Tier 1 (200M) is Qualifying Screening only; Final Merit = Tier 2 Paper 1 (Section 1 + Section 2 = 390 Marks)',
+      duration_minutes: 195
+    },
+    {
+      id: 'str-ssc-chsl',
+      exam_id: 'ex-ssc-chsl',
+      tier_name: 'SSC CHSL 10+2 (Tier 1 Screening 200M -> Tier 2 Merit 360M)',
+      sections_json: JSON.stringify([
+        { name: 'Tier 1: 4 Sections (English, Math, Reasoning, GA)', questions: 100, marks: 200, duration: 60, question_types: '25 Qs each section • Class 10+2 level (+2 / -0.50)' },
+        { name: 'Tier 2: Math (30 Qs) + Reasoning (30 Qs)', questions: 60, marks: 180, duration: 60, question_types: 'Section 1 (+3 / -1)' },
+        { name: 'Tier 2: English (40 Qs) + GA (20 Qs)', questions: 60, marks: 180, duration: 60, question_types: 'Section 2 (+3 / -1)' }
+      ]),
+      total_marks: 360,
+      total_questions: 120,
+      marking_scheme: 'Tier 2 Merit = 360 Marks + Typing Test (35 wpm English / 30 wpm Hindi)',
+      duration_minutes: 135
+    },
+    {
+      id: 'str-rrb-ntpc',
+      exam_id: 'ex-rrb-ntpc',
+      tier_name: 'RRB NTPC (CBT 1 Screening -> CBT 2 Merit -> CBAT / Typing)',
+      sections_json: JSON.stringify([
+        { name: 'CBT 1: General Awareness (40 Qs), Math (30 Qs), Reasoning (30 Qs)', questions: 100, marks: 100, duration: 90, question_types: 'Screening round for all Pay Levels (+1 / -0.33)' },
+        { name: 'CBT 2: General Awareness (50 Qs), Math (35 Qs), Reasoning (35 Qs)', questions: 120, marks: 120, duration: 90, question_types: 'Decides final merit ranking for Station Master, Goods Guard (+1 / -0.33)' }
+      ]),
+      total_marks: 120,
+      total_questions: 120,
+      marking_scheme: '+1 for Correct, -0.33 for Incorrect; CBT 2 marks decide 70% merit, CBAT aptitude decides 30%',
+      duration_minutes: 90
     },
     {
       id: 'str-sbi-po',
       exam_id: 'ex-sbi-po',
-      tier_name: 'Phase 1 Prelims + Phase 2 Mains',
+      tier_name: 'SBI PO 3-Phase Selection (Prelims 100M -> Mains 250M -> GE & Interview 50M)',
       sections_json: JSON.stringify([
-        { name: 'Prelims: English Language', questions: 30, marks: 30, duration: 20 },
-        { name: 'Prelims: Quantitative Aptitude', questions: 35, marks: 35, duration: 20 },
-        { name: 'Prelims: Reasoning Ability', questions: 35, marks: 35, duration: 20 }
+        { name: 'Phase 1 Prelims: English (30 Qs, 30M, 20 mins)', questions: 30, marks: 30, duration: 20, question_types: 'RC, Cloze test, Error detection (+1 / -0.25)' },
+        { name: 'Phase 1 Prelims: Quantitative Aptitude (35 Qs, 35M, 20 mins)', questions: 35, marks: 35, duration: 20, question_types: 'Data Interpretation, Quadratic, Simplification (+1 / -0.25)' },
+        { name: 'Phase 1 Prelims: Reasoning Ability (35 Qs, 35M, 20 mins)', questions: 35, marks: 35, duration: 20, question_types: 'Puzzles, Seating arrangement, Syllogisms (+1 / -0.25)' },
+        { name: 'Phase 2 Mains: Reasoning & Computer Aptitude (45 Qs, 60M, 60 mins)', questions: 45, marks: 60, duration: 60, question_types: 'High-level multi-layered puzzles, input-output, coding' },
+        { name: 'Phase 2 Mains: Data Analysis & Interpretation (35 Qs, 60M, 45 mins)', questions: 35, marks: 60, duration: 45, question_types: 'Caselet DI, Radar charts, Missing DI, Probability DI' },
+        { name: 'Phase 2 Mains: General/Economy/Banking Awareness (40 Qs, 50M, 35 mins)', questions: 40, marks: 50, duration: 35, question_types: 'RBI Circulars, Financial schemes, Banking current affairs' },
+        { name: 'Phase 2 Mains: English Language (35 Qs, 40M, 40 mins)', questions: 35, marks: 40, duration: 40, question_types: 'Advanced inference, vocab, sentence connectors' },
+        { name: 'Phase 2 Mains: Descriptive Test (English Letter & Essay)', questions: 2, marks: 50, duration: 30, question_types: '1 Formal Letter + 1 Contemporary Essay typed on keyboard' },
+        { name: 'Phase 3: Group Exercises (20M) + Personal Interview (30M)', questions: 1, marks: 50, duration: 30, question_types: 'Panel Viva and Group Discussion on banking & economic scenarios' }
       ]),
-      total_marks: 100,
-      total_questions: 100,
-      marking_scheme: '+1 for Correct, -0.25 for Incorrect',
-      duration_minutes: 60
+      total_marks: 300,
+      total_questions: 157,
+      marking_scheme: 'Normalized 75:25 Merit (Mains 250M converted to 75 + Interview 50M converted to 25 = 100 Marks)',
+      duration_minutes: 240
+    },
+    {
+      id: 'str-ibps-po',
+      exam_id: 'ex-ibps-po',
+      tier_name: 'IBPS PO (Prelims 100M -> Mains 225M -> Interview 100M)',
+      sections_json: JSON.stringify([
+        { name: 'Prelims: English (30), Quant (35), Reasoning (35)', questions: 100, marks: 100, duration: 60, question_types: 'Strict 20-minute sectional timer for each section (+1 / -0.25)' },
+        { name: 'Mains: 4 Objective Sections (200M) + Descriptive Writing (25M)', questions: 157, marks: 225, duration: 210, question_types: 'Sectional and overall cutoffs both applicable (+1 / -0.25)' }
+      ]),
+      total_marks: 225,
+      total_questions: 157,
+      marking_scheme: '80:20 Merit Weightage (Mains 80% + Interview 20%)',
+      duration_minutes: 210
+    },
+    {
+      id: 'str-rbi-b',
+      exam_id: 'ex-rbi-b',
+      tier_name: 'RBI Grade B (Phase 1 200M -> Phase 2 300M -> Interview 75M)',
+      sections_json: JSON.stringify([
+        { name: 'Phase 1: GA (80 Qs, 80M), Reasoning (60 Qs, 60M), English (30 Qs, 30M), Quant (30 Qs, 30M)', questions: 200, marks: 200, duration: 120, question_types: 'Objective CBT screening (+1 / -0.25)' },
+        { name: 'Phase 2 Paper 1: Economic & Social Issues (ESI - 50% Obj + 50% Desc)', questions: 34, marks: 100, duration: 120, question_types: 'Macroeconomics, Union Budget, Poverty, Demographics' },
+        { name: 'Phase 2 Paper 2: English Writing Skills (Descriptive)', questions: 3, marks: 100, duration: 90, question_types: 'Essay, Précis writing, Reading comprehension' },
+        { name: 'Phase 2 Paper 3: Finance and Management (FM - 50% Obj + 50% Desc)', questions: 34, marks: 100, duration: 120, question_types: 'Financial system, Financial markets, Leadership, Corporate governance' }
+      ]),
+      total_marks: 375,
+      total_questions: 71,
+      marking_scheme: 'Phase 2 (300M) + Interview (75M) = 375 Marks decides final merit',
+      duration_minutes: 330
     },
     {
       id: 'str-upsc-cse',
       exam_id: 'ex-upsc-cse',
-      tier_name: 'CSE Stage 1: Preliminary Exam (GS 1 + CSAT)',
+      tier_name: 'UPSC CSE 3-Stage Selection (Prelims 400M -> Mains 1750M -> Interview 275M = 2025 Marks)',
       sections_json: JSON.stringify([
-        { name: 'Paper 1: General Studies 1 (Merit)', questions: 100, marks: 200, duration: 120 },
-        { name: 'Paper 2: CSAT Aptitude (Qualifying 33%)', questions: 80, marks: 200, duration: 120 }
+        { name: 'Stage 1: Prelims Paper 1 (General Studies - Decides Cutoff)', questions: 100, marks: 200, duration: 120, question_types: 'History, Polity, Geography, Economy, Science & Tech, Environment, Current Affairs (+2 / -0.66)' },
+        { name: 'Stage 1: Prelims Paper 2 (CSAT Aptitude - Qualifying 33%)', questions: 80, marks: 200, duration: 120, question_types: 'Reading Comprehension, Logical Reasoning, Basic Numeracy, Data Sufficiency (+2.5 / -0.83)' },
+        { name: 'Stage 2: Mains Essay (Paper 1)', questions: 2, marks: 250, duration: 180, question_types: '2 Essays out of 8 choices (125 marks each): Philosophical, Socio-economic, Governance' },
+        { name: 'Stage 2: Mains GS 1 (Indian Heritage, History, Geography, Society)', questions: 20, marks: 250, duration: 180, question_types: '10 Qs (10M each, 150 words) + 10 Qs (15M each, 250 words) Subjective' },
+        { name: 'Stage 2: Mains GS 2 (Governance, Constitution, Polity, Social Justice, IR)', questions: 20, marks: 250, duration: 180, question_types: '10 Qs (10M) + 10 Qs (15M) Analytical Subjective' },
+        { name: 'Stage 2: Mains GS 3 (Technology, Economic Dev, Biodiversity, Security, Disaster Mgmt)', questions: 20, marks: 250, duration: 180, question_types: '10 Qs (10M) + 10 Qs (15M) Analytical Subjective' },
+        { name: 'Stage 2: Mains GS 4 (Ethics, Integrity, and Aptitude)', questions: 12, marks: 250, duration: 180, question_types: 'Section A (Theoretical Ethics) + Section B (6 Case Studies)' },
+        { name: 'Stage 2: Optional Subject Paper 1 & Paper 2', questions: 10, marks: 500, duration: 360, question_types: '2 Papers (250 Marks each) in Chosen Discipline (PSIR, Geography, Sociology, History, Anthropology, etc.)' },
+        { name: 'Stage 3: Personality Test (Interview at Dholpur House, New Delhi)', questions: 1, marks: 275, duration: 35, question_types: 'Board Interview testing analytical composure, ethical stance, leadership, situational awareness' }
       ]),
-      total_marks: 400,
-      total_questions: 180,
-      marking_scheme: 'GS1: +2 / -0.66; CSAT: +2.5 / -0.83',
-      duration_minutes: 240
+      total_marks: 2025,
+      total_questions: 283,
+      marking_scheme: 'Prelims Screening only; Final Merit = Mains 1750 + Interview 275 = 2025 Marks (Topper scores ~1050/2025 ~52%)',
+      duration_minutes: 1695
+    },
+    {
+      id: 'str-state-pcs',
+      exam_id: 'ex-state-pcs',
+      tier_name: 'State Combined Civil Services (Prelims -> Mains -> Interview)',
+      sections_json: JSON.stringify([
+        { name: 'Prelims: GS Paper 1 (Merit)', questions: 150, marks: 200, duration: 120, question_types: 'General Studies + State Specific GK (UP/Bihar/MP GK)' },
+        { name: 'Prelims: CSAT Paper 2 (Qualifying 33%)', questions: 100, marks: 200, duration: 120, question_types: 'Hindi/English, Logic, Math, Interpersonal Communication' },
+        { name: 'Mains: GS 1 to 6 Papers + Essay', questions: 120, marks: 1500, duration: 1080, question_types: 'Descriptive GS + Mandatory State Special Papers (e.g. UP GK Paper 5 & 6 in UPPSC)' },
+        { name: 'Interview', questions: 1, marks: 100, duration: 25, question_types: 'State Administrative Panel Viva Voce' }
+      ]),
+      total_marks: 1600,
+      total_questions: 371,
+      marking_scheme: 'Written Mains + Interview decides merit for SDM, DSP, BDO ranks',
+      duration_minutes: 1345
+    },
+    {
+      id: 'str-upsc-capf',
+      exam_id: 'ex-upsc-capf',
+      tier_name: 'CAPF (AC) Single-Day Written Exam (Paper 1 + Paper 2) + PET + Interview',
+      sections_json: JSON.stringify([
+        { name: 'Paper 1: General Ability and Intelligence', questions: 125, marks: 250, duration: 120, question_types: 'Objective MCQ (+2 / -0.66) covering GS, Science, Reasoning' },
+        { name: 'Paper 2: General Studies, Essay and Comprehension', questions: 6, marks: 200, duration: 180, question_types: 'Descriptive: 4 Essays, 2 Arguments, 2 Reports, Précis, Comprehension' }
+      ]),
+      total_marks: 450,
+      total_questions: 131,
+      marking_scheme: 'Paper 1 (250M) + Paper 2 (200M) + Interview/Personality (150M) = 600 Total Marks',
+      duration_minutes: 300
+    },
+    {
+      id: 'str-upsc-epfo',
+      exam_id: 'ex-upsc-epfo',
+      tier_name: 'EPFO EO/AO & APFC Recruitment Test (RT + Interview)',
+      sections_json: JSON.stringify([
+        { name: 'Recruitment Test (Objective MCQ)', questions: 120, marks: 300, duration: 120, question_types: 'Indian Freedom Movement, Economy, Labour Laws, Industrial Relations, Social Security, Computer Apps, Math' },
+        { name: 'Interview / Personality Round', questions: 1, marks: 100, duration: 25, question_types: 'Administrative Board Viva' }
+      ]),
+      total_marks: 300,
+      total_questions: 121,
+      marking_scheme: '75:25 Weightage (RT 75%, Interview 25%); +2.5 / -0.83 marking in RT',
+      duration_minutes: 145
+    },
+    {
+      id: 'str-upsc-cds',
+      exam_id: 'ex-upsc-cds',
+      tier_name: 'CDS Written Examination + 5-Day SSB Interview',
+      sections_json: JSON.stringify([
+        { name: 'English Language', questions: 120, marks: 100, duration: 120, question_types: 'Vocabulary, Grammar, Sentence Ordering, Comprehension' },
+        { name: 'General Knowledge', questions: 120, marks: 100, duration: 120, question_types: 'History, Geography, Defence, Polity, Science, Current Events' },
+        { name: 'Elementary Mathematics (Except OTA)', questions: 100, marks: 100, duration: 120, question_types: 'Arithmetic, Algebra, Trigonometry, Geometry, Mensuration' }
+      ]),
+      total_marks: 300,
+      total_questions: 340,
+      marking_scheme: '+0.83 / -0.27; Written (300M for IMA/AFA, 200M for OTA) + SSB Interview (300M/200M)',
+      duration_minutes: 360
+    },
+    // UGC-NET (JRF & Assistant Professor)
+    {
+      id: 'str-ugc-net',
+      exam_id: 'ex-ugc-net-jrf',
+      tier_name: 'UGC-NET Single 3-Hour CBT Session (Paper 1 + Paper 2, No Break)',
+      sections_json: JSON.stringify([
+        { name: 'Paper 1: General Teaching & Research Aptitude (Common to All 83 Subjects)', questions: 50, marks: 100, duration: 60, question_types: '10 Units × 5 Qs each: Teaching Aptitude, Research Aptitude, RC, Communication, Math, Logical/Pramanas, DI, ICT, Environment, Higher Education' },
+        { name: 'Paper 2: Domain Subject Specialization (Commerce, Management, Pol Sci, English, History, etc.)', questions: 100, marks: 200, duration: 120, question_types: '10 Core Units covering Post-Graduate Level Core Concepts, Thematic Questions, Assertion-Reason, Matching' }
+      ]),
+      total_marks: 300,
+      total_questions: 150,
+      marking_scheme: '+2 for Correct, NO NEGATIVE MARKING, 0 for Unattempted; Single 180-minute window with free navigation between Paper 1 and Paper 2',
+      duration_minutes: 180
+    },
+    // State SET
+    {
+      id: 'str-state-set',
+      exam_id: 'ex-state-set',
+      tier_name: 'State Eligibility Test (Paper 1 + Paper 2)',
+      sections_json: JSON.stringify([
+        { name: 'Paper 1: General Teaching & Research Aptitude', questions: 50, marks: 100, duration: 60, question_types: 'Identical 10 units to UGC-NET Paper 1 with occasional state higher education questions' },
+        { name: 'Paper 2: Domain Subject (State Nodal Syllabus)', questions: 100, marks: 200, duration: 120, question_types: '100 Subject Objective Questions (100% overlap with UGC-NET syllabus)' }
+      ]),
+      total_marks: 300,
+      total_questions: 150,
+      marking_scheme: '+2 for Correct, NO NEGATIVE MARKING; Qualifying 6% aggregate merit rule',
+      duration_minutes: 180
     }
   ];
 
@@ -1227,7 +1455,8 @@ export async function seedDatabase(db: Database): Promise<void> {
 
   // --- SEED COLLEGES & PROGRAMS ---
   const colleges = [
-    // MBA Colleges
+    // MBA Colleges (Comprehensive Top Colleges Directory for all 5 Exams)
+    // --- 1. CAT Top Colleges ---
     {
       id: 'col-iima',
       category_id: 'cat-mba',
@@ -1244,7 +1473,7 @@ export async function seedDatabase(db: Database): Promise<void> {
           id: 'prg-iima-pgp',
           exam_code: 'CAT',
           program_name: 'Post Graduate Program in Management (PGP)',
-          degree_level: 'MBA / Post-Graduate',
+          degree_level: 'MBA',
           seats: 395,
           duration_years: 2,
           avg_package_lpa: 34.36,
@@ -1252,7 +1481,7 @@ export async function seedDatabase(db: Database): Promise<void> {
           exam_cutoff_percentile: '99.5+ Percentile (Gen)',
           exam_cutoff_rank: 'Top 500 in CAT',
           academic_cutoff: '10th/12th/Grad min 80%+ for composite score shortlisting',
-          selection_process: 'CAT Score -> AWT (Analytical Writing Test) -> Personal Interview -> Composite Score Merit'
+          selection_process: 'CAT Score -> AWT (Analytical Writing Test) -> Personal Interview'
         }
       ]
     },
@@ -1285,13 +1514,41 @@ export async function seedDatabase(db: Database): Promise<void> {
       ]
     },
     {
+      id: 'col-iimc',
+      category_id: 'cat-mba',
+      name: 'Indian Institute of Management Calcutta (IIM-C)',
+      code: 'IIMC',
+      location: 'Kolkata, West Bengal',
+      institution_type: 'Institute of National Importance',
+      accreditation: 'NIRF Management Rank #4 | Triple Crown (AACSB, AMBA, EQUIS)',
+      website: 'https://iimcal.ac.in',
+      data_status: 'DEMO',
+      source: 'IIM Calcutta Official Placement Report',
+      programs: [
+        {
+          id: 'prg-iimc-pgp',
+          exam_code: 'CAT',
+          program_name: 'Master of Business Administration (MBA)',
+          degree_level: 'MBA',
+          seats: 462,
+          duration_years: 2,
+          avg_package_lpa: 35.07,
+          median_package_lpa: 33.67,
+          exam_cutoff_percentile: '99.0+ Percentile (Heavy Quantitative Weightage)',
+          exam_cutoff_rank: 'Top 750 in CAT',
+          academic_cutoff: '10th/12th/Graduation 50% min (Heavy CAT weight 56% in shortlist)',
+          selection_process: 'CAT Score (56%) -> WAT & PI (Personal Interview)'
+        }
+      ]
+    },
+    {
       id: 'col-fms',
       category_id: 'cat-mba',
       name: 'Faculty of Management Studies (FMS Delhi)',
       code: 'FMS',
       location: 'New Delhi',
       institution_type: 'Government (Delhi University)',
-      accreditation: 'Premier Central University Faculty | Highest ROI B-School',
+      accreditation: 'Premier Central University Faculty | Lowest Fee & Highest ROI in India',
       website: 'https://fms.edu',
       data_status: 'DEMO',
       source: 'FMS Official Placement Bulletin (Seed)',
@@ -1305,21 +1562,163 @@ export async function seedDatabase(db: Database): Promise<void> {
           duration_years: 2,
           avg_package_lpa: 34.10,
           median_package_lpa: 31.00,
-          exam_cutoff_percentile: '99.2+ Percentile (Heavy VARC Weightage)',
+          exam_cutoff_percentile: '99.2+ Percentile (VARC: 40%, QA: 30%, DILR: 30%)',
           exam_cutoff_rank: 'Top 600 in CAT',
-          academic_cutoff: 'Bachelor’s degree with 50% marks',
-          selection_process: 'Weighted CAT Score (VARC 40%, QA 30%, DILR 30%) -> Extempore -> PI'
+          academic_cutoff: 'Total 2-year fee is only ₹2.0 Lakhs! ROI > 1700%',
+          selection_process: 'Weighted CAT Score -> Extempore Speech -> Personal Interview'
         }
       ]
     },
     {
+      id: 'col-iiml',
+      category_id: 'cat-mba',
+      name: 'Indian Institute of Management Lucknow (IIM-L)',
+      code: 'IIML',
+      location: 'Lucknow, Uttar Pradesh',
+      institution_type: 'Institute of National Importance',
+      accreditation: 'NIRF Management Rank #6 | AACSB & AMBA Accredited',
+      website: 'https://iiml.ac.in',
+      data_status: 'DEMO',
+      source: 'IIM Lucknow Placement Bulletin',
+      programs: [
+        {
+          id: 'prg-iiml-pgp',
+          exam_code: 'CAT',
+          program_name: 'Post Graduate Programme in Management (PGP)',
+          degree_level: 'MBA',
+          seats: 495,
+          duration_years: 2,
+          avg_package_lpa: 32.20,
+          median_package_lpa: 30.00,
+          exam_cutoff_percentile: '98.5+ Percentile',
+          exam_cutoff_rank: 'Top 1200 in CAT',
+          academic_cutoff: 'Past academic consistency + work experience bonus',
+          selection_process: 'CAT (60%) -> WAT & PI (Personal Interview)'
+        }
+      ]
+    },
+    {
+      id: 'col-iimk',
+      category_id: 'cat-mba',
+      name: 'Indian Institute of Management Kozhikode (IIM-K)',
+      code: 'IIMK',
+      location: 'Kozhikode, Kerala',
+      institution_type: 'Institute of National Importance',
+      accreditation: 'NIRF Management Rank #3 | EQUIS & AMBA Accredited',
+      website: 'https://iimk.ac.in',
+      data_status: 'DEMO',
+      source: 'IIM Kozhikode Admission Notification',
+      programs: [
+        {
+          id: 'prg-iimk-pgp',
+          exam_code: 'CAT',
+          program_name: 'Post Graduate Programme in Management (PGP)',
+          degree_level: 'MBA',
+          seats: 480,
+          duration_years: 2,
+          avg_package_lpa: 31.02,
+          median_package_lpa: 27.00,
+          exam_cutoff_percentile: '98.0+ Percentile',
+          exam_cutoff_rank: 'Top 1500 in CAT',
+          academic_cutoff: 'Strong diversity points for female and non-engineering candidates',
+          selection_process: 'CAT Score + Diversity Factor -> WAT/PI'
+        }
+      ]
+    },
+    {
+      id: 'col-spjimr',
+      category_id: 'cat-mba',
+      name: 'S.P. Jain Institute of Management and Research (SPJIMR)',
+      code: 'SPJIMR',
+      location: 'Mumbai, Maharashtra',
+      institution_type: 'Private Autonomous',
+      accreditation: 'AACSB & AMBA Accredited | Top 5 B-School in India',
+      website: 'https://spjimr.org',
+      data_status: 'DEMO',
+      source: 'SPJIMR Official Admission Policy',
+      programs: [
+        {
+          id: 'prg-spjimr-pgdm',
+          exam_code: 'CAT',
+          program_name: 'Post Graduate Diploma in Management (PGDM)',
+          degree_level: 'PGDM',
+          seats: 240,
+          duration_years: 2,
+          avg_package_lpa: 33.00,
+          median_package_lpa: 31.50,
+          exam_cutoff_percentile: '85+%ile (Profile-based Call) / 95+%ile (Score-based)',
+          exam_cutoff_rank: 'Dual Call Criteria: Profile vs Score',
+          academic_cutoff: 'Excellent 10th/12th/Grad or notable extracurricular achievements',
+          selection_process: 'Early Profile Shortlist -> Group Interview Round 1 & 2'
+        }
+      ]
+    },
+    {
+      id: 'col-mdi',
+      category_id: 'cat-mba',
+      name: 'Management Development Institute (MDI Gurgaon)',
+      code: 'MDI',
+      location: 'Gurugram, Haryana',
+      institution_type: 'Private Autonomous',
+      accreditation: 'AACSB, AMBA & SAQS Accredited | Premier NCR B-School',
+      website: 'https://mdi.ac.in',
+      data_status: 'DEMO',
+      source: 'MDI Gurgaon Official Placement Report',
+      programs: [
+        {
+          id: 'prg-mdi-pgdm',
+          exam_code: 'CAT',
+          program_name: 'Post Graduate Diploma in Management (PGDM)',
+          degree_level: 'PGDM',
+          seats: 360,
+          duration_years: 2,
+          avg_package_lpa: 27.67,
+          median_package_lpa: 26.13,
+          exam_cutoff_percentile: '95.0+ Percentile',
+          exam_cutoff_rank: 'Top 3500 in CAT',
+          academic_cutoff: '50% in graduation; 10th & 12th minimum 50%',
+          selection_process: 'CAT Score -> GD & PI Round'
+        }
+      ]
+    },
+    {
+      id: 'col-sjmsom',
+      category_id: 'cat-mba',
+      name: 'Shailesh J. Mehta School of Management, IIT Bombay',
+      code: 'SJMSOM',
+      location: 'Mumbai, Maharashtra',
+      institution_type: 'Institute of National Importance',
+      accreditation: 'Top Tech B-School | High Tech-Consulting & Finance Placements',
+      website: 'https://som.iitb.ac.in',
+      data_status: 'DEMO',
+      source: 'SJMSOM IIT Bombay Admission Report',
+      programs: [
+        {
+          id: 'prg-sjmsom-mba',
+          exam_code: 'CAT',
+          program_name: 'Master of Business Administration (MBA)',
+          degree_level: 'MBA',
+          seats: 152,
+          duration_years: 2,
+          avg_package_lpa: 28.88,
+          median_package_lpa: 26.64,
+          exam_cutoff_percentile: '98.5+ Percentile',
+          exam_cutoff_rank: 'Top 1200 in CAT',
+          academic_cutoff: '4-year Bachelor degree (Engineering/Technology/Pharmacy/Arch)',
+          selection_process: 'CAT Score -> Personal Interview'
+        }
+      ]
+    },
+
+    // --- 2. XAT Top Colleges ---
+    {
       id: 'col-xlri',
       category_id: 'cat-mba',
-      name: 'XLRI Xavier School of Management',
+      name: 'XLRI Xavier School of Management (Jamshedpur & Delhi-NCR)',
       code: 'XLRI',
-      location: 'Jamshedpur, Jharkhand & NCR',
+      location: 'Jamshedpur, Jharkhand & Jhajjar, NCR',
       institution_type: 'Private Autonomous',
-      accreditation: 'AACSB, AMBA & NBA Accredited | Oldest B-School in India',
+      accreditation: 'AACSB, AMBA & NBA Accredited | #1 Private B-School in India',
       website: 'https://xlri.ac.in',
       data_status: 'DEMO',
       source: 'XLRI Official Admission Criteria (Seed)',
@@ -1329,14 +1728,412 @@ export async function seedDatabase(db: Database): Promise<void> {
           exam_code: 'XAT',
           program_name: 'PGDM (Business Management / Human Resource Management)',
           degree_level: 'PGDM',
-          seats: 360,
+          seats: 540,
           duration_years: 2,
           avg_package_lpa: 32.70,
           median_package_lpa: 30.00,
-          exam_cutoff_percentile: '96.0+ Percentile in XAT (BM: 96, HRM: 94)',
+          exam_cutoff_percentile: '96.0+ Percentile (BM) / 94.0+ Percentile (HRM)',
           exam_cutoff_rank: 'Top 1200 in XAT',
           academic_cutoff: 'Graduation in any discipline',
-          selection_process: 'XAT Score with Sectional Cutoffs -> GD/PI Round'
+          selection_process: 'XAT Score with Sectional Cutoffs (DM/VALR/QADI) -> GD/PI Round'
+        }
+      ]
+    },
+    {
+      id: 'col-ximb',
+      category_id: 'cat-mba',
+      name: 'Xavier Institute of Management (XIMB Bhubaneswar)',
+      code: 'XIMB',
+      location: 'Bhubaneswar, Odisha',
+      institution_type: 'Private Autonomous',
+      accreditation: 'Premier Jesuit B-School | Top Consulting & IT Recruiter',
+      website: 'https://ximb.edu.in',
+      data_status: 'DEMO',
+      source: 'XIMB Official Placement Report',
+      programs: [
+        {
+          id: 'prg-ximb-bm',
+          exam_code: 'XAT',
+          program_name: 'MBA in Business Management (BM)',
+          degree_level: 'MBA',
+          seats: 360,
+          duration_years: 2,
+          avg_package_lpa: 20.03,
+          median_package_lpa: 19.25,
+          exam_cutoff_percentile: '91.0+ Percentile in XAT / 91.0+ in CAT',
+          exam_cutoff_rank: 'Top 3000 in XAT',
+          academic_cutoff: 'Three-year Bachelor’s Degree with 55% marks',
+          selection_process: 'XAT/CAT Score -> Writing Ability Test & Personal Interview'
+        }
+      ]
+    },
+    {
+      id: 'col-gim',
+      category_id: 'cat-mba',
+      name: 'Goa Institute of Management (GIM Goa)',
+      code: 'GIM',
+      location: 'Sanquelim, Goa',
+      institution_type: 'Private Autonomous',
+      accreditation: 'AACSB & AMBA Accredited | Premier BDA & Healthcare MBA',
+      website: 'https://gim.ac.in',
+      data_status: 'DEMO',
+      source: 'GIM Goa Placement Report',
+      programs: [
+        {
+          id: 'prg-gim-pgdm',
+          exam_code: 'XAT',
+          program_name: 'PGDM (Core, Big Data Analytics, Healthcare, BIFS)',
+          degree_level: 'PGDM',
+          seats: 300,
+          duration_years: 2,
+          avg_package_lpa: 15.00,
+          median_package_lpa: 14.50,
+          exam_cutoff_percentile: '85.0+ Percentile in XAT / 85.0+ in CAT',
+          exam_cutoff_rank: 'Top 5000 in XAT/CAT',
+          academic_cutoff: 'Bachelor’s degree with 50% marks',
+          selection_process: 'XAT/CAT/CMAT/GMAT Score -> Achievers Round / Elite PI'
+        }
+      ]
+    },
+    {
+      id: 'col-tapmi',
+      category_id: 'cat-mba',
+      name: 'T.A. Pai Management Institute (TAPMI Manipal)',
+      code: 'TAPMI',
+      location: 'Manipal, Karnataka',
+      institution_type: 'Private Autonomous (MAHE)',
+      accreditation: 'AACSB & AMBA Accredited',
+      website: 'https://tapmi.edu.in',
+      data_status: 'DEMO',
+      source: 'TAPMI Official Report',
+      programs: [
+        {
+          id: 'prg-tapmi-mba',
+          exam_code: 'XAT',
+          program_name: 'MBA (General, BFSI, HR, Marketing)',
+          degree_level: 'MBA',
+          seats: 420,
+          duration_years: 2,
+          avg_package_lpa: 14.60,
+          median_package_lpa: 13.50,
+          exam_cutoff_percentile: '85.0+ Percentile in XAT / 85.0+ in CAT',
+          exam_cutoff_rank: 'Top 6000 in XAT/CAT',
+          academic_cutoff: '50% in graduation',
+          selection_process: 'XAT/CAT Score -> English Proficiency Test -> PI'
+        }
+      ]
+    },
+
+    // --- 3. SNAP Top Colleges (Symbiosis Institutes) ---
+    {
+      id: 'col-sibm-pune',
+      category_id: 'cat-mba',
+      name: 'Symbiosis Institute of Business Management (SIBM Pune)',
+      code: 'SIBM-PUNE',
+      location: 'Lavale, Pune, Maharashtra',
+      institution_type: 'Private Deemed University',
+      accreditation: 'Flagship Symbiosis B-School | NAAC A++ Grade',
+      website: 'https://sibmpune.edu.in',
+      data_status: 'DEMO',
+      source: 'SIBM Pune Placement Report',
+      programs: [
+        {
+          id: 'prg-sibm-pune-mba',
+          exam_code: 'SNAP',
+          program_name: 'Master of Business Administration (MBA)',
+          degree_level: 'MBA',
+          seats: 180,
+          duration_years: 2,
+          avg_package_lpa: 28.16,
+          median_package_lpa: 25.00,
+          exam_cutoff_percentile: '98.5+ Percentile (~42-44/60 Marks in SNAP)',
+          exam_cutoff_rank: 'Top 1000 in SNAP',
+          academic_cutoff: 'Graduation with 50% (45% for SC/ST)',
+          selection_process: 'SNAP Score (50%) -> GE-PIWAT (Group Exercise, Personal Interview, WAT: 50%)'
+        }
+      ]
+    },
+    {
+      id: 'col-scmhrd',
+      category_id: 'cat-mba',
+      name: 'Symbiosis Centre for Management & HRD (SCMHRD Pune)',
+      code: 'SCMHRD',
+      location: 'Hinjawadi, Pune, Maharashtra',
+      institution_type: 'Private Deemed University',
+      accreditation: 'Top HR & Infrastructure Development Management B-School',
+      website: 'https://scmhrd.edu',
+      data_status: 'DEMO',
+      source: 'SCMHRD Placement Report',
+      programs: [
+        {
+          id: 'prg-scmhrd-mba',
+          exam_code: 'SNAP',
+          program_name: 'MBA (HR, Marketing, Finance, Ops & Infrastructure Dev)',
+          degree_level: 'MBA',
+          seats: 180,
+          duration_years: 2,
+          avg_package_lpa: 23.71,
+          median_package_lpa: 21.00,
+          exam_cutoff_percentile: '97.0+ Percentile (~40-42/60 Marks in SNAP)',
+          exam_cutoff_rank: 'Top 2000 in SNAP',
+          academic_cutoff: 'Graduation with 50% marks',
+          selection_process: 'SNAP Score -> GE-PIWAT Round'
+        }
+      ]
+    },
+    {
+      id: 'col-siib',
+      category_id: 'cat-mba',
+      name: 'Symbiosis Institute of International Business (SIIB Pune)',
+      code: 'SIIB',
+      location: 'Hinjawadi, Pune, Maharashtra',
+      institution_type: 'Private Deemed University',
+      accreditation: 'Specialized International Business, Agri-Business & Energy B-School',
+      website: 'https://siib.ac.in',
+      data_status: 'DEMO',
+      source: 'SIIB Official Report',
+      programs: [
+        {
+          id: 'prg-siib-mba',
+          exam_code: 'SNAP',
+          program_name: 'MBA in International Business (IB) / Agri-Business / Energy',
+          degree_level: 'MBA',
+          seats: 210,
+          duration_years: 2,
+          avg_package_lpa: 13.51,
+          median_package_lpa: 12.80,
+          exam_cutoff_percentile: '93.0+ Percentile (~36-38/60 Marks in SNAP)',
+          exam_cutoff_rank: 'Top 5000 in SNAP',
+          academic_cutoff: 'Graduation with 50% marks',
+          selection_process: 'SNAP Score -> GE-PIWAT'
+        }
+      ]
+    },
+    {
+      id: 'col-sibm-blr',
+      category_id: 'cat-mba',
+      name: 'Symbiosis Institute of Business Management (SIBM Bengaluru)',
+      code: 'SIBM-BLR',
+      location: 'Electronic City, Bengaluru, Karnataka',
+      institution_type: 'Private Deemed University',
+      accreditation: 'Strategic IT Capital Location | High Corporate Engagement',
+      website: 'https://sibm.edu.in',
+      data_status: 'DEMO',
+      source: 'SIBM Bengaluru Placement Report',
+      programs: [
+        {
+          id: 'prg-sibm-blr-mba',
+          exam_code: 'SNAP',
+          program_name: 'Master of Business Administration (MBA)',
+          degree_level: 'MBA',
+          seats: 180,
+          duration_years: 2,
+          avg_package_lpa: 13.48,
+          median_package_lpa: 12.50,
+          exam_cutoff_percentile: '90.0+ Percentile (~34-36/60 Marks in SNAP)',
+          exam_cutoff_rank: 'Top 7000 in SNAP',
+          academic_cutoff: 'Graduation with 50% marks',
+          selection_process: 'SNAP Score -> GE-PIWAT'
+        }
+      ]
+    },
+
+    // --- 4. NMAT Top Colleges ---
+    {
+      id: 'col-nmims-mumbai',
+      category_id: 'cat-mba',
+      name: 'NMIMS School of Business Management (SBM Mumbai)',
+      code: 'NMIMS-MUMBAI',
+      location: 'Vile Parle, Mumbai, Maharashtra',
+      institution_type: 'Private Deemed University',
+      accreditation: 'AACSB Accredited | Top 10 Private B-School in India',
+      website: 'https://nmims.edu',
+      data_status: 'DEMO',
+      source: 'NMIMS Placement Report',
+      programs: [
+        {
+          id: 'prg-nmims-mba',
+          exam_code: 'NMAT',
+          program_name: 'Master of Business Administration (Core MBA / MBA HR)',
+          degree_level: 'MBA',
+          seats: 600,
+          duration_years: 2,
+          avg_package_lpa: 26.63,
+          median_package_lpa: 24.50,
+          exam_cutoff_percentile: '232-235+ Score in NMAT (Sectional: 70+ in each)',
+          exam_cutoff_rank: 'Top 2500 in NMAT',
+          academic_cutoff: 'Graduation with 50% in any discipline',
+          selection_process: 'NMAT Score (1st attempt only for Mumbai campus) -> WAT/PI'
+        }
+      ]
+    },
+    {
+      id: 'col-nmims-blr',
+      category_id: 'cat-mba',
+      name: 'NMIMS Bengaluru Campus',
+      code: 'NMIMS-BLR',
+      location: 'Bannerghatta Road, Bengaluru, Karnataka',
+      institution_type: 'Private Deemed University',
+      accreditation: 'AMBA Accredited',
+      website: 'https://nmimsbengaluru.org',
+      data_status: 'DEMO',
+      source: 'NMIMS Bengaluru Report',
+      programs: [
+        {
+          id: 'prg-nmims-blr-mba',
+          exam_code: 'NMAT',
+          program_name: 'Master of Business Administration (MBA)',
+          degree_level: 'MBA',
+          seats: 240,
+          duration_years: 2,
+          avg_package_lpa: 14.00,
+          median_package_lpa: 13.00,
+          exam_cutoff_percentile: '220+ Score in NMAT',
+          exam_cutoff_rank: 'Top 6000 in NMAT',
+          academic_cutoff: 'Graduation with 50% marks',
+          selection_process: 'NMAT Score -> Watson-Glaser Test -> PI'
+        }
+      ]
+    },
+    {
+      id: 'col-kjsom',
+      category_id: 'cat-mba',
+      name: 'K J Somaiya Institute of Management (KJSIM Mumbai)',
+      code: 'KJSOM',
+      location: 'Vidyavihar, Mumbai, Maharashtra',
+      institution_type: 'Private Autonomous',
+      accreditation: 'AACSB Member | Massive Financial Capital Alumni Base',
+      website: 'https://simsr.somaiya.edu',
+      data_status: 'DEMO',
+      source: 'K J Somaiya Placement Report',
+      programs: [
+        {
+          id: 'prg-kjsom-mba',
+          exam_code: 'NMAT',
+          program_name: 'Master of Business Administration (MBA)',
+          degree_level: 'MBA',
+          seats: 600,
+          duration_years: 2,
+          avg_package_lpa: 12.50,
+          median_package_lpa: 12.00,
+          exam_cutoff_percentile: '222+ in NMAT / 85+ in CAT / 85+ in XAT',
+          exam_cutoff_rank: 'Top 5500 in NMAT',
+          academic_cutoff: 'Bachelor’s degree with 50% marks',
+          selection_process: 'NMAT/CAT/XAT Score -> Case Analysis & PI'
+        }
+      ]
+    },
+
+    // --- 5. CMAT Top Colleges ---
+    {
+      id: 'col-jbims',
+      category_id: 'cat-mba',
+      name: 'Jamnalal Bajaj Institute of Management Studies (JBIMS Mumbai)',
+      code: 'JBIMS',
+      location: 'Churchgate, Mumbai, Maharashtra',
+      institution_type: 'Government Autonomous (Mumbai University)',
+      accreditation: 'CEO Factory of India | Highest ROI in Maharashtra (Fee ₹6L, CTC ₹28 LPA)',
+      website: 'https://jbims.edu',
+      data_status: 'DEMO',
+      source: 'JBIMS Official Placement Report',
+      programs: [
+        {
+          id: 'prg-jbims-mms',
+          exam_code: 'CMAT',
+          program_name: 'Masters in Management Studies (MMS)',
+          degree_level: 'MBA / MMS',
+          seats: 150,
+          duration_years: 2,
+          avg_package_lpa: 28.02,
+          median_package_lpa: 26.50,
+          exam_cutoff_percentile: '99.99 Percentile in CMAT (~345+/400) / 99.93+ in MH-CET',
+          exam_cutoff_rank: 'All India Rank 1 - 30 in CMAT',
+          academic_cutoff: 'Total 2-year fee ₹6.0 Lakhs! Average salary ₹28.02 LPA',
+          selection_process: 'Centralized CAP Round via DTE Maharashtra / CMAT Score'
+        }
+      ]
+    },
+    {
+      id: 'col-simsree',
+      category_id: 'cat-mba',
+      name: 'Sydenham Institute of Management (SIMSREE Mumbai)',
+      code: 'SIMSREE',
+      location: 'Churchgate, Mumbai, Maharashtra',
+      institution_type: 'Government Autonomous',
+      accreditation: 'Unbeatable ROI: 2-Year Fee is only ₹1.5 Lakhs vs ₹15.3 LPA Package!',
+      website: 'https://simsree.org',
+      data_status: 'DEMO',
+      source: 'SIMSREE Placement Bulletin',
+      programs: [
+        {
+          id: 'prg-simsree-mms',
+          exam_code: 'CMAT',
+          program_name: 'Masters in Management Studies (MMS)',
+          degree_level: 'MMS',
+          seats: 180,
+          duration_years: 2,
+          avg_package_lpa: 15.30,
+          median_package_lpa: 14.50,
+          exam_cutoff_percentile: '99.8+ Percentile in CMAT (~330+/400)',
+          exam_cutoff_rank: 'All India Top 100 in CMAT',
+          academic_cutoff: '50% in graduation; Ultra-low fees of ₹1.5 Lakhs',
+          selection_process: 'DTE Maharashtra CAP Counselling'
+        }
+      ]
+    },
+    {
+      id: 'col-greatlakes',
+      category_id: 'cat-mba',
+      name: 'Great Lakes Institute of Management (Chennai & Gurgaon)',
+      code: 'GREATLAKES',
+      location: 'Chennai, Tamil Nadu',
+      institution_type: 'Private Autonomous',
+      accreditation: 'AMBA & SAQS Accredited | #1 for Tech & Analytics MBA',
+      website: 'https://greatlakes.edu.in',
+      data_status: 'DEMO',
+      source: 'Great Lakes Placement Report',
+      programs: [
+        {
+          id: 'prg-greatlakes-pgdm',
+          exam_code: 'CMAT',
+          program_name: 'PGDM (2-Year) & PGPM (1-Year for Experienced)',
+          degree_level: 'PGDM',
+          seats: 300,
+          duration_years: 2,
+          avg_package_lpa: 14.50,
+          median_package_lpa: 13.80,
+          exam_cutoff_percentile: '90.0+ Percentile in CMAT / 85+ in CAT / 85+ in XAT',
+          exam_cutoff_rank: 'Top 5000 in CMAT',
+          academic_cutoff: 'Graduation with minimum 50% marks',
+          selection_process: 'CMAT/CAT/XAT Score -> Analytical Writing Test -> PI'
+        }
+      ]
+    },
+    {
+      id: 'col-pumba',
+      category_id: 'cat-mba',
+      name: 'Department of Management Sciences, Savitribai Phule Pune Univ (PUMBA)',
+      code: 'PUMBA',
+      location: 'Ganeshkhind, Pune, Maharashtra',
+      institution_type: 'Government University Department',
+      accreditation: 'Affordable Premier Govt B-School in Pune (Fee ₹1.4 Lakhs)',
+      website: 'https://pumba.in',
+      data_status: 'DEMO',
+      source: 'PUMBA Pune Report',
+      programs: [
+        {
+          id: 'prg-pumba-mba',
+          exam_code: 'CMAT',
+          program_name: 'Master of Business Administration (MBA)',
+          degree_level: 'MBA',
+          seats: 180,
+          duration_years: 2,
+          avg_package_lpa: 8.85,
+          median_package_lpa: 8.20,
+          exam_cutoff_percentile: '95.0+ Percentile in CMAT / 98.0+ in MH-CET',
+          exam_cutoff_rank: 'Top 3000 in CMAT',
+          academic_cutoff: 'Graduation with 50% marks; 2-year fee is ₹1.4 Lakhs',
+          selection_process: 'Maharashtra DTE Centralized Admission'
         }
       ]
     },
@@ -1503,32 +2300,440 @@ export async function seedDatabase(db: Database): Promise<void> {
       ]
     },
 
-    // UPSC Posts
+    // UPSC Posts & Premier Cadres
     {
       id: 'col-upsc-cadre',
       category_id: 'cat-upsc',
-      name: 'Civil Services of India (IAS / IPS / IFS / IRS)',
+      name: 'All India & Central Civil Services (IAS / IPS / IFS / IRS)',
       code: 'UPSC-CADRE',
-      location: 'All India Service & Central Secretariats',
-      institution_type: 'Government (Apex Constitutional Cadre)',
-      accreditation: 'DoPT / Union Public Service Commission',
+      location: 'Central Secretariat, New Delhi & Pan-India District Cadres',
+      institution_type: 'Government (Apex All-India Constitutional Cadre)',
+      accreditation: 'DoPT / Union Public Service Commission (LBSNAA / SVPNPA)',
       website: 'https://upsc.gov.in',
       data_status: 'DEMO',
-      source: 'UPSC CSE Marks & Service Allocation PDF (Seed)',
+      source: 'UPSC CSE Marks & Service Allocation Gazette (Seed)',
       programs: [
         {
           id: 'prg-upsc-ias',
           exam_code: 'UPSC-CSE',
-          program_name: 'Indian Administrative Service (IAS) & Indian Foreign Service (IFS)',
-          degree_level: 'Premier All-India Constitutional Cadre',
+          program_name: 'Indian Administrative Service (IAS)',
+          degree_level: 'All India Service (District Magistrate / Collector / Central Secretary)',
           seats: 180,
-          duration_years: 0,
-          avg_package_lpa: 14.00, // Basic Pay 56,100 + DA + Official Residence, Vehicle, Security
-          median_package_lpa: 14.00,
-          exam_cutoff_percentile: 'AIR 1 - 95 (General Category for IAS)',
+          duration_years: 2, // 2-year induction at LBSNAA Mussoorie & District Training
+          avg_package_lpa: 16.50, // Pay Level 10 (Basic 56,100) + DA + Bunglow, Car, Security, Travel Perks
+          median_package_lpa: 16.50,
+          exam_cutoff_percentile: 'AIR 1 - 95 (General) | AIR 1 - 380 (OBC) | AIR 1 - 500 (SC)',
           exam_cutoff_rank: 'Rank 1 - 95',
-          academic_cutoff: 'Recognized graduate degree',
-          selection_process: 'Prelims (Cutoff ~88-92/200) -> Mains 1750 marks -> Personality Test 275 marks'
+          academic_cutoff: 'Graduation in ANY discipline (No min marks required!)',
+          selection_process: 'Prelims (CSAT 33% + GS Cutoff ~75-88/200) -> Mains (1750M) -> Interview (275M)'
+        },
+        {
+          id: 'prg-upsc-ips',
+          exam_code: 'UPSC-CSE',
+          program_name: 'Indian Police Service (IPS)',
+          degree_level: 'All India Service (SP / SSP / DIG / IG / DGP / IB / CBI)',
+          seats: 200,
+          duration_years: 2, // SVPNPA Hyderabad Academy Training
+          avg_package_lpa: 16.50,
+          median_package_lpa: 16.50,
+          exam_cutoff_percentile: 'AIR 96 - 240 (General) | AIR 241 - 520 (OBC)',
+          exam_cutoff_rank: 'Rank 96 - 240',
+          academic_cutoff: 'Graduation + Physical Standard (Height 165cm Men, 150cm Women)',
+          selection_process: 'UPSC Merit + Medical/Physical Board clearance'
+        },
+        {
+          id: 'prg-upsc-ifs',
+          exam_code: 'UPSC-CSE',
+          program_name: 'Indian Foreign Service (IFS)',
+          degree_level: 'Central Group A Service (Ambassador / High Commissioner / Diplomat)',
+          seats: 40,
+          duration_years: 2, // Sushma Swaraj Institute of Foreign Service (SSIFS)
+          avg_package_lpa: 24.00, // International Diplomatic Foreign Allowances included
+          median_package_lpa: 24.00,
+          exam_cutoff_percentile: 'AIR 50 - 150 (General)',
+          exam_cutoff_rank: 'Rank 50 - 150',
+          academic_cutoff: 'Graduation in any stream',
+          selection_process: 'Mains Written (1750M) + Personality Test (275M)'
+        },
+        {
+          id: 'prg-upsc-irs',
+          exam_code: 'UPSC-CSE',
+          program_name: 'Indian Revenue Service (IRS - Income Tax & Customs/GST)',
+          degree_level: 'Central Group A Service (Assistant Commissioner of IT / GST)',
+          seats: 320,
+          duration_years: 1.5, // NADT Nagpur / NACIN Faridabad
+          avg_package_lpa: 15.00,
+          median_package_lpa: 15.00,
+          exam_cutoff_percentile: 'AIR 220 - 480 (General) | AIR 481 - 780 (OBC/EWS)',
+          exam_cutoff_rank: 'Rank 220 - 480',
+          academic_cutoff: 'Recognized Bachelor Degree',
+          selection_process: 'UPSC Combined Civil Services Merit List'
+        }
+      ]
+    },
+    {
+      id: 'col-state-pcs-up',
+      category_id: 'cat-upsc',
+      name: 'Uttar Pradesh Public Service Commission (UPPSC PCS - SDM / DSP)',
+      code: 'UPPSC-PCS',
+      location: 'Prayagraj & Lucknow, Uttar Pradesh',
+      institution_type: 'State Public Service Commission',
+      accreditation: 'Premier Provincial Civil Service (Direct 90% Overlap with UPSC)',
+      website: 'https://uppsc.up.nic.in',
+      data_status: 'DEMO',
+      source: 'UPPSC Combined State / Upper Subordinate Gazette',
+      programs: [
+        {
+          id: 'prg-uppsc-sdm',
+          exam_code: 'STATE-PCS',
+          program_name: 'Sub-Divisional Magistrate (SDM) & Deputy SP (DSP)',
+          degree_level: 'Provincial Civil Service (Pay Level 10: Basic 56,100, Gross ~88,000/mo)',
+          seats: 450,
+          duration_years: 1,
+          avg_package_lpa: 12.50,
+          median_package_lpa: 12.50,
+          exam_cutoff_percentile: 'Prelims ~125-130 / 200 Marks (Net ~92-95 Qs)',
+          exam_cutoff_rank: 'Top 100 in State Merit for SDM',
+          academic_cutoff: 'Graduation in any discipline; Age 21-40 years',
+          selection_process: 'Prelims (GS + CSAT 33%) -> Mains 6 GS Papers (including UP Special) -> Interview (100M)'
+        }
+      ]
+    },
+    {
+      id: 'col-state-pcs-bihar',
+      category_id: 'cat-upsc',
+      name: 'Bihar Public Service Commission (BPSC Combined Competitive Exam)',
+      code: 'BPSC-CCE',
+      location: 'Patna, Bihar',
+      institution_type: 'State Public Service Commission',
+      accreditation: 'Bihar Administrative & Police Service (Sub-Divisional Officer / DSP)',
+      website: 'https://bpsc.bih.nic.in',
+      data_status: 'DEMO',
+      source: 'BPSC Integrated CCE Notification',
+      programs: [
+        {
+          id: 'prg-bpsc-bas',
+          exam_code: 'STATE-PCS',
+          program_name: 'Bihar Administrative Service (SDO / BDO / Deputy Collector)',
+          degree_level: 'State Class-1 Gazetted (Pay Level 9/10)',
+          seats: 1950,
+          duration_years: 1,
+          avg_package_lpa: 11.50,
+          median_package_lpa: 11.50,
+          exam_cutoff_percentile: 'Prelims Cutoff ~91-96 / 150 Marks (Negative 0.33)',
+          exam_cutoff_rank: 'Top 250 for Administrative Service',
+          academic_cutoff: 'Graduate in any stream',
+          selection_process: 'Prelims (150 Qs) -> Mains (GS 1, GS 2, Essay) -> Interview (120M)'
+        }
+      ]
+    },
+    {
+      id: 'col-upsc-capf-forces',
+      category_id: 'cat-upsc',
+      name: 'Central Armed Police Forces (BSF, CRPF, CISF, ITBP, SSB - AC)',
+      code: 'UPSC-CAPF',
+      location: 'Border Guarding & Internal Security Commands (Pan-India)',
+      institution_type: 'Central Armed Police Forces (Ministry of Home Affairs)',
+      accreditation: 'Direct Gazetted Class 1 Armed Forces Commission (Pay Level 10)',
+      website: 'https://upsc.gov.in',
+      data_status: 'DEMO',
+      source: 'UPSC CAPF (AC) Official Notification',
+      programs: [
+        {
+          id: 'prg-capf-ac-post',
+          exam_code: 'UPSC-CAPF',
+          program_name: 'Assistant Commandant (Company Commander - BSF / CRPF / CISF)',
+          degree_level: 'Gazetted Class 1 (Basic 56,100, Gross ~95,000/mo + Military Allowances)',
+          seats: 506,
+          duration_years: 1, // Academy training (BSF Academy Tekanpur / CRPF Gurgaon)
+          avg_package_lpa: 14.50,
+          median_package_lpa: 14.50,
+          exam_cutoff_percentile: 'Paper 1 Cutoff ~125-135 / 250 Marks',
+          exam_cutoff_rank: 'Final Merit ~345 / 600 Marks',
+          academic_cutoff: 'Bachelor’s degree + Physical Endurance Test (100m, 800m, Long Jump, Shot Put)',
+          selection_process: 'Paper 1 (GS 250M) + Paper 2 (Essay/English 200M) -> Physical Test -> Interview (150M)'
+        }
+      ]
+    },
+    {
+      id: 'col-upsc-epfo-dept',
+      category_id: 'cat-upsc',
+      name: 'Employees’ Provident Fund Organisation (UPSC EPFO - EO/AO & APFC)',
+      code: 'UPSC-EPFO',
+      location: 'Ministry of Labour & Employment, New Delhi & Regional Directorates',
+      institution_type: 'Statutory Body (Ministry of Labour & Employment, Govt of India)',
+      accreditation: 'Premier Enforcement & Quasi-Judicial Cadre (Pay Level 8 & Level 10)',
+      website: 'https://epfindia.gov.in',
+      data_status: 'DEMO',
+      source: 'UPSC EPFO Special Recruitment Notification',
+      programs: [
+        {
+          id: 'prg-epfo-apfc',
+          exam_code: 'UPSC-EPFO',
+          program_name: 'Assistant Provident Fund Commissioner (APFC) & Enforcement Officer',
+          degree_level: 'Central Govt Group A/B Gazetted Officer',
+          seats: 577,
+          duration_years: 0,
+          avg_package_lpa: 13.50,
+          median_package_lpa: 13.50,
+          exam_cutoff_percentile: 'Recruitment Test Cutoff ~165 / 300 Marks',
+          exam_cutoff_rank: 'Top 500 in Combined Merit',
+          academic_cutoff: 'Bachelor’s Degree in any discipline',
+          selection_process: 'Single Written Objective Test (75% weightage) -> Interview (25% weightage)'
+        }
+      ]
+    },
+
+    // --- UGC-NET Top Universities & Commission Institutions ---
+    {
+      id: 'col-jnu-ugc',
+      category_id: 'cat-ugc-net',
+      name: 'Jawaharlal Nehru University (JNU New Delhi)',
+      code: 'JNU',
+      location: 'New Delhi',
+      institution_type: 'Central University (Institute of National Importance)',
+      accreditation: 'NIRF University Rank #2 | NAAC A++ (3.91/4.0)',
+      website: 'https://jnu.ac.in',
+      data_status: 'DEMO',
+      source: 'JNU e-Prospectus & Ph.D. Admission Guidelines (Seed)',
+      programs: [
+        {
+          id: 'prg-jnu-phd-jrf',
+          exam_code: 'UGC-NET',
+          program_name: 'Ph.D. with Junior Research Fellowship (Direct JRF Mode)',
+          degree_level: 'Doctoral (Ph.D.) + ₹37,000/mo Fellowship',
+          seats: 380,
+          duration_years: 5,
+          avg_package_lpa: 11.50, // Pay Level 10 Assistant Professor equivalent upon graduation
+          median_package_lpa: 11.50,
+          exam_cutoff_percentile: 'JRF Qualified (AIR Top 100 in Subject)',
+          exam_cutoff_rank: 'Category 1 JRF Qualified',
+          academic_cutoff: '55% in Master degree (50% for SC/ST/OBC); Exemption from written test',
+          selection_process: 'UGC-NET JRF Score (70% weightage) -> Viva Voce & Research Synopsis (30%)'
+        }
+      ]
+    },
+    {
+      id: 'col-du-ugc',
+      category_id: 'cat-ugc-net',
+      name: 'University of Delhi (DU Central & 90+ Constituent Colleges)',
+      code: 'DU',
+      location: 'New Delhi',
+      institution_type: 'Central University',
+      accreditation: 'NIRF University Rank #6 | 90+ Top Colleges (SRCC, Miranda, Hindu, St. Stephens)',
+      website: 'https://du.ac.in',
+      data_status: 'DEMO',
+      source: 'DU Assistant Professor Recruitment Bulletin & Ph.D. Ordinance',
+      programs: [
+        {
+          id: 'prg-du-asst-prof',
+          exam_code: 'UGC-NET',
+          program_name: 'Assistant Professor Recruitment (Regular Govt Pay Level 10)',
+          degree_level: 'Permanent Faculty (Basic ₹57,700, Gross ₹90k-1.1L/mo)',
+          seats: 4500,
+          duration_years: 0,
+          avg_package_lpa: 12.00, // Gross salary + DA + HRA + Medical ~₹12 LPA
+          median_package_lpa: 12.00,
+          exam_cutoff_percentile: 'UGC-NET Qualified (Category 1 or Category 2)',
+          exam_cutoff_rank: 'NET Qualified + High Academic API Score',
+          academic_cutoff: 'Master’s degree with 55% marks (50% for reserved)',
+          selection_process: 'Academic API Screening (Grad, PG, NET-JRF, Ph.D.) -> College Interview Selection'
+        }
+      ]
+    },
+    {
+      id: 'col-bhu-ugc',
+      category_id: 'cat-ugc-net',
+      name: 'Banaras Hindu University (BHU Varanasi)',
+      code: 'BHU',
+      location: 'Varanasi, Uttar Pradesh',
+      institution_type: 'Central University (Institute of Eminence)',
+      accreditation: 'NIRF University Rank #5 | Largest Residential University in Asia',
+      website: 'https://bhu.ac.in',
+      data_status: 'DEMO',
+      source: 'BHU RET & JRF Ph.D. Information Bulletin',
+      programs: [
+        {
+          id: 'prg-bhu-phd-jrf',
+          exam_code: 'UGC-NET',
+          program_name: 'Ph.D. Research Scholar (Direct JRF Admissions)',
+          degree_level: 'Ph.D. + Monthly Fellowship of ₹37,000 + HRA',
+          seats: 520,
+          duration_years: 5,
+          avg_package_lpa: 10.80,
+          median_package_lpa: 10.80,
+          exam_cutoff_percentile: 'UGC-NET JRF Award Letter',
+          exam_cutoff_rank: 'Top 1% in UGC-NET',
+          academic_cutoff: '55% aggregate marks in PG or equivalent grade',
+          selection_process: 'Direct JRF Admission -> Personal Research Interview'
+        }
+      ]
+    },
+    {
+      id: 'col-jmi-ugc',
+      category_id: 'cat-ugc-net',
+      name: 'Jamia Millia Islamia (JMI New Delhi)',
+      code: 'JMI',
+      location: 'Jamia Nagar, New Delhi',
+      institution_type: 'Central University',
+      accreditation: 'NIRF University Rank #3 | NAAC A++ Accredited',
+      website: 'https://jmi.ac.in',
+      data_status: 'DEMO',
+      source: 'JMI Ph.D. & Faculty Notification',
+      programs: [
+        {
+          id: 'prg-jmi-phd-asst',
+          exam_code: 'UGC-NET',
+          program_name: 'Doctoral Studies & Assistant Professor Tenure',
+          degree_level: 'Ph.D. / Academic Faculty',
+          seats: 320,
+          duration_years: 5,
+          avg_package_lpa: 11.20,
+          median_package_lpa: 11.20,
+          exam_cutoff_percentile: 'UGC-NET JRF / Assistant Professor',
+          exam_cutoff_rank: 'Category 1 / 2 Qualified',
+          academic_cutoff: 'Post-Graduation with 55% minimum',
+          selection_process: 'UGC-NET Merit Exemption -> Research Proposal Defense'
+        }
+      ]
+    },
+    {
+      id: 'col-uoh-ugc',
+      category_id: 'cat-ugc-net',
+      name: 'University of Hyderabad (UoH)',
+      code: 'UOH',
+      location: 'Gachibowli, Hyderabad, Telangana',
+      institution_type: 'Central University (Institute of Eminence)',
+      accreditation: 'NIRF University Rank #10 | Premier Research Hub in Southern India',
+      website: 'https://uohyd.ac.in',
+      data_status: 'DEMO',
+      source: 'UoH Research Scholar Report',
+      programs: [
+        {
+          id: 'prg-uoh-jrf',
+          exam_code: 'UGC-NET',
+          program_name: 'Ph.D. Humanities, Social Sciences, Economics & Management',
+          degree_level: 'Ph.D. Fellowship Program',
+          seats: 260,
+          duration_years: 5,
+          avg_package_lpa: 10.50,
+          median_package_lpa: 10.50,
+          exam_cutoff_percentile: 'UGC-NET JRF Qualified',
+          exam_cutoff_rank: 'Top National Percentile',
+          academic_cutoff: 'Master’s degree with 55% marks',
+          selection_process: 'Direct Viva-Voce for JRF Holders'
+        }
+      ]
+    },
+    {
+      id: 'col-tiss-ugc',
+      category_id: 'cat-ugc-net',
+      name: 'Tata Institute of Social Sciences (TISS Mumbai)',
+      code: 'TISS',
+      location: 'Deonar, Mumbai, Maharashtra',
+      institution_type: 'Deemed Central University (Centrally Funded)',
+      accreditation: '#1 Social Sciences & HR Research Institute in Asia',
+      website: 'https://tiss.edu',
+      data_status: 'DEMO',
+      source: 'TISS Doctoral Bulletin',
+      programs: [
+        {
+          id: 'prg-tiss-phd',
+          exam_code: 'UGC-NET',
+          program_name: 'Ph.D. in Social Work, Management & Labour Studies, Education',
+          degree_level: 'Ph.D. Program',
+          seats: 120,
+          duration_years: 5,
+          avg_package_lpa: 14.50, // Highly demanded in UN, World Bank, Corporate CSR & Faculty
+          median_package_lpa: 13.50,
+          exam_cutoff_percentile: 'UGC-NET JRF in Subject',
+          exam_cutoff_rank: 'Top 500 in Subject',
+          academic_cutoff: '55% in relevant master’s degree',
+          selection_process: 'Research Proposal Assessment -> Personal Interview'
+        }
+      ]
+    },
+    {
+      id: 'col-uppsc-ap',
+      category_id: 'cat-ugc-net',
+      name: 'Uttar Pradesh Higher Education Services Commission (UPHESC / UPPSC)',
+      code: 'UPPSC-AP',
+      location: 'Prayagraj & Lucknow, Uttar Pradesh',
+      institution_type: 'State Public Service Commission',
+      accreditation: 'Direct Permanent Assistant Professor Recruitment in 400+ Govt Degree Colleges',
+      website: 'https://uppsc.up.nic.in',
+      data_status: 'DEMO',
+      source: 'UPPSC Assistant Professor Official Gazette Advertisement',
+      programs: [
+        {
+          id: 'prg-uppsc-ap-post',
+          exam_code: 'UGC-NET',
+          program_name: 'Permanent Assistant Professor (Govt Degree & Aided Colleges)',
+          degree_level: 'Gazetted Class-1 Officer (Pay Level 10: Basic ₹57,700, Gross ₹92,000/mo)',
+          seats: 2200,
+          duration_years: 0,
+          avg_package_lpa: 11.80, // Basic + DA + HRA + Pension benefits
+          median_package_lpa: 11.80,
+          exam_cutoff_percentile: 'UGC-NET Qualified (Mandatory Eligibility)',
+          exam_cutoff_rank: 'Written Exam Score + Interview Merit',
+          academic_cutoff: 'Master’s degree with 55% + UGC NET / UP-SLET qualified',
+          selection_process: 'Written Objective Exam (GS 30 Qs + Subject 70 Qs = 200 Marks) -> Interview (30 Marks)'
+        }
+      ]
+    },
+    {
+      id: 'col-rpsc-ap',
+      category_id: 'cat-ugc-net',
+      name: 'Rajasthan Public Service Commission (RPSC College Lecturer)',
+      code: 'RPSC-AP',
+      location: 'Ajmer & Jaipur, Rajasthan',
+      institution_type: 'State Public Service Commission',
+      accreditation: 'Direct Permanent Assistant Professor Recruitment in Rajasthan Govt Colleges',
+      website: 'https://rpsc.rajasthan.gov.in',
+      data_status: 'DEMO',
+      source: 'RPSC College Education Department Notification',
+      programs: [
+        {
+          id: 'prg-rpsc-ap-post',
+          exam_code: 'UGC-NET',
+          program_name: 'Assistant Professor (College Education Department)',
+          degree_level: 'Gazetted Class-1 (UGC 7th Pay Level 10)',
+          seats: 1914,
+          duration_years: 0,
+          avg_package_lpa: 11.50,
+          median_package_lpa: 11.50,
+          exam_cutoff_percentile: 'UGC-NET / Rajasthan SET Qualified',
+          exam_cutoff_rank: 'Written Merit List',
+          academic_cutoff: 'Master’s degree with 55% marks (50% for SC/ST/OBC/MBC)',
+          selection_process: 'Paper 1 (Subject 75M) + Paper 2 (Subject 75M) + Paper 3 (Rajasthan GK 50M) -> Interview (24M)'
+        }
+      ]
+    },
+    {
+      id: 'col-mppsc-ap',
+      category_id: 'cat-ugc-net',
+      name: 'Madhya Pradesh Public Service Commission (MPPSC Assistant Professor)',
+      code: 'MPPSC-AP',
+      location: 'Indore & Bhopal, Madhya Pradesh',
+      institution_type: 'State Public Service Commission',
+      accreditation: 'Higher Education Department Govt of MP (Pay Level 10)',
+      website: 'https://mppsc.mp.gov.in',
+      data_status: 'DEMO',
+      source: 'MPPSC Assistant Professor Notification',
+      programs: [
+        {
+          id: 'prg-mppsc-ap-post',
+          exam_code: 'UGC-NET',
+          program_name: 'Assistant Professor in Govt Universities & Colleges',
+          degree_level: 'Permanent Govt Lecturer (Pay Level 10: ₹57,700)',
+          seats: 1669,
+          duration_years: 0,
+          avg_package_lpa: 11.50,
+          median_package_lpa: 11.50,
+          exam_cutoff_percentile: 'UGC-NET or MP-SET Qualified',
+          exam_cutoff_rank: 'State Merit List',
+          academic_cutoff: 'Master’s degree with 55% marks in subject',
+          selection_process: 'OMR Written Exam (MP GK 200M + Subject 600M = 800M) -> Direct Merit Selection'
         }
       ]
     }

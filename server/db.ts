@@ -246,5 +246,98 @@ function initSchema(db: Database): void {
       source TEXT NOT NULL,
       FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
     );
+
+    -- Detailed exam subjects (CSIR-NET, IIT-JAM, UGC-NET) from train.html
+    CREATE TABLE IF NOT EXISTS exam_subjects (
+      id TEXT PRIMARY KEY,
+      exam_code TEXT NOT NULL,
+      category_id TEXT NOT NULL,
+      code TEXT NOT NULL,
+      name TEXT NOT NULL,
+      who_text TEXT NOT NULL,
+      background TEXT NOT NULL,
+      description TEXT NOT NULL,
+      academic_routes_json TEXT NOT NULL,
+      careers_json TEXT NOT NULL,
+      related_exams_json TEXT NOT NULL,
+      key_topics_json TEXT NOT NULL,
+      programs_json TEXT,
+      source TEXT DEFAULT 'train.html data layer',
+      verified INTEGER DEFAULT 1
+    );
+
+    -- Official cutoffs (CSIR-NET, IIT-JAM) from train.html
+    CREATE TABLE IF NOT EXISTS cutoffs (
+      id TEXT PRIMARY KEY,
+      exam_code TEXT NOT NULL,
+      subject TEXT NOT NULL,
+      track TEXT NOT NULL,
+      session TEXT NOT NULL,
+      ur REAL,
+      ews REAL,
+      obc REAL,
+      sc REAL,
+      st REAL,
+      pwd REAL,
+      obc_ews REAL,
+      sc_st_pwd REAL,
+      unit TEXT NOT NULL,
+      source TEXT NOT NULL,
+      verified INTEGER DEFAULT 1,
+      is_benchmark INTEGER DEFAULT 0,
+      approx_marks_json TEXT
+    );
+
+    -- PW student results (IIT-JAM, CSIR-NET) from train.html
+    CREATE TABLE IF NOT EXISTS pw_results (
+      id TEXT PRIMARY KEY,
+      exam_code TEXT NOT NULL,
+      year TEXT NOT NULL,
+      subject TEXT NOT NULL,
+      student_name TEXT NOT NULL,
+      rank INTEGER,
+      track TEXT,
+      session TEXT,
+      score TEXT,
+      source TEXT NOT NULL
+    );
+
+    -- Parallel / alternative exams from train.html
+    CREATE TABLE IF NOT EXISTS parallel_exams (
+      id TEXT PRIMARY KEY,
+      exam_group TEXT NOT NULL,
+      group_label TEXT NOT NULL,
+      name TEXT NOT NULL,
+      full_name TEXT NOT NULL,
+      eligibility TEXT NOT NULL,
+      background TEXT NOT NULL,
+      career_outcome TEXT NOT NULL,
+      leads_to TEXT NOT NULL,
+      difficulty TEXT NOT NULL,
+      syllabus_overlap TEXT NOT NULL,
+      overlap_csirnet TEXT,
+      overlap_iitjam TEXT,
+      combinable INTEGER DEFAULT 1,
+      why_backup TEXT NOT NULL,
+      reason_short TEXT NOT NULL
+    );
+
+    -- Exam comparison data from train.html
+    CREATE TABLE IF NOT EXISTS exam_comparison (
+      id TEXT PRIMARY KEY,
+      exam_code TEXT NOT NULL,
+      name TEXT NOT NULL,
+      eligibility TEXT NOT NULL,
+      audience TEXT NOT NULL,
+      subjects_covered TEXT NOT NULL,
+      exam_level TEXT NOT NULL,
+      career_outcome TEXT NOT NULL,
+      higher_ed TEXT NOT NULL,
+      research_value TEXT NOT NULL,
+      teaching_value TEXT NOT NULL,
+      overlap_text TEXT NOT NULL,
+      prep_duration TEXT NOT NULL,
+      backup_value TEXT NOT NULL
+    );
   `);
 }

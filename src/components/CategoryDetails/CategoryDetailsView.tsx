@@ -11,6 +11,9 @@ import { ExamsMappingSection } from './ExamsMappingSection';
 import { CollegesSection } from './CollegesSection';
 import { ResultsSection } from './ResultsSection';
 import { ProvenResultsSection } from './ProvenResultsSection';
+import { MbaCounsellorCockpit } from './MbaCounsellorCockpit';
+import { UgcNetCounsellorCockpit } from './UgcNetCounsellorCockpit';
+import { UpscCounsellorCockpit } from './UpscCounsellorCockpit';
 
 interface CategoryDetailsViewProps {
   payload: CategoryDetailPayload;
@@ -39,6 +42,57 @@ export const CategoryDetailsView: React.FC<CategoryDetailsViewProps> = ({
     results,
     successStories
   } = payload;
+
+  // If MBA category, render the fast, counsellor-first Cockpit!
+  if (category.slug === 'mba') {
+    return (
+      <MbaCounsellorCockpit
+        category={category}
+        exams={exams}
+        colleges={colleges}
+        eligibilityRules={eligibilityRules}
+        preparation={preparation}
+        courses={courses}
+        onBack={onBack}
+        onPitchCourse={onPitchCourse}
+        onOpenFitmentModal={onOpenFitmentModal}
+      />
+    );
+  }
+
+  // If UGC-NET category, render the fast, counsellor-first Cockpit!
+  if (category.slug === 'ugc-net') {
+    return (
+      <UgcNetCounsellorCockpit
+        category={category}
+        exams={exams}
+        colleges={colleges}
+        eligibilityRules={eligibilityRules}
+        preparation={preparation}
+        courses={courses}
+        onBack={onBack}
+        onPitchCourse={onPitchCourse}
+        onOpenFitmentModal={onOpenFitmentModal}
+      />
+    );
+  }
+
+  // If UPSC category, render the fast, counsellor-first Cockpit!
+  if (category.slug === 'upsc') {
+    return (
+      <UpscCounsellorCockpit
+        category={category}
+        exams={exams}
+        colleges={colleges}
+        eligibilityRules={eligibilityRules}
+        preparation={preparation}
+        courses={courses}
+        onBack={onBack}
+        onPitchCourse={onPitchCourse}
+        onOpenFitmentModal={onOpenFitmentModal}
+      />
+    );
+  }
 
   const scrollToSection = (sectionId: SectionId) => {
     setActiveSection(sectionId);
