@@ -210,8 +210,11 @@ export async function seedDatabase(db: Database): Promise<void> {
     { id: 'ex-iit-jam', category_id: 'cat-csir-jam', code: 'IIT-JAM', name: 'Joint Admission Test for Masters', conducting_body: 'IITs (Rotational)', frequency: 'Once a Year (Feb)', mode: 'CBT', duration_minutes: 180, exam_level: 'National', official_website: 'https://jam.iitd.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
 
     // PHARMA
-    { id: 'ex-gpat', category_id: 'cat-pharma', code: 'GPAT', name: 'Graduate Pharmacy Aptitude Test', conducting_body: 'NBEMS', frequency: 'Once a Year (June)', mode: 'CBT', duration_minutes: 180, exam_level: 'National', official_website: 'https://natboard.edu.in', data_status: 'DEMO', academic_year: '2025-2026' },
-    { id: 'ex-niper', category_id: 'cat-pharma', code: 'NIPER-JEE', name: 'NIPER Joint Entrance Examination', conducting_body: 'NIPER Council', frequency: 'Once a Year (July)', mode: 'CBT', duration_minutes: 120, exam_level: 'National (Tier 1 Pharma)', official_website: 'https://niperguwahati.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-gpat', category_id: 'cat-pharma', code: 'GPAT', name: 'Graduate Pharmacy Aptitude Test (GPAT)', conducting_body: 'National Board of Examinations in Medical Sciences (NBEMS)', frequency: 'Once a Year (May-June)', mode: 'Computer Based Test (CBT - 125 MCQs)', duration_minutes: 180, exam_level: 'National Apex Pharmacy (AICTE ₹12,400/mo Fellowship)', official_website: 'https://natboard.edu.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-niper', category_id: 'cat-pharma', code: 'NIPER-JEE', name: 'NIPER Joint Entrance Examination (7 Apex NIPER Institutes)', conducting_body: 'NIPER Council (NIPER Guwahati/Hyderabad/Mohali)', frequency: 'Once a Year (June-July)', mode: 'CBT (200 MCQs)', duration_minutes: 120, exam_level: 'National Tier 1 Institute of National Importance', official_website: 'https://niper.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-drug-inspector', category_id: 'cat-pharma', code: 'DRUG-INSPECTOR', name: 'Government Drug Inspector (DI - CDSCO & State PSCs)', conducting_body: 'UPSC (Central CDSCO) & State PSCs (UPPSC, MPSC, RPSC, TNPSC)', frequency: 'Regular Notification Based Recruitment', mode: 'Written Examination (CBT/OMR) + Interview', duration_minutes: 120, exam_level: 'Class-1 / Class-2 Gazetted Officer (Pay Level 8/10)', official_website: 'https://cdsco.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-govt-pharmacist', category_id: 'cat-pharma', code: 'GOVT-PHARMACIST', name: 'Government Pharmacist Recruitment (ESIC, RRB Railway, AIIMS, State Services)', conducting_body: 'ESIC, Railway Recruitment Boards, AIIMS & State Health Boards', frequency: 'Annual Central & State Health Vacancies', mode: 'CBT (100-125 MCQs)', duration_minutes: 120, exam_level: 'Central / State Govt Hospital Post (Pay Level 5)', official_website: 'https://esic.gov.in', data_status: 'DEMO', academic_year: '2025-2026' },
+    { id: 'ex-bits-hd-pharma', category_id: 'cat-pharma', code: 'BITS-HD-PHARMA', name: 'BITS Pilani Higher Degree Pharmacy Entrance (BITS HD)', conducting_body: 'Birla Institute of Technology and Science, Pilani', frequency: 'Once a Year (May)', mode: 'Online Computer Test', duration_minutes: 180, exam_level: 'Premier Deemed University M.Pharm', official_website: 'https://bitsadmission.com', data_status: 'DEMO', academic_year: '2025-2026' },
 
     // UGC NET
     { id: 'ex-ugc-net-jrf', category_id: 'cat-ugc-net', code: 'UGC-NET', name: 'UGC National Eligibility Test (JRF, Asst Prof & PhD)', conducting_body: 'National Testing Agency (NTA)', frequency: 'Twice a Year (June & Dec Cycles)', mode: 'Computer Based Test (CBT)', duration_minutes: 180, exam_level: 'National (Tier 1 Academic)', official_website: 'https://ugcnet.nta.ac.in', data_status: 'DEMO', academic_year: '2025-2026' },
@@ -358,6 +361,67 @@ export async function seedDatabase(db: Database): Promise<void> {
       total_marks: 120,
       total_questions: 120,
       marking_scheme: '+1 for Correct, -0.25 for Incorrect MCQ',
+      duration_minutes: 120
+    },
+    // --- PHARMA STRUCTURES ---
+    {
+      id: 'str-gpat',
+      exam_id: 'ex-gpat',
+      tier_name: 'GPAT Computer Based Test (125 MCQs, 500 Marks, 180 Mins)',
+      sections_json: JSON.stringify([
+        { name: 'Pharmaceutics & NDDS', questions: 38, marks: 152, duration: 55, question_types: 'Dosage Form Design, Biopharmaceutics, Pharmacokinetics, Novel Drug Delivery, Physical Pharmacy (+4 / -1)' },
+        { name: 'Pharmaceutical Chemistry & Medicinal Chem', questions: 38, marks: 152, duration: 55, question_types: 'SAR of Drug Classes, Organic Chemistry, Heterocyclic, Spectroscopy UV/NMR/IR/Mass (+4 / -1)' },
+        { name: 'Pharmacology & Toxicology', questions: 28, marks: 112, duration: 40, question_types: 'ANS, CNS, CVS Drugs, Chemotherapy, Autacoids, Adverse Drug Reactions, Clinical Trials (+4 / -1)' },
+        { name: 'Pharmacognosy & Phytochemistry', questions: 10, marks: 40, duration: 15, question_types: 'Alkaloids, Glycosides, Terpenoids, Extraction Techniques, Adulteration (+4 / -1)' },
+        { name: 'Pharmaceutical Jurisprudence & Allied', questions: 11, marks: 44, duration: 15, question_types: 'Drugs & Cosmetics Act 1940, Pharmacy Act 1948, NDPS, Biochemistry, Microbiology (+4 / -1)' }
+      ]),
+      total_marks: 500,
+      total_questions: 125,
+      marking_scheme: '+4 for Correct, -1 for Incorrect MCQ; Qualifying gives ₹12,400/month AICTE PG Scholarship (Total ₹2,97,600 across 2-year M.Pharm)',
+      duration_minutes: 180
+    },
+    {
+      id: 'str-niper',
+      exam_id: 'ex-niper',
+      tier_name: 'NIPER JEE (200 MCQs, 200 Marks, 120 Mins Speed Test)',
+      sections_json: JSON.stringify([
+        { name: 'Natural Products & Phytochemistry', questions: 40, marks: 40, duration: 25, question_types: 'Biosynthetic pathways, Isolation, Bioactive secondary metabolites (+1 / -0.25)' },
+        { name: 'Medicinal Chemistry & Organic Synthesis', questions: 50, marks: 50, duration: 30, question_types: 'Reaction mechanisms, Stereochemistry, Target-based drug design (+1 / -0.25)' },
+        { name: 'Pharmacology, Toxicology & Clinical Research', questions: 50, marks: 50, duration: 30, question_types: 'Bioassays, In-vitro/In-vivo testing, Receptor signaling (+1 / -0.25)' },
+        { name: 'Pharmaceutics, Regulatory Affairs & Devices', questions: 40, marks: 40, duration: 25, question_types: 'Polymer chemistry, Preformulation, Medical devices, Patents (+1 / -0.25)' },
+        { name: 'Aptitude & General Pharmaceutical GK', questions: 20, marks: 20, duration: 10, question_types: 'Pharma industry current affairs, Nobel prizes, Basic numerical reasoning (+1 / -0.25)' }
+      ]),
+      total_marks: 200,
+      total_questions: 200,
+      marking_scheme: '+1 for Correct, -0.25 for Incorrect; Valid GPAT score mandatory for eligibility',
+      duration_minutes: 120
+    },
+    {
+      id: 'str-drug-inspector',
+      exam_id: 'ex-drug-inspector',
+      tier_name: 'Drug Inspector Selection (Written CBT/OMR + Viva)',
+      sections_json: JSON.stringify([
+        { name: 'Forensic Pharmacy & Drug Legislation', questions: 50, marks: 100, duration: 45, question_types: 'D&C Act 1940 & Rules 1945, Schedule M GMP, Schedule Y Clinical Trials, DPCI (+2 / -0.66)' },
+        { name: 'Industrial Pharmacy, QC & Manufacturing', questions: 50, marks: 100, duration: 45, question_types: 'Sterile products, QA/QC, Stability testing, Microbiological assays (+2 / -0.66)' },
+        { name: 'Pharmacology, Bioavailability & Toxicology', questions: 50, marks: 100, duration: 45, question_types: 'Drug mechanisms, Adverse reactions, Drug interactions, LD50/ED50 (+2 / -0.66)' },
+        { name: 'General Studies & Mental Ability (State/UPSC)', questions: 50, marks: 100, duration: 45, question_types: 'Indian Constitution, Current Affairs, Logical Reasoning (+2 / -0.66)' }
+      ]),
+      total_marks: 400,
+      total_questions: 200,
+      marking_scheme: 'Written Test Merit (85%) + Interview (15%) for Gazetted Class 1/2 Post',
+      duration_minutes: 180
+    },
+    {
+      id: 'str-govt-pharmacist',
+      exam_id: 'ex-govt-pharmacist',
+      tier_name: 'Government Hospital Pharmacist CBT (ESIC / RRB / AIIMS)',
+      sections_json: JSON.stringify([
+        { name: 'Technical Pharmacy Domain Knowledge', questions: 80, marks: 80, duration: 80, question_types: 'Hospital & Clinical Pharmacy, Dispensing, Pharmacology, Drug Store Management (+1 / -0.25)' },
+        { name: 'General Aptitude, Reasoning & Awareness', questions: 45, marks: 45, duration: 40, question_types: 'General Science, Arithmetic, Reasoning, General English (+1 / -0.25)' }
+      ]),
+      total_marks: 125,
+      total_questions: 125,
+      marking_scheme: '+1 for Correct, -0.25 for Incorrect; Direct selection for permanent hospital posting',
       duration_minutes: 120
     },
     {
@@ -2266,6 +2330,232 @@ export async function seedDatabase(db: Database): Promise<void> {
           exam_cutoff_rank: 'AIR Top 250 in GATE CS',
           academic_cutoff: 'B.E./B.Tech in CS/IT with min 60% or 6.5 CGPA',
           selection_process: 'Direct Admission through COAP based on GATE score (TA category)'
+        }
+      ]
+    },
+
+    // --- PHARMA PREMIER INSTITUTES & RECRUITMENT AUTHORITIES ---
+    {
+      id: 'col-niper-mohali',
+      category_id: 'cat-pharma',
+      name: 'NIPER S.A.S. Nagar (Mohali - Apex National Institute)',
+      code: 'NIPER-MOHALI',
+      location: 'Sector 67, S.A.S. Nagar, Mohali, Punjab',
+      institution_type: 'Institute of National Importance (Ministry of Chemicals & Fertilizers)',
+      accreditation: 'NIRF Pharmacy Overall Rank #1 in India',
+      website: 'https://niper.gov.in',
+      data_status: 'DEMO',
+      source: 'NIPER Placement Report & NIPER JEE Counseling Archive (Seed)',
+      programs: [
+        {
+          id: 'prg-niper-pharmaceutics',
+          exam_code: 'NIPER-JEE',
+          program_name: 'M.S. (Pharm.) in Pharmaceutics & Novel Drug Delivery',
+          degree_level: 'Master of Science in Pharmacy',
+          seats: 45,
+          duration_years: 2,
+          avg_package_lpa: 9.80, // Top MNC placements: Novartis, Dr. Reddy’s, Sun Pharma, Cipla
+          median_package_lpa: 9.00,
+          exam_cutoff_percentile: 'NIPER JEE Rank Top 80',
+          exam_cutoff_rank: 'AIR 1 - 85 in NIPER JEE',
+          academic_cutoff: 'B.Pharm with min 60% or 6.75 CGPA + Valid GPAT Score',
+          selection_process: 'GPAT Qualification -> NIPER JEE Rank -> Web Counseling'
+        },
+        {
+          id: 'prg-niper-pharmacology',
+          exam_code: 'NIPER-JEE',
+          program_name: 'M.S. (Pharm.) in Pharmacology & Toxicology',
+          degree_level: 'Master of Science in Pharmacy (Preclinical R&D)',
+          seats: 35,
+          duration_years: 2,
+          avg_package_lpa: 9.20,
+          median_package_lpa: 8.80,
+          exam_cutoff_percentile: 'NIPER JEE Rank Top 120',
+          exam_cutoff_rank: 'AIR 1 - 120',
+          academic_cutoff: 'B.Pharm with min 60% + Valid GPAT Score',
+          selection_process: 'NIPER JEE Written Merit'
+        }
+      ]
+    },
+    {
+      id: 'col-niper-hyd-ahm',
+      category_id: 'cat-pharma',
+      name: 'NIPER Hyderabad & NIPER Ahmedabad',
+      code: 'NIPER-HYD-AHM',
+      location: 'Genome Valley Hyderabad & Gandhinagar Ahmedabad',
+      institution_type: 'Institute of National Importance',
+      accreditation: 'NIRF Pharmacy Top 5 (Medical Device Hub & Genome Hub)',
+      website: 'https://niperhyd.ac.in',
+      data_status: 'DEMO',
+      source: 'NIPER Joint Counseling Data',
+      programs: [
+        {
+          id: 'prg-niper-regulatory',
+          exam_code: 'NIPER-JEE',
+          program_name: 'M.S. (Pharm.) in Regulatory Affairs & Medical Devices',
+          degree_level: 'Postgraduate Specialized',
+          seats: 60,
+          duration_years: 2,
+          avg_package_lpa: 8.90,
+          median_package_lpa: 8.50,
+          exam_cutoff_percentile: 'NIPER JEE Rank Top 350',
+          exam_cutoff_rank: 'AIR 100 - 350',
+          academic_cutoff: 'B.Pharm with min 60% + Valid GPAT',
+          selection_process: 'NIPER JEE Merit Counseling'
+        },
+        {
+          id: 'prg-niper-mba-pharm',
+          exam_code: 'NIPER-JEE',
+          program_name: 'MBA (Pharm.) in Pharmaceutical Management',
+          degree_level: 'Pharma Executive MBA',
+          seats: 50,
+          duration_years: 2,
+          avg_package_lpa: 10.50, // High demand in pharma marketing & brand management
+          median_package_lpa: 10.00,
+          exam_cutoff_percentile: 'NIPER JEE Management Rank Top 150',
+          exam_cutoff_rank: 'Top 150',
+          academic_cutoff: 'B.Pharm / B.Tech / M.Sc with GPAT/CAT score',
+          selection_process: 'NIPER JEE (Management Test) + Group Discussion + Personal Interview'
+        }
+      ]
+    },
+    {
+      id: 'col-ict-mumbai',
+      category_id: 'cat-pharma',
+      name: 'Institute of Chemical Technology (ICT Mumbai - UDCT)',
+      code: 'ICT-MUMBAI',
+      location: 'Matunga, Mumbai, Maharashtra',
+      institution_type: 'State Deemed Research University (Elite Status)',
+      accreditation: 'NIRF Overall Top 15 / Pharmacy Rank #5 (Legacy of Padma Vibhushan Prof. M.M. Sharma)',
+      website: 'https://ictmumbai.edu.in',
+      data_status: 'DEMO',
+      source: 'ICT Mumbai Placement Report',
+      programs: [
+        {
+          id: 'prg-ict-mpharm',
+          exam_code: 'GPAT',
+          program_name: 'M.Pharm in Pharmaceutics & Bioprocess Technology',
+          degree_level: 'Master of Pharmacy',
+          seats: 30,
+          duration_years: 2,
+          avg_package_lpa: 10.20,
+          median_package_lpa: 9.80,
+          exam_cutoff_percentile: 'GPAT Score 220+ / 500 (AIR Top 200)',
+          exam_cutoff_rank: 'AIR Top 200 in GPAT',
+          academic_cutoff: 'B.Pharm with min 60% + GPAT Qualified',
+          selection_process: 'CAP Counseling based on GPAT Merit'
+        }
+      ]
+    },
+    {
+      id: 'col-jamia-hamdard',
+      category_id: 'cat-pharma',
+      name: 'Jamia Hamdard (Faculty of Pharmacy - SPER New Delhi)',
+      code: 'JAMIA-HAMDARD',
+      location: 'Hamdard Nagar, New Delhi',
+      institution_type: 'Deemed to be University',
+      accreditation: 'NIRF Pharmacy Rank #2 in India',
+      website: 'https://jamiahamdard.edu',
+      data_status: 'DEMO',
+      source: 'SPER Placement Gazette',
+      programs: [
+        {
+          id: 'prg-jh-pharmacology',
+          exam_code: 'GPAT',
+          program_name: 'M.Pharm in Pharmacology & Clinical Research',
+          degree_level: 'Master of Pharmacy',
+          seats: 40,
+          duration_years: 2,
+          avg_package_lpa: 8.50,
+          median_package_lpa: 8.00,
+          exam_cutoff_percentile: 'GPAT Score 190+ / 500',
+          exam_cutoff_rank: 'AIR Top 600 in GPAT',
+          academic_cutoff: 'B.Pharm with min 55% marks + Valid GPAT',
+          selection_process: 'GPAT Merit Counseling'
+        }
+      ]
+    },
+    {
+      id: 'col-cdsco-di',
+      category_id: 'cat-pharma',
+      name: 'Central Drugs Standard Control Organization (CDSCO - Ministry of Health)',
+      code: 'CDSCO',
+      location: 'FDA Bhawan, Kotla Road, New Delhi & Port/Zonal Offices',
+      institution_type: 'Apex National Regulatory Authority (Government of India)',
+      accreditation: 'Statutory National Drug Authority under Drugs & Cosmetics Act',
+      website: 'https://cdsco.gov.in',
+      data_status: 'DEMO',
+      source: 'UPSC CDSCO Drug Inspector Recruitment Notification',
+      programs: [
+        {
+          id: 'prg-cdsco-di',
+          exam_code: 'DRUG-INSPECTOR',
+          program_name: 'Central Drug Inspector (CDI / ADC Cadre)',
+          degree_level: 'Central Gazetted Class 1 / 2 (Pay Level 8/10: Basic ₹47,600 to ₹56,100)',
+          seats: 120,
+          duration_years: 0,
+          avg_package_lpa: 11.50, // Gross Salary ~₹85,000 - ₹1,00,000/mo + Govt Allowances & Quarters
+          median_package_lpa: 11.50,
+          exam_cutoff_percentile: 'UPSC Recruitment Test Score 68%+ in CBT',
+          exam_cutoff_rank: 'Top 120 All India Merit',
+          academic_cutoff: 'Degree in Pharmacy or Pharmaceutical Sciences + 18 months manufacturing experience in Schedule C/C1 drugs',
+          selection_process: 'UPSC Written Recruitment Test (CBT) + Personal Interview'
+        }
+      ]
+    },
+    {
+      id: 'col-state-psc-di',
+      category_id: 'cat-pharma',
+      name: 'State Drug Inspectorates (UPPSC, MPSC, RPSC, TNPSC Drug Administration)',
+      code: 'STATE-DI',
+      location: 'State Food & Drug Administration (FDA) Head Offices & Districts',
+      institution_type: 'State Government Health & Family Welfare Department',
+      accreditation: 'State Statutory Drug Licensing & Enforcement Authority',
+      website: 'https://uppsc.up.nic.in',
+      data_status: 'DEMO',
+      source: 'State PSC Gazetted Notification',
+      programs: [
+        {
+          id: 'prg-state-di',
+          exam_code: 'DRUG-INSPECTOR',
+          program_name: 'Drug Inspector (DI - State Food & Drug Administration)',
+          degree_level: 'State Gazetted Officer (Pay Level 8: Gross ~₹75,000/mo)',
+          seats: 380,
+          duration_years: 0,
+          avg_package_lpa: 9.80,
+          median_package_lpa: 9.80,
+          exam_cutoff_percentile: 'State Written Score 72%+',
+          exam_cutoff_rank: 'State Merit List Top Rankers',
+          academic_cutoff: 'B.Pharm degree + State Pharmacy Council Registration',
+          selection_process: 'State PSC Written Examination -> Viva/Interview -> Document Verification'
+        }
+      ]
+    },
+    {
+      id: 'col-govt-hospital-pharmacist',
+      category_id: 'cat-pharma',
+      name: 'Central & State Government Hospitals (ESIC, RRB Railways, AIIMS)',
+      code: 'GOVT-HOSPITAL',
+      location: 'ESIC Hospitals, Railway Divisional Hospitals & AIIMS Pan-India',
+      institution_type: 'Government Healthcare Network',
+      accreditation: 'Central Autonomous & Railway Medical Services',
+      website: 'https://esic.gov.in',
+      data_status: 'DEMO',
+      source: 'ESIC / RRB Pharmacist Recruitment Gazette',
+      programs: [
+        {
+          id: 'prg-esic-rrb-pharmacist',
+          exam_code: 'GOVT-PHARMACIST',
+          program_name: 'Government Hospital Pharmacist (ESIC / Railway / AIIMS)',
+          degree_level: 'Central Govt Group C (Pay Level 5: Basic ₹29,200, Gross ~₹48,000/mo + Perks)',
+          seats: 2450,
+          duration_years: 0,
+          avg_package_lpa: 6.20, // Gross Salary + CGHS Medical + Railway Travel Pass
+          median_package_lpa: 6.20,
+          exam_cutoff_percentile: 'CBT Score 75+ / 125 Marks',
+          exam_cutoff_rank: 'Board Merit',
+          academic_cutoff: 'D.Pharm or B.Pharm from PCI approved institute + Registered Pharmacist with State Pharmacy Council',
+          selection_process: 'Single-tier Computer Based Test (CBT) -> Document Verification (NO INTERVIEW!)'
         }
       ]
     },

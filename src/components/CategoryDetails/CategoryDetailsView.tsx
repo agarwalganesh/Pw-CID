@@ -16,6 +16,7 @@ import { UgcNetCounsellorCockpit } from './UgcNetCounsellorCockpit';
 import { UpscCounsellorCockpit } from './UpscCounsellorCockpit';
 import { SscCounsellorCockpit } from './SscCounsellorCockpit';
 import { BankingCounsellorCockpit } from './BankingCounsellorCockpit';
+import { PharmaCounsellorCockpit } from './PharmaCounsellorCockpit';
 
 interface CategoryDetailsViewProps {
   payload: CategoryDetailPayload;
@@ -117,6 +118,23 @@ export const CategoryDetailsView: React.FC<CategoryDetailsViewProps> = ({
   if (category.slug === 'banking') {
     return (
       <BankingCounsellorCockpit
+        category={category}
+        exams={exams}
+        colleges={colleges}
+        eligibilityRules={eligibilityRules}
+        preparation={preparation}
+        courses={courses}
+        onBack={onBack}
+        onPitchCourse={onPitchCourse}
+        onOpenFitmentModal={onOpenFitmentModal}
+      />
+    );
+  }
+
+  // If Pharma category, render the fast, counsellor-first Cockpit!
+  if (category.slug === 'pharma') {
+    return (
+      <PharmaCounsellorCockpit
         category={category}
         exams={exams}
         colleges={colleges}
