@@ -42,45 +42,52 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
   }, [categories, searchQuery]);
 
   return (
-    <div>
+    <div style={{ width: '100%' }}>
       {/* Hero / Platform Overview Banner */}
       <div style={{
-        backgroundColor: 'linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%)',
+        background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%)',
         border: '1px solid var(--border-subtle)',
         borderRadius: 'var(--radius-lg)',
-        padding: '32px 36px',
-        margin: '24px 0 28px 0',
+        padding: '24px 20px',
+        margin: '16px 0 24px 0',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         flexWrap: 'wrap',
-        gap: '24px',
+        gap: '18px',
         boxShadow: 'var(--shadow-md)'
       }}>
-        <div style={{ maxWidth: '680px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+        <div style={{ maxWidth: '680px', flex: '1 1 300px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
             <span className="badge badge-verified">OFFICIAL COUNSELLOR SUITE</span>
-            <span className="badge badge-demo">DEMO DATA LAYER ACTIVE</span>
+            <span className="badge badge-demo">2025-2026 ACADEMIC SESSION</span>
           </div>
-          <h1 style={{ fontSize: '26px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '8px' }}>
+          <h1 style={{
+            fontSize: 'clamp(20px, 4vw, 26px)',
+            fontWeight: 800,
+            color: '#ffffff',
+            letterSpacing: '-0.02em',
+            marginBottom: '8px',
+            lineHeight: '1.25'
+          }}>
             EdTech Counsellor Intelligence & Fitment Platform
           </h1>
-          <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
-            Access verified syllabus mappings, real eligibility cutoffs, 3-year historical result proof, and deterministic student fitment algorithms for 11 core exam categories.
+          <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+            Instant syllabus mappings, eligibility cutoffs, 3-year historical results, and student fitment algorithms for 11 core exam categories.
           </p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '100%', maxWidth: '320px', flex: '1 1 240px' }}>
           <button
             className="btn btn-primary"
             onClick={onOpenFitmentModal}
-            style={{ padding: '12px 20px', fontSize: '14px' }}
+            style={{ padding: '12px 18px', fontSize: '13px', width: '100%' }}
           >
             <Sparkles size={16} />
             Evaluate Student Profile & Pitch
           </button>
           <div style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center' }}>
-            Deterministic rule-based recommendations
+            Rule-based algorithmic recommendations
           </div>
         </div>
       </div>
@@ -91,23 +98,23 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
         alignItems: 'center',
         justifyContent: 'space-between',
         flexWrap: 'wrap',
-        gap: '16px',
-        marginBottom: '20px'
+        gap: '12px',
+        marginBottom: '18px'
       }}>
         <div>
-          <h2 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-primary)' }}>
+          <h2 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--text-primary)' }}>
             All 11 Categories ({filteredCategories.length})
           </h2>
           <p style={{ fontSize: '12px', color: 'var(--text-secondary)' }}>
-            Select any category below to inspect comprehensive preparation roadmaps, subjects, and colleges.
+            Tap any category to open its dedicated Counsellor Cockpit.
           </p>
         </div>
 
-        <div style={{ width: '320px' }}>
+        <div style={{ width: '100%', maxWidth: '340px' }}>
           <SearchBar
             value={searchQuery}
             onChange={setSearchQuery}
-            placeholder="Search categories (e.g. MBA, CLAT, UPSC)..."
+            placeholder="Search categories (e.g. MBA, CLAT, CA)..."
           />
         </div>
       </div>

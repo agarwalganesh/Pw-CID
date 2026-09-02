@@ -32,20 +32,20 @@ export const CategoryHeader: React.FC<CategoryHeaderProps> = ({
       </div>
 
       {/* Main Category Header Block */}
-      <div style={{
+      <div className="card" style={{
         backgroundColor: 'var(--bg-secondary)',
         border: '1px solid var(--border-subtle)',
         borderRadius: 'var(--radius-lg)',
-        padding: '28px 32px',
+        padding: '20px',
         boxShadow: 'var(--shadow-md)'
       }}>
-        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px' }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
+          <div style={{ flex: '1 1 300px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px', flexWrap: 'wrap' }}>
               <span className="badge badge-verified">CATEGORY INTELLIGENCE</span>
               <span className="badge badge-demo">{category.data_status} DATA</span>
             </div>
-            <h1 style={{ fontSize: '30px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '6px' }}>
+            <h1 style={{ fontSize: 'clamp(22px, 4vw, 30px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '6px' }}>
               {category.name}
             </h1>
             <p style={{ fontSize: '15px', fontWeight: 600, color: 'var(--primary-500)', marginBottom: '10px' }}>

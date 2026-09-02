@@ -12,7 +12,6 @@ import {
   Shield,
   Building2,
   BookOpen,
-  School,
   ArrowRight,
   Sparkles
 } from 'lucide-react';
@@ -26,17 +25,17 @@ interface CategoryCardProps {
 }
 
 const iconMap: Record<string, React.ReactNode> = {
-  Briefcase: <Briefcase size={22} />,
-  Scale: <Scale size={22} />,
-  Atom: <Atom size={22} />,
-  Pill: <Pill size={22} />,
-  GraduationCap: <GraduationCap size={22} />,
-  FileSpreadsheet: <FileSpreadsheet size={22} />,
-  Train: <Train size={22} />,
-  Cpu: <Cpu size={22} />,
-  Landmark: <Landmark size={22} />,
-  Shield: <Shield size={22} />,
-  Building2: <Building2 size={22} />
+  Briefcase: <Briefcase size={20} />,
+  Scale: <Scale size={20} />,
+  Atom: <Atom size={20} />,
+  Pill: <Pill size={20} />,
+  GraduationCap: <GraduationCap size={20} />,
+  FileSpreadsheet: <FileSpreadsheet size={20} />,
+  Train: <Train size={20} />,
+  Cpu: <Cpu size={20} />,
+  Landmark: <Landmark size={20} />,
+  Shield: <Shield size={20} />,
+  Building2: <Building2 size={20} />
 };
 
 export const CategoryCard: React.FC<CategoryCardProps> = ({
@@ -44,7 +43,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
   onSelect,
   onOpenFitmentWithCategory
 }) => {
-  const icon = iconMap[category.icon] || <BookOpen size={22} />;
+  const icon = iconMap[category.icon] || <BookOpen size={20} />;
 
   return (
     <div
@@ -61,11 +60,11 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
     >
       <div>
         {/* Top bar with icon & status */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
           <div style={{
             backgroundColor: 'rgba(59, 130, 246, 0.15)',
             color: 'var(--primary-500)',
-            padding: '10px',
+            padding: '8px',
             borderRadius: '10px',
             display: 'flex',
             alignItems: 'center',
@@ -77,17 +76,17 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
         </div>
 
         {/* Category Name & Tagline */}
-        <h3 style={{ fontSize: '18px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '4px' }}>
+        <h3 style={{ fontSize: '17px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '3px' }}>
           {category.name}
         </h3>
-        <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--primary-500)', marginBottom: '10px' }}>
+        <p style={{ fontSize: '12px', fontWeight: 600, color: 'var(--primary-500)', marginBottom: '8px' }}>
           {category.tagline}
         </p>
         <p style={{
-          fontSize: '13px',
+          fontSize: '12px',
           color: 'var(--text-secondary)',
-          lineHeight: '1.4',
-          marginBottom: '16px',
+          lineHeight: '1.45',
+          marginBottom: '14px',
           display: '-webkit-box',
           WebkitLineClamp: 3,
           WebkitBoxOrient: 'vertical',
@@ -102,32 +101,32 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '8px',
-          padding: '10px',
+          gap: '6px',
+          padding: '8px',
           backgroundColor: 'rgba(15, 23, 42, 0.6)',
           borderRadius: 'var(--radius-sm)',
           border: '1px solid var(--border-subtle)',
-          marginBottom: '14px',
+          marginBottom: '12px',
           textAlign: 'center'
         }}>
           <div>
-            <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)' }}>{category.exam_count}</div>
-            <div style={{ fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Exams</div>
+            <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)' }}>{category.exam_count}</div>
+            <div style={{ fontSize: '9px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Exams</div>
           </div>
           <div>
-            <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--emerald-400)' }}>{category.course_count}</div>
-            <div style={{ fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Courses</div>
+            <div style={{ fontSize: '15px', fontWeight: 700, color: 'var(--emerald-400)' }}>{category.course_count}</div>
+            <div style={{ fontSize: '9px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Courses</div>
           </div>
           <div>
-            <div style={{ fontSize: '16px', fontWeight: 700, color: '#60a5fa' }}>{category.college_count}</div>
-            <div style={{ fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Institutes</div>
+            <div style={{ fontSize: '15px', fontWeight: 700, color: '#60a5fa' }}>{category.college_count}</div>
+            <div style={{ fontSize: '9px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Institutes</div>
           </div>
         </div>
 
         <div style={{ display: 'flex', gap: '8px' }}>
           <button
             className="btn btn-secondary btn-sm"
-            style={{ flex: 1 }}
+            style={{ flex: 1, padding: '8px 10px', fontSize: '12px' }}
             onClick={(e) => {
               e.stopPropagation();
               onSelect(category);
@@ -138,6 +137,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
           </button>
           <button
             className="btn btn-outline btn-sm"
+            style={{ padding: '8px 10px', fontSize: '12px' }}
             onClick={(e) => {
               e.stopPropagation();
               onOpenFitmentWithCategory(category);

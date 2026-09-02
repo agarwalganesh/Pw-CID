@@ -400,100 +400,40 @@ export const MbaCounsellorCockpit: React.FC<MbaCounsellorCockpitProps> = ({
   return (
     <div style={{ paddingBottom: '60px' }}>
       {/* Top Banner & Quick Controls */}
-      <div style={{
-        background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
-        border: '1px solid #334155',
-        borderRadius: '16px',
-        padding: '24px 28px',
-        marginBottom: '20px',
-        color: '#FFFFFF',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        flexWrap: 'wrap',
-        gap: '16px',
-        boxShadow: '0 8px 24px rgba(0,0,0,0.2)'
-      }}>
-        <div>
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-6 mb-5 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4 relative overflow-hidden">
+        <div className="space-y-2 z-10">
           <button
             onClick={onBack}
-            style={{
-              background: 'rgba(255,255,255,0.1)',
-              border: 'none',
-              color: '#94A3B8',
-              padding: '6px 12px',
-              borderRadius: '8px',
-              fontSize: '12px',
-              fontWeight: 600,
-              cursor: 'pointer',
-              marginBottom: '10px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px'
-            }}
+            className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg border border-slate-700 transition-colors"
           >
             ← Back to All Categories
           </button>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{
-              width: '44px',
-              height: '44px',
-              borderRadius: '12px',
-              background: 'linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '22px'
-            }}>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-xl shrink-0 shadow-lg shadow-blue-500/20">
               🎓
             </div>
             <div>
-              <h1 style={{ fontSize: '24px', fontWeight: 700, margin: 0, letterSpacing: '-0.02em' }}>
+              <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white">
                 MBA Counsellor Cockpit
               </h1>
-              <p style={{ margin: '4px 0 0', color: '#94A3B8', fontSize: '13px' }}>
+              <p className="text-slate-400 text-xs sm:text-sm max-w-2xl">
                 Instant Intelligence for Calls: 5 Exams (CAT, XAT, SNAP, NMAT, CMAT) • 25+ Top B-Schools • Sectional Marks • Live Pitch
               </p>
             </div>
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+        <div className="flex items-center gap-2.5 flex-wrap w-full md:w-auto z-10">
           <button
             onClick={() => setActiveTab('pitch')}
-            style={{
-              background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
-              border: 'none',
-              color: '#FFFFFF',
-              padding: '10px 18px',
-              borderRadius: '10px',
-              fontWeight: 700,
-              fontSize: '13px',
-              cursor: 'pointer',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              boxShadow: '0 4px 12px rgba(16, 185, 129, 0.3)'
-            }}
+            className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-900/30 transition-all"
           >
             <PhoneCall size={16} />
             Student Call Script
           </button>
           <button
             onClick={onOpenFitmentModal}
-            style={{
-              background: '#3B82F6',
-              border: 'none',
-              color: '#FFFFFF',
-              padding: '10px 16px',
-              borderRadius: '10px',
-              fontWeight: 700,
-              fontSize: '13px',
-              cursor: 'pointer',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px'
-            }}
+            className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition-all"
           >
             <Target size={16} />
             Check Student Profile
@@ -502,16 +442,7 @@ export const MbaCounsellorCockpit: React.FC<MbaCounsellorCockpitProps> = ({
       </div>
 
       {/* Main Cockpit Tabs */}
-      <div style={{
-        display: 'flex',
-        gap: '6px',
-        background: '#1E293B',
-        padding: '6px',
-        borderRadius: '12px',
-        marginBottom: '20px',
-        border: '1px solid #334155',
-        overflowX: 'auto'
-      }}>
+      <div className="flex gap-1.5 bg-slate-900/90 p-1.5 rounded-xl mb-5 border border-slate-800 overflow-x-auto whitespace-nowrap scrollbar-none">
         {[
           { id: 'exams', label: '1. Exam Patterns & Subjects', icon: BookOpen, badge: '5 Exams' },
           { id: 'colleges', label: '2. Top Colleges & Packages', icon: GraduationCap, badge: `${colleges.length || 24} Colleges` },
@@ -526,32 +457,17 @@ export const MbaCounsellorCockpit: React.FC<MbaCounsellorCockpitProps> = ({
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as CockpitTab)}
-              style={{
-                background: isActive ? '#3B82F6' : 'transparent',
-                color: isActive ? '#FFFFFF' : '#94A3B8',
-                border: 'none',
-                padding: '10px 16px',
-                borderRadius: '8px',
-                fontWeight: 700,
-                fontSize: '13px',
-                cursor: 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                whiteSpace: 'nowrap',
-                transition: 'all 0.15s ease'
-              }}
+              className={`flex items-center gap-2 px-3.5 py-2.5 text-xs sm:text-sm font-bold rounded-lg transition-all whitespace-nowrap ${
+                isActive
+                  ? 'bg-blue-600 text-white shadow-md shadow-blue-900/30 font-bold'
+                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+              }`}
             >
-              <IconComponent size={16} />
+              <IconComponent size={15} />
               {tab.label}
-              <span style={{
-                background: isActive ? 'rgba(255,255,255,0.25)' : '#334155',
-                color: isActive ? '#FFFFFF' : '#CBD5E1',
-                padding: '2px 6px',
-                borderRadius: '12px',
-                fontSize: '10px',
-                fontWeight: 700
-              }}>
+              <span className={`px-1.5 py-0.5 rounded-full text-[10px] font-bold ${
+                isActive ? 'bg-white/20 text-white' : 'bg-slate-800 text-slate-400'
+              }`}>
                 {tab.badge}
               </span>
             </button>

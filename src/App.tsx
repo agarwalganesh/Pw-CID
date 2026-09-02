@@ -8,6 +8,7 @@ import { StudentFitmentModal } from './components/StudentIntelligence/StudentFit
 import { CounsellorPitchModal } from './components/StudentIntelligence/CounsellorPitchModal';
 import { LoadingState } from './components/Common/LoadingState';
 import { ErrorState } from './components/Common/ErrorState';
+import { MobileQuickBar } from './components/Common/MobileQuickBar';
 
 export function App() {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -195,6 +196,14 @@ export function App() {
           </div>
         </div>
       </footer>
+
+      {/* Mobile Floating Quick Action Bar */}
+      <MobileQuickBar
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onSelectCategory={(cat) => setSelectedCategory(cat)}
+        onOpenFitmentModal={() => handleOpenFitment(selectedCategory)}
+      />
     </div>
   );
 }
