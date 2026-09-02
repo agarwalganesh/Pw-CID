@@ -1,47 +1,65 @@
 import { Category, CategoryDetailPayload, StudentProfile, FitmentResult, CounsellorPitchResponse } from '../types';
+import {
+  getCategoriesLocal,
+  getCategoryDetailsLocal,
+  calculateFitmentLocal,
+  generatePitchLocal
+} from '../services/dataService';
 
 const API_BASE = '/api';
 
-export async function getCategories(): Promise<Category[]> {
-  const response = await fetch(`${API_BASE}/categories`);
-  const data = await response.json();
-  if (!data.success) {
-    throw new Error(data.error || 'Failed to fetch categories');
+async function safeFetchJson<T>(url: string, options?: RequestInit): Promise<T | null> {
+  try {
+    const response = await fetch(url, options);
+    const contentType = response.headers.get('content-type') || '';
+    if (response.ok && contentType.includes('application/json')) {
+      const data = await response.json();
+      if (data && data.success) {
+        return data.data as T;
+      }
+    }
+  } catch (err) {
+    // Network failure or backend not running
   }
-  return data.data;
+  return null;
+}
+
+export async function getCategories(): Promise<Category[]> {
+  const remoteData = await safeFetchJson<Category[]>(`${API_BASE}/categories`);
+  if (remoteData && Array.isArray(remoteData) && remoteData.length > 0) {
+    return remoteData;
+  }
+  return getCategoriesLocal();
 }
 
 export async function getCategoryDetails(idOrSlug: string): Promise<CategoryDetailPayload> {
-  const response = await fetch(`${API_BASE}/categories/${idOrSlug}`);
-  const data = await response.json();
-  if (!data.success) {
-    throw new Error(data.error || 'Failed to fetch category details');
+  const remoteData = await safeFetchJson<CategoryDetailPayload>(`${API_BASE}/categories/${idOrSlug}`);
+  if (remoteData && remoteData.category) {
+    return remoteData;
   }
-  return data.data;
+  return getCategoryDetailsLocal(idOrSlug);
 }
 
 export async function calculateFitment(profile: StudentProfile): Promise<FitmentResult> {
-  const response = await fetch(`${API_BASE}/fitment/calculate`, {
+  const remoteData = await safeFetchJson<FitmentResult>(`${API_BASE}/fitment/calculate`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(profile)
   });
-  const data = await response.json();
-  if (!data.success) {
-    throw new Error(data.error || 'Failed to calculate fitment');
+  if (remoteData && remoteData.overall_fitment_score !== undefined) {
+    return remoteData;
   }
-  return data.data;
+  return calculateFitmentLocal(profile);
 }
 
 export async function generatePitch(profile: StudentProfile, fitment: FitmentResult): Promise<CounsellorPitchResponse> {
-  const response = await fetch(`${API_BASE}/pitch/generate`, {
+  const remoteData = await safeFetchJson<CounsellorPitchResponse>(`${API_BASE}/pitch/generate`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ profile, fitment })
   });
-  const data = await response.json();
-  if (!data.success) {
-    throw new Error(data.error || 'Failed to generate counsellor pitch');
+  if (remoteData && remoteData.pitch_sections) {
+    return remoteData;
   }
-  return data.data;
+  return generatePitchLocal(profile, fitment);
 }
